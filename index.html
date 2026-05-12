@@ -1,0 +1,1057 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COSTiMO — Construction Cost Platform & Project Consultancy</title>
+<meta name="description" content="COSTiMO helps construction teams prepare resource-based estimates, convert awarded estimates into approved budgets, and monitor project costs in real time.">
+<meta property="og:title" content="COSTiMO — Construction Cost Platform & Project Consultancy">
+<meta property="og:description" content="Structured estimation, budgeting, and cost monitoring for construction projects. Platform + specialist consultancy for India and GCC.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://costimo.ai">
+<link rel="icon" type="image/svg+xml" href="movu8uza-costimo-favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1F3B;--navy-2:#142a4d;--navy-deep:#070f1e;--steel:#1F4E79;
+  --gold:#C6A75E;--gold-h:#B8963F;--gold-l:#F5EDDA;--gold-bg:#FFFBEC;--sand:#FAF6EC;
+  --ink:#0B1F3B;--text:#1F2937;--muted:#62707F;--subtle:#94A3B8;
+  --bg:#F3F5F8;--bg-2:#EDF1F6;--card:#FFFFFF;--border:#D8DFE8;--divider:#ECF0F5;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --serif:'Fraunces',Georgia,serif;
+  --ease:cubic-bezier(0.2,0.8,0.2,1);
+  --shadow-card:0 1px 0 rgba(11,31,59,.04),0 8px 24px -12px rgba(11,31,59,.10);
+  --shadow-pop:0 24px 64px -16px rgba(11,31,59,.30);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto}
+a{text-decoration:none;color:inherit}
+
+/* LAYOUT */
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.section{padding:96px 0}
+.section-sm{padding:72px 0}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.eyebrow-muted{color:var(--muted)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;height:68px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--divider)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1180px;margin:0 auto;padding:0 40px}
+.nav-logo img{display:block}
+.nav-links{display:flex;align-items:center;gap:6px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:8px;transition:color .2s,background .2s}
+.nav-links a:hover{color:var(--ink);background:var(--bg)}
+.nav-signin{color:var(--ink)!important;font-weight:600!important}
+.nav-cta{background:var(--navy)!important;color:#fff!important;border-radius:8px;padding:8px 16px!important;font-weight:600!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--navy-2)!important}
+
+/* HERO */
+.hero{background:var(--navy);position:relative;overflow:hidden;padding:100px 0 90px}
+.hero::before{content:'';position:absolute;top:-200px;left:-200px;width:800px;height:800px;background:radial-gradient(circle at 30% 30%,rgba(198,167,94,.12) 0%,transparent 65%);pointer-events:none}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,167,94,.12);border:1px solid rgba(198,167,94,.28);border-radius:100px;padding:6px 14px;margin-bottom:22px}
+.hero-badge-chip{background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:3px 9px}
+.hero-badge-text{font-size:13px;color:rgba(255,255,255,.75);font-weight:500}
+.hero h1{font-size:clamp(36px,4.5vw,54px);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:1px}
+.h1-word{color:rgba(255,255,255,.45);transition:color .7s ease,text-shadow .7s ease}
+.h1-word.active{color:var(--gold);text-shadow:0 0 28px rgba(198,167,94,.55)}
+.h1-arrow{color:rgba(255,255,255,.25);font-style:normal}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:1.7;max-width:520px;margin-bottom:24px}
+.hero-clarify{border-left:3px solid var(--gold);padding:14px 18px;background:rgba(198,167,94,.07);border-radius:0 10px 10px 0;margin-bottom:30px}
+.hero-clarify p{font-size:14px;color:rgba(255,255,255,.82);line-height:1.65;font-style:italic}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.btn-gold{background:var(--gold);color:var(--navy);font-size:14px;font-weight:700;border:none;border-radius:10px;padding:12px 24px;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-gold:hover{background:var(--gold-h);transform:translateY(-1px)}
+.btn-gold-lg{font-size:15px;padding:14px 28px}
+.btn-ghost{background:transparent;color:#fff;font-size:14px;font-weight:600;border:1.5px solid rgba(255,255,255,.3);border-radius:10px;padding:12px 22px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-ghost:hover{border-color:rgba(255,255,255,.65);background:rgba(255,255,255,.06);transform:translateY(-1px)}
+.btn-ghost-lg{font-size:15px;padding:14px 26px}
+.btn-ghost i,.btn-gold i{width:16px;height:16px;flex-shrink:0}
+.hero-meta{display:flex;gap:20px;flex-wrap:wrap}
+.hero-meta-item{display:flex;align-items:center;gap:7px;font-size:13px;color:rgba(255,255,255,.55);font-weight:500}
+.hero-meta-item i{width:14px;height:14px;color:var(--gold)}
+
+/* AI WIDGET */
+.ai-widget{background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);border-radius:18px;overflow:visible;position:relative}
+.aiw-header{padding:20px 22px 16px;border-bottom:1px solid rgba(198,167,94,.18)}
+.aiw-header-row{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.aiw-header-row i{width:18px;height:18px;color:var(--gold)}
+.aiw-title{font-size:15px;font-weight:700;color:var(--ink)}
+.aiw-beta{background:var(--gold);color:var(--navy);font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:2px 8px;margin-left:auto}
+.aiw-sub{font-size:12.5px;color:var(--muted)}
+.aiw-input-area{padding:16px 22px;position:relative}
+.aiw-textarea-wrap{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:13px 50px 13px 16px;cursor:text;min-height:72px;position:relative;transition:border-color .2s}
+.aiw-textarea-wrap:hover{border-color:var(--gold)}
+.aiw-demo{font-size:14px;color:var(--ink);line-height:1.55;user-select:none}
+.aiw-demo.placeholder{color:var(--subtle)}
+.aiw-demo.hidden{display:none}
+.aiw-cursor{display:inline-block;width:2px;height:14px;background:var(--gold);vertical-align:middle;animation:blink .8s step-end infinite;margin-left:1px}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+#heroInput{display:none;width:100%;border:none;background:transparent;font-family:var(--font);font-size:14px;color:var(--ink);resize:none;outline:none;line-height:1.55;min-height:48px}
+#heroInput.active{display:block}
+.aiw-submit{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;background:var(--navy);border:none;border-radius:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.aiw-submit:hover{background:var(--navy-2)}
+.aiw-submit i{width:15px;height:15px;color:#fff}
+.aiw-thinking{padding:14px 22px 0;display:none;align-items:center;gap:10px}
+.aiw-thinking.visible{display:flex}
+.aiw-dots{display:flex;gap:5px}
+.aiw-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);animation:dotpulse 1.2s ease-in-out infinite}
+.aiw-dot:nth-child(2){animation-delay:.2s}
+.aiw-dot:nth-child(3){animation-delay:.4s}
+@keyframes dotpulse{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+.aiw-thinking-text{font-size:13px;color:var(--muted);font-style:italic}
+.aiw-results{padding:0 22px 16px;opacity:0;transform:translateY(8px);transition:opacity .35s var(--ease),transform .35s var(--ease);pointer-events:none}
+.aiw-results.visible{opacity:1;transform:translateY(0);pointer-events:auto}
+.aiw-results-label{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;margin-top:14px}
+.aiw-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;background:#fff;border:1px solid var(--divider);margin-bottom:7px}
+.aiw-row.primary{border-color:rgba(198,167,94,.35);background:rgba(255,251,236,.6)}
+.aiw-row.aiw-dim{opacity:.7}
+.aiw-check{width:22px;height:22px;background:var(--gold);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px}
+.aiw-check svg{width:11px;height:11px}
+.aiw-rdot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;margin-top:7px}
+.aiw-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.aiw-res{font-size:11.5px;color:var(--muted);margin-bottom:4px}
+.aiw-rate{font-size:12px;color:var(--steel);font-weight:600}
+.aiw-add{margin-left:auto;flex-shrink:0;background:var(--navy);color:#fff;border:none;border-radius:7px;padding:5px 12px;font-size:11.5px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
+.aiw-add:hover{background:var(--navy-2)}
+.aiw-footer{padding:12px 22px 16px;border-top:1px solid rgba(198,167,94,.18);display:flex;align-items:center;gap:8px}
+.aiw-footer i{width:13px;height:13px;color:var(--gold);flex-shrink:0}
+.aiw-footer-text{font-size:12px;color:var(--muted)}
+
+/* HERO CHIPS */
+.hero-chip{position:absolute;display:flex;align-items:center;gap:9px;padding:9px 14px;border-radius:12px;background:#fff;box-shadow:0 12px 28px -8px rgba(11,31,59,.4);font-size:12px;color:var(--ink);font-weight:600;z-index:2}
+.hero-chip i{width:14px;height:14px}
+.hero-chip.chip-tl{top:-10px;left:-12px;color:#0B6B3A}
+.hero-chip.chip-tl i{color:#16a34a}
+.hero-chip.chip-br{bottom:-12px;right:-10px}
+.hero-chip.chip-br i{color:var(--gold)}
+.hero-chip-sub{display:block;font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:1px}
+
+/* POSITIONING STRIP */
+.pos-strip{background:#fff;padding:88px 0}
+.pos-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.pos-head h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:14px}
+.pos-head h2 em{font-style:normal;color:var(--gold)}
+.pos-head p{font-size:16px;color:var(--muted);line-height:1.7}
+.poscards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.poscard{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:box-shadow .2s,transform .2s}
+.poscard:hover{box-shadow:var(--shadow-card);transform:translateY(-2px)}
+.poscard-icon{width:44px;height:44px;border-radius:12px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.poscard-icon i{width:20px;height:20px;color:var(--gold)}
+.poscard h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.poscard p{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+/* PLATFORM FEATURES */
+.plat-head{max-width:680px;margin-bottom:56px}
+.plat-head h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
+.plat-head h2 em{font-style:normal;color:var(--gold)}
+.plat-head .lead{font-size:17px;color:var(--text);font-weight:500;margin-bottom:14px}
+.plat-head p{font-size:14.5px;color:var(--muted);line-height:1.7}
+.platform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden}
+.pfeat{background:var(--card);padding:28px 26px;transition:background .2s}
+.pfeat:hover{background:#fdfeff}
+.pfeat.span2{grid-column:span 2;background:var(--sand)}
+.pfeat.span2:hover{background:var(--gold-bg)}
+.pfeat-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.pfeat-icon i{width:18px;height:18px;color:var(--gold)}
+.pfeat h4{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.pfeat p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* FEATURE SECTIONS */
+.feat{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.feat.reversed{grid-template-columns:1.05fr 1fr}
+.feat-copy h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:14px}
+.feat-copy h2 em{font-style:normal;color:var(--gold)}
+.feat-copy .lead{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:28px}
+.feat-items{display:flex;flex-direction:column;gap:22px}
+.feat-item{display:flex;gap:15px;align-items:flex-start}
+.feat-item-icon{width:38px;height:38px;border-radius:10px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.feat-item-icon i{width:17px;height:17px;color:var(--gold)}
+.feat-item h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.feat-item p{font-size:13px;color:var(--muted);line-height:1.6}
+.feat-screen-wrap{position:relative}
+.feat-screen-frame{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 24px 60px -16px rgba(11,31,59,.22)}
+.feat-screen-frame img{width:100%;display:block}
+.feat-glow{position:absolute;inset:-2px;border-radius:16px;background:radial-gradient(ellipse at 50% 0%,rgba(198,167,94,.12) 0%,transparent 60%);pointer-events:none;z-index:0}
+.feat-screen-wrap>*:not(.feat-glow){position:relative;z-index:1}
+.feat-floater{position:absolute;background:#fff;border-radius:12px;padding:12px 15px;box-shadow:0 16px 36px -10px rgba(11,31,59,.22);border:1px solid var(--divider);display:flex;align-items:center;gap:11px;z-index:2}
+.feat-floater.f1{bottom:24px;left:-28px}
+.feat-floater.f2{top:32px;right:-28px}
+.feat-floater i{width:16px;height:16px;color:var(--gold);flex-shrink:0}
+.feat-floater-text{font-size:12.5px;font-weight:700;color:var(--ink)}
+.feat-floater-sub{font-size:10.5px;color:var(--muted);margin-top:1px}
+
+/* CONSULTANCY */
+.svc-header{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px}
+.svc-head{flex:1}
+.svc-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
+.svc-head h2 em{font-style:normal;color:var(--gold)}
+.svc-head .lead{font-size:17px;color:var(--text);font-weight:500;margin-bottom:12px}
+.svc-head p{font-size:14.5px;color:var(--muted);line-height:1.7;max-width:580px}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);border-radius:10px;padding:12px 24px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.btn-outline:hover{background:var(--navy);color:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.svc-card{background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:30px 28px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.svc-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-card)}
+.svc-card-icon{width:46px;height:46px;border-radius:12px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.svc-card-icon i{width:21px;height:21px;color:var(--gold)}
+.svc-card h4{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.svc-card p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* UNIFIED */
+.section-dark{background:var(--navy);padding:88px 0}
+.unified{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:80px;background:linear-gradient(135deg,var(--navy),#152e54);border-radius:18px;position:relative;overflow:hidden}
+.unified::before{content:'';position:absolute;top:-120px;right:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(198,167,94,.14) 0%,transparent 65%);pointer-events:none}
+.unified-left h2{font-size:clamp(24px,2.8vw,36px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.025em;margin-bottom:20px}
+.unified-left h2 em{font-style:normal;color:var(--gold)}
+.unified-left .eyebrow{color:var(--gold)}
+.unified-left p{font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:14px}
+.unified-right{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start;position:relative;z-index:1}
+.unified-block{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px 20px;backdrop-filter:blur(8px)}
+.unified-block i{width:20px;height:20px;color:var(--gold);margin-bottom:12px}
+.unified-block h4{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:7px}
+.unified-block p{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.6}
+
+/* HOW IT WORKS */
+.flow-head{text-align:center;max-width:620px;margin:0 auto 56px}
+.flow-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
+.flow-head h2 em{font-style:normal;color:var(--gold)}
+.flow-head p{font-size:15px;color:var(--muted);line-height:1.7}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:14px;overflow:hidden}
+.flow-step{background:#fff;padding:34px 32px;display:flex;flex-direction:column;gap:14px}
+.flow-num-row{display:flex;align-items:baseline;gap:12px}
+.flow-num span{font-family:var(--serif);font-size:42px;font-weight:600;color:var(--ink);letter-spacing:-.025em;line-height:1}
+.flow-num-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.flow-step h4{font-size:17px;font-weight:700;color:var(--ink)}
+.flow-step p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* WHY COSTIMO */
+.bg-navy{background:var(--navy);padding:88px 0}
+.why-head{text-align:center;max-width:600px;margin:0 auto 52px}
+.why-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
+.why-head h2 em{font-style:normal;color:var(--gold)}
+.why-head p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7}
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 22px;backdrop-filter:blur(8px);transition:background .2s,border-color .2s}
+.why-card:hover{background:rgba(255,255,255,.09);border-color:rgba(198,167,94,.3)}
+.why-icon{width:44px;height:44px;border-radius:11px;background:rgba(198,167,94,.38);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.why-icon i{width:20px;height:20px;color:#fff}
+.why-card h4{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:8px}
+.why-card p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6}
+
+/* USE CASES */
+.uc-head{text-align:center;max-width:580px;margin:0 auto 52px}
+.uc-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
+.uc-head h2 em{font-style:normal;color:var(--gold)}
+.uc-head p{font-size:15px;color:var(--muted);line-height:1.7}
+.uc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.uc-card{background:#fff;border:1.5px solid var(--border);border-radius:13px;padding:26px 22px;transition:background .2s,border-color .2s,transform .2s}
+.uc-card:hover{background:var(--bg);border-color:var(--gold);transform:translateY(-2px)}
+.uc-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.uc-icon i{width:18px;height:18px;color:var(--gold)}
+.uc-card h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.uc-card p{font-size:12.5px;color:var(--muted);line-height:1.6}
+
+/* CTA BLOCK */
+.cta-block{background:var(--navy);padding:96px 0;text-align:center;position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse at 50% 20%,rgba(198,167,94,.14) 0%,transparent 60%);pointer-events:none}
+.cta-block h2{font-size:clamp(28px,3.5vw,46px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.03em;margin-bottom:18px;position:relative}
+.cta-block h2 em{font-style:normal;color:var(--gold)}
+.cta-block p{font-size:16px;color:rgba(255,255,255,.65);max-width:580px;margin:0 auto 36px;line-height:1.7;position:relative}
+.cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+
+/* FOOTER */
+footer{background:var(--navy-deep);padding:72px 0 0}
+.footer-top{display:grid;grid-template-columns:320px 1fr;gap:80px;margin-bottom:56px}
+.footer-brand p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;margin-bottom:18px}
+.footer-pills{display:flex;gap:8px;flex-wrap:wrap}
+.footer-pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:5px 14px;font-size:11.5px;color:rgba(255,255,255,.5);font-weight:600}
+.footer-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.footer-col h5{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
+.footer-col a{display:block;font-size:13.5px;color:rgba(255,255,255,.55);margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:rgba(255,255,255,.9)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.35)}
+.status-dot{display:flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,.4)}
+.status-dot::before{content:'';width:7px;height:7px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.2)}
+
+/* RESPONSIVE */
+@media(max-width:1080px){
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .feat,.feat.reversed{grid-template-columns:1fr;gap:48px}
+  .feat.reversed .feat-screen-wrap{order:-1}
+  .platform-grid{grid-template-columns:repeat(2,1fr)}
+  .pfeat.span2{grid-column:span 2}
+  .poscards,.svc-grid{grid-template-columns:repeat(2,1fr)}
+  .flow,.why-grid,.uc-grid{grid-template-columns:1fr}
+  .unified{grid-template-columns:1fr;padding:48px}
+  .footer-top{grid-template-columns:1fr;gap:40px}
+  .footer-cols{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+  .wrap,.nav-inner{padding:0 22px}
+  .nav-links a:not(.nav-cta):not(.nav-signin){display:none}
+  .platform-grid,.poscards,.why-grid,.uc-grid{grid-template-columns:1fr}
+  .pfeat.span2{grid-column:span 1}
+  .svc-header{flex-direction:column;align-items:flex-start;gap:20px}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .section{padding:64px 0}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="mp2jwz89-costimo-icon-annotated-light.webp" alt="COSTiMO" style="height:56px;width:auto">
+    </a>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#platform">Platform</a>
+      <a href="#consultancy">Consultancy</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="nav-cta">Request demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-dots"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <!-- Left: text column -->
+      <div class="hero-left">
+        <h1><span class="h1-word" id="h1-est">Estimate</span> <span class="h1-arrow">→</span> <span class="h1-word" id="h1-bud">Budget</span> <span class="h1-arrow">→</span> <span class="h1-word" id="h1-ctrl">Control</span><br>construction costs.</h1>
+        <p class="hero-sub">COSTiMO helps construction teams prepare resource-based estimates, convert awarded estimates into approved budgets, and monitor project costs in real time — supported by specialist consultancy in contractor vetting, contract governance, and cost control frameworks.</p>
+        <div class="hero-clarify">
+          <p>Use your own organisation-approved resource rates. COSTiMO structures the quantities, assemblies, cost elements, dashboards, budget conversion, and cost tracking workflow.</p>
+        </div>
+        <div class="hero-actions">
+          <button class="btn-gold">Explore the platform</button>
+          <button class="btn-ghost"><i data-lucide="phone-call"></i> Discuss consultancy support</button>
+        </div>
+        <div class="hero-meta">
+          <span class="hero-meta-item"><i data-lucide="check-circle"></i> Your rate library, your control</span>
+          <span class="hero-meta-item"><i data-lucide="check-circle"></i> Estimate · Budget · Cost control</span>
+          <span class="hero-meta-item"><i data-lucide="check-circle"></i> GCC &amp; India</span>
+        </div>
+      </div>
+      <!-- Right: AI Widget -->
+      <div style="position:relative">
+        <div class="ai-widget">
+          <div class="aiw-header">
+            <div class="aiw-header-row">
+              <i data-lucide="sparkles"></i>
+              <span class="aiw-title">Describe with AI</span>
+              <span class="aiw-beta">Beta</span>
+            </div>
+            <p class="aiw-sub">Type any construction item — get matched assemblies with your org rates</p>
+          </div>
+          <div class="aiw-input-area">
+            <div class="aiw-textarea-wrap" id="heroTextareaWrap">
+              <div id="heroText" class="aiw-demo placeholder">Describe your assembly in plain language…</div>
+              <textarea id="heroInput" rows="3" placeholder="Describe your assembly in plain language…"></textarea>
+              <button class="aiw-submit" id="heroSubmit" aria-label="Submit">
+                <i data-lucide="arrow-up"></i>
+              </button>
+            </div>
+          </div>
+          <div class="aiw-thinking" id="heroThinking">
+            <div class="aiw-dots">
+              <div class="aiw-dot"></div>
+              <div class="aiw-dot"></div>
+              <div class="aiw-dot"></div>
+            </div>
+            <span class="aiw-thinking-text">Matching against your rate library…</span>
+          </div>
+          <div class="aiw-results" id="heroResults">
+            <div class="aiw-results-label">Matched assemblies</div>
+            <div id="heroResultsBody"></div>
+          </div>
+          <div class="aiw-footer">
+            <i data-lucide="zap"></i>
+            <span class="aiw-footer-text">Try: excavation · concrete · formwork · rebar · piping · painting</span>
+          </div>
+        </div>
+        <!-- Floating chip BR -->
+        <div class="hero-chip chip-br">
+          <i data-lucide="trending-up"></i>
+          <div>
+            ₹8,04,480
+            <span class="hero-chip-sub">Added to WBS 1.1.2</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POSITIONING STRIP -->
+<section class="pos-strip">
+  <div class="wrap">
+    <div class="pos-head">
+      <p class="eyebrow">Built for disciplined cost management</p>
+      <h2>For teams that take <em>cost control</em> seriously.</h2>
+      <p>COSTiMO is designed for contractors, developers, project owners, and consultants who need better control over project estimates, budgets, commitments, actual costs, and commercial risk.</p>
+    </div>
+    <div class="poscards">
+      <div class="poscard">
+        <div class="poscard-icon"><i data-lucide="layers"></i></div>
+        <h4>Resource-based estimation</h4>
+        <p>Create estimates from assemblies, activities, cost elements, units, and required quantities.</p>
+      </div>
+      <div class="poscard">
+        <div class="poscard-icon"><i data-lucide="database"></i></div>
+        <h4>Organisation rate library</h4>
+        <p>Maintain your own approved labour, material, equipment, and subcontract rates.</p>
+      </div>
+      <div class="poscard">
+        <div class="poscard-icon"><i data-lucide="trending-up"></i></div>
+        <h4>Budget &amp; cost control</h4>
+        <p>Convert awarded estimates into budgets and monitor project costs against approved baselines.</p>
+      </div>
+      <div class="poscard">
+        <div class="poscard-icon"><i data-lucide="shield-check"></i></div>
+        <h4>Project consultancy</h4>
+        <p>Strengthen contractor evaluation, contract governance, cost control processes, and digital workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM FEATURES -->
+<section class="section" id="platform" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="plat-head">
+      <p class="eyebrow">Platform</p>
+      <h2>Construction <em>cost platform</em>.</h2>
+      <p class="lead">Structured estimation, budgeting, and cost monitoring for construction projects.</p>
+      <p>COSTiMO gives project teams a practical system to build estimates from resource break-ups, apply organisation-approved rates, review cost composition, approve budgets, and monitor execution costs. Designed to support disciplined project cost governance — not to replace professional commercial judgement.</p>
+    </div>
+    <div class="platform-grid">
+      <div class="pfeat span2">
+        <div class="pfeat-icon"><i data-lucide="layers"></i></div>
+        <h4>Activity resource break-up</h4>
+        <p>Access structured resource requirements for construction activities — including cost elements, units, and quantities per unit of work. The starting point for every reliable estimate.</p>
+      </div>
+      <div class="pfeat span2">
+        <div class="pfeat-icon"><i data-lucide="database"></i></div>
+        <h4>Your own rate library</h4>
+        <p>Maintain resource rates within your organisation library. COSTiMO pulls these rates into estimates to calculate project cost — commercial rate ownership stays with your organisation.</p>
+      </div>
+      <div class="pfeat">
+        <div class="pfeat-icon"><i data-lucide="layout-grid"></i></div>
+        <h4>Assemblies &amp; cost elements</h4>
+        <p>Standardise estimation logic across repeated activities. Break items into labour, materials, equipment, consumables, subcontract, and other elements.</p>
+      </div>
+      <div class="pfeat">
+        <div class="pfeat-icon"><i data-lucide="bar-chart-3"></i></div>
+        <h4>Estimate dashboard</h4>
+        <p>Review estimate values from multiple angles — cost element, work package, BOQ item, activity, resource category, and project summary.</p>
+      </div>
+      <div class="pfeat">
+        <div class="pfeat-icon"><i data-lucide="clipboard-check"></i></div>
+        <h4>Estimate to budget</h4>
+        <p>Convert the estimate of an awarded project into a controlled project budget — with approved baselines and revision discipline.</p>
+      </div>
+      <div class="pfeat">
+        <div class="pfeat-icon"><i data-lucide="activity"></i></div>
+        <h4>Budget to cost monitoring</h4>
+        <p>Use the approved budget to monitor commitments, actual costs, forecast costs, and variances as the project progresses.</p>
+      </div>
+      <div class="pfeat">
+        <div class="pfeat-icon"><i data-lucide="eye"></i></div>
+        <h4>Real-time cost visibility</h4>
+        <p>Track how project costs are moving against budget, and identify areas requiring management attention.</p>
+      </div>
+      <div class="pfeat">
+        <div class="pfeat-icon"><i data-lucide="sparkles"></i></div>
+        <h4>AI-assisted structure</h4>
+        <p>AI assists search, resource structuring, assembly matching, and cost analysis presentation — final rates and approvals stay under user control.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESTIMATE ENGINE FEATURE SECTION -->
+<section class="section" style="background:#fff">
+  <div class="wrap">
+    <div class="feat">
+      <div class="feat-copy">
+        <p class="eyebrow">Inside the platform</p>
+        <h2>Hierarchical precision, down to the <em>last resource</em>.</h2>
+        <p class="lead">Structure scope as a full WBS tree. Estimate at the lowest level — resources, quantities, units, durations — and let every parent row roll up automatically. Apply your own approved rates to compute project cost.</p>
+        <div class="feat-items">
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="folder-tree"></i></div>
+            <div>
+              <h4>Full WBS hierarchy</h4>
+              <p>Work Packages → Activities → BOQ Items → Resources. No flat lists, no orphan items.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="layout-grid"></i></div>
+            <div>
+              <h4>Reusable assemblies</h4>
+              <p>Build organisation-wide resource assemblies once; pull them into every project that needs them.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="git-branch"></i></div>
+            <div>
+              <h4>Revision discipline</h4>
+              <p>Draft → Rev0 → Rev1 with locked history. Compare any two revisions side-by-side.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="globe"></i></div>
+            <div>
+              <h4>Multi-currency</h4>
+              <p>INR, SAR, AED — correct ₹ / ﷼ / د.إ symbol rendering per region, always tabular-aligned.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-screen-wrap">
+        <div class="feat-glow"></div>
+        <div class="feat-screen-frame">
+          <img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO full WBS view — Wellness Hospital">
+        </div>
+        <div class="feat-floater f1">
+          <i data-lucide="layers"></i>
+          <div>
+            <div class="feat-floater-text">₹133,35,23,142.61</div>
+            <div class="feat-floater-sub">Wellness Hospital · 31 WBS levels</div>
+          </div>
+        </div>
+        <div class="feat-floater f2">
+          <i data-lucide="lock"></i>
+          <div>
+            <div class="feat-floater-text">Rev0 · Locked</div>
+            <div class="feat-floater-sub">31 / 31 priced</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCE ASSEMBLY FEATURE SECTION -->
+<section class="section" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="feat reversed">
+      <div class="feat-screen-wrap">
+        <div class="feat-glow"></div>
+        <div class="feat-screen-frame">
+          <img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO masonry cost elements panel">
+        </div>
+        <div class="feat-floater f1">
+          <i data-lucide="layers"></i>
+          <div>
+            <div class="feat-floater-text">9,915 CUM Masonry · AAC block</div>
+          </div>
+        </div>
+      </div>
+      <div class="feat-copy">
+        <p class="eyebrow">Assembly intelligence</p>
+        <h2>Resource break-up for every <em>construction activity</em>.</h2>
+        <p class="lead">Each assembly carries the full resource structure — cost elements, numbers, durations, quantities per unit of work. Scale to project quantities and the cost computes automatically.</p>
+        <div class="feat-items">
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="package"></i></div>
+            <div>
+              <h4>Cost elements by category</h4>
+              <p>Labour, material, equipment, consumables, subcontract — each tracked separately with their own quantity and unit.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="calculator"></i></div>
+            <div>
+              <h4>Quantity per unit logic</h4>
+              <p>Assemblies define resource quantities per output unit. Scale to 352 m³ or 9,915 CUM — the breakdown scales precisely.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="copy"></i></div>
+            <div>
+              <h4>Shared costs distribution</h4>
+              <p>Distribute project-wide overhead costs (management, site facilities) pro-rata across all WBS assemblies.</p>
+            </div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item-icon"><i data-lucide="bar-chart-2"></i></div>
+            <div>
+              <h4>Analytics &amp; composition</h4>
+              <p>Review cost by element type, activity, work package, and project total — before submitting your estimate.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTANCY -->
+<section class="section" id="consultancy" style="background:#fff">
+  <div class="wrap">
+    <div class="svc-header">
+      <div class="svc-head">
+        <p class="eyebrow">Consultancy</p>
+        <h2>Construction <em>project consultancy</em>.</h2>
+        <p class="lead">Advisory support for better contractor decisions, contract discipline, and cost governance.</p>
+        <p>COSTiMO provides specialist consultancy services for construction organisations that require practical, contractually sound, and execution-oriented support. The consultancy offering complements the platform by helping companies establish the right processes — before digitising them.</p>
+      </div>
+      <button class="btn-outline">Discuss requirement</button>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="svc-card-icon"><i data-lucide="shield-check"></i></div>
+        <h4>Contractor vetting &amp; pre-qualification</h4>
+        <p>Evaluate contractors on financial capacity, technical capability, execution history, safety systems, manpower, equipment, litigation profile, and project suitability — before award.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon"><i data-lucide="scroll-text"></i></div>
+        <h4>Contract governance</h4>
+        <p>Develop and review contract conditions, SOPs, approval workflows, variation procedures, payment controls, and dispute prevention mechanisms.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon"><i data-lucide="bar-chart-3"></i></div>
+        <h4>Cost control frameworks</h4>
+        <p>Implement project cost codes, budget structures, commitment tracking, cost reporting formats, variance review procedures, and management dashboards.</p>
+      </div>
+      <div class="svc-card">
+        <div class="svc-card-icon"><i data-lucide="monitor"></i></div>
+        <h4>Custom construction web apps</h4>
+        <p>Design and develop practical web-based tools for vendor management, project estimation, cost tracking, approvals, document workflows, and reporting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UNIFIED VALUE -->
+<section class="section-dark">
+  <div class="wrap">
+    <div class="unified">
+      <div class="unified-left" style="position:relative;z-index:1">
+        <p class="eyebrow">One brand, two halves</p>
+        <h2>Cost platform <em>and</em> project governance.</h2>
+        <p>Construction cost control does not start after expenses are incurred. It begins with a structured estimate, continues through an approved budget, and succeeds only when actual project costs are measured against a clear baseline.</p>
+        <p>COSTiMO brings these stages together through a combination of software and consultancy. The platform provides the structure, dashboards, and workflow. The consultancy provides the professional judgement, governance framework, and implementation support.</p>
+      </div>
+      <div class="unified-right">
+        <div class="unified-block">
+          <i data-lucide="layout-grid"></i>
+          <h4>The platform</h4>
+          <p>Structure, dashboards, and workflow — for estimation, budgeting, and cost monitoring.</p>
+        </div>
+        <div class="unified-block">
+          <i data-lucide="users"></i>
+          <h4>The consultancy</h4>
+          <p>Professional judgement, governance framework, and implementation support.</p>
+        </div>
+        <div class="unified-block">
+          <i data-lucide="database"></i>
+          <h4>Your data</h4>
+          <p>Approved rates, assemblies, vendor library — all stay within your organisation.</p>
+        </div>
+        <div class="unified-block">
+          <i data-lucide="check-circle"></i>
+          <h4>Your approvals</h4>
+          <p>Final rates, variations, and budget approvals always remain under user control.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="flow-head">
+      <p class="eyebrow">How it works</p>
+      <h2>A practical <em>cost flow</em> for construction projects.</h2>
+      <p>Six stages from first BOQ line to in-flight cost control — built around the way construction projects are actually estimated, awarded, budgeted, executed, and commercially controlled.</p>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="flow-num-row">
+          <div class="flow-num"><span>01</span></div>
+          <span class="flow-num-label">Resource-based structure</span>
+        </div>
+        <h4>Build the estimate</h4>
+        <p>Create a structured estimate using WBS, work packages, BOQ items, activities, assemblies, cost elements, units, and resource quantities.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-row">
+          <div class="flow-num"><span>02</span></div>
+          <span class="flow-num-label">Your approved library</span>
+        </div>
+        <h4>Apply org rates</h4>
+        <p>Use your own approved rate library for labour, material, equipment, subcontract, and other resources. No external rate suggestion.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-row">
+          <div class="flow-num"><span>03</span></div>
+          <span class="flow-num-label">Cost from every angle</span>
+        </div>
+        <h4>Review composition</h4>
+        <p>Analyse project cost by activity, cost element, resource type, work package, and summary dashboard — before submission.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-row">
+          <div class="flow-num"><span>04</span></div>
+          <span class="flow-num-label">Award, then baseline</span>
+        </div>
+        <h4>Convert to budget</h4>
+        <p>Once the project is awarded, convert the final estimate into an approved project budget with controlled revisions.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-row">
+          <div class="flow-num"><span>05</span></div>
+          <span class="flow-num-label">Commitments &amp; actuals</span>
+        </div>
+        <h4>Monitor execution</h4>
+        <p>Track commitments, actual costs, forecast cost at completion, and variances against the approved budget — live.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num-row">
+          <div class="flow-num"><span>06</span></div>
+          <span class="flow-num-label">Management response</span>
+        </div>
+        <h4>Take action</h4>
+        <p>Use variance visibility to control procurement, productivity, subcontracting, claims, and project profitability.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY COSTIMO -->
+<section class="bg-navy">
+  <div class="wrap">
+    <div class="why-head">
+      <p class="eyebrow">Why COSTiMO</p>
+      <h2>Designed around <em>execution realities</em>.</h2>
+      <p>COSTiMO is not a generic accounting package or a simple rate calculator. It is designed around the way construction projects are estimated, awarded, budgeted, executed, and commercially controlled.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="shield"></i></div>
+        <h4>No uncontrolled rate suggestion</h4>
+        <p>COSTiMO does not impose market rates. Users maintain their own organisation-approved rates and commercial assumptions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="layers"></i></div>
+        <h4>Resource quantity intelligence</h4>
+        <p>The platform focuses on activity-wise resource requirements, assembly logic, and cost element structure.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="git-merge"></i></div>
+        <h4>Estimate-to-budget discipline</h4>
+        <p>Approved estimates can become controlled project budgets — reducing disconnect between tendering and execution.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="activity"></i></div>
+        <h4>Execution cost monitoring</h4>
+        <p>Budgets can be used for monitoring commitments, actuals, forecasts, and variance through execution.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i data-lucide="users"></i></div>
+        <h4>Consultancy-led implementation</h4>
+        <p>Processes, controls, and dashboards aligned with each organisation's operating model — not the other way around.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section" id="use-cases" style="background:#fff">
+  <div class="wrap">
+    <div class="uc-head">
+      <p class="eyebrow">Use cases</p>
+      <h2>Where COSTiMO <em>can be used</em>.</h2>
+      <p>From bid preparation to in-flight cost control, and from contractor evaluation to governance setup.</p>
+    </div>
+    <div class="uc-grid">
+      <div class="uc-card">
+        <div class="uc-icon"><i data-lucide="file-text"></i></div>
+        <h4>Tender estimation</h4>
+        <p>Prepare structured resource-based estimates for construction bids and internal reviews.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon"><i data-lucide="clipboard-list"></i></div>
+        <h4>Project budgeting</h4>
+        <p>Convert awarded estimates into execution budgets with clear cost baselines.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon"><i data-lucide="bar-chart-3"></i></div>
+        <h4>Cost control</h4>
+        <p>Monitor commitments, actual costs, and forecast variances during project execution.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon"><i data-lucide="user-check"></i></div>
+        <h4>Contractor evaluation</h4>
+        <p>Assess vendors and contractors before award using financial, technical, legal, and execution criteria.</p>
+      </div>
+      <div class="uc-card">
+        <div class="uc-icon"><i data-lucide="shield-check"></i></div>
+        <h4>Governance improvement</h4>
+        <p>Create SOPs, contract controls, approval processes, and cost reporting systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BLOCK -->
+<section class="cta-block" id="contact">
+  <div class="wrap">
+    <h2>Bring structure and control<br>to <em>construction project costs.</em></h2>
+    <p>Whether you need a resource-based estimation platform, a project budget and cost monitoring system, or consultancy support for contractor vetting and cost governance — COSTiMO provides a practical route to stronger commercial control.</p>
+    <div class="cta-actions">
+      <button class="btn-gold btn-gold-lg">Request platform demo</button>
+      <button class="btn-ghost btn-ghost-lg"><i data-lucide="phone-call"></i> Discuss consultancy requirement</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="movu8uzc-costimo-logo-full-dark.svg" alt="COSTiMO" style="height:32px">
+        <p>Construction cost platform &amp; project consultancy. Estimate · Budget · Cost Control · Contractor Vetting · Contract Governance · Custom Construction Apps.</p>
+        <div class="footer-pills">
+          <span class="footer-pill">COSTiMO.ai</span>
+          <span class="footer-pill">Platform + Advisory</span>
+          <span class="footer-pill">GCC &amp; India</span>
+        </div>
+      </div>
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Platform</h5>
+          <a href="#">Resource break-up</a>
+          <a href="#">Assemblies &amp; cost elements</a>
+          <a href="#">Estimate dashboard</a>
+          <a href="#">Estimate to budget</a>
+          <a href="#">Cost monitoring</a>
+        </div>
+        <div class="footer-col">
+          <h5>Consultancy</h5>
+          <a href="#">Contractor vetting</a>
+          <a href="#">Contract governance</a>
+          <a href="#">Cost control frameworks</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <a href="#">About</a>
+          <a href="#">Use cases</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h5>Legal</h5>
+          <a href="#">Privacy policy</a>
+          <a href="#">Terms of service</a>
+          <a href="#">Security</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 COSTiMO.ai. All rights reserved.</span>
+      <span class="status-dot">All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+<script>
+(function(){
+  const words = ['h1-est','h1-bud','h1-ctrl'];
+  let idx = 0;
+  function cycle(){
+    words.forEach(function(id){ document.getElementById(id).classList.remove('active'); });
+    document.getElementById(words[idx]).classList.add('active');
+    idx = (idx + 1) % words.length;
+  }
+  cycle();
+  setInterval(cycle, 1800);
+})();
+</script>
+
+<script>
+(function(){
+  const demoEl=document.getElementById('heroText');
+  const inputEl=document.getElementById('heroInput');
+  const submitBtn=document.getElementById('heroSubmit');
+  const resultsEl=document.getElementById('heroResults');
+  const thinkingEl=document.getElementById('heroThinking');
+  const bodyEl=document.getElementById('heroResultsBody');
+  const wrap=document.getElementById('heroTextareaWrap');
+
+  const LIBRARY=[
+    {kw:['backfill','fill','sandy','compaction','compact'],results:[
+      {name:'Back filling — available fill material',resources:'Helpers × 1 · Wheel Loader · Plate Compactor · F&A',qty:'352 m³',rate:'₹810 / m³'},
+      {name:'Backfill sandy, manual compact',rate:'₹730 / m³'},
+      {name:'Backfill engineered fill, 85% proctor',rate:'₹1,085 / m³'},
+    ]},
+    {kw:['excavat','earthwork','cut','trench','dig'],results:[
+      {name:'Excavation in sandy soil — machine cut',resources:'Excavator 0.9 m³ · Dumptruck · Helpers × 2',qty:'352 m³',rate:'₹1,285 / m³'},
+      {name:'Excavation — rock, hydraulic breaker',rate:'₹1,912 / m³'},
+      {name:'Trench excavation, hand tools, <1 m depth',rate:'₹1,080 / m³'},
+    ]},
+    {kw:['concrete','pour','cast','slab','footing','foundation','raft','lean'],results:[
+      {name:'Lean concrete below mass concrete',resources:'Concrete pump · Vibrator · Helpers × 2',qty:'per m³',rate:'₹4,050 / m³'},
+      {name:'Mass concrete — Grade M25, ready mix',rate:'₹6,975 / m³'},
+      {name:'Reinforced concrete slab, M30, 200 mm',rate:'₹9,450 / m³'},
+    ]},
+    {kw:['formwork','shuttering','falsework','centering'],results:[
+      {name:'Formwork — flat slab soffit, steel props',resources:'Carpenter × 2 · Steel props · Plywood',qty:'per m²',rate:'₹1,395 / m²'},
+      {name:'Formwork — column box, timber',rate:'₹1,238 / m²'},
+      {name:'Formwork — beam side, reusable steel',rate:'₹1,575 / m²'},
+    ]},
+    {kw:['rebar','reinforcement','steel bar','bar bending','bending','tying'],results:[
+      {name:'Rebar supply & fix — Fe500 16 mm TMT bars',resources:'Steel fixer × 2 · Bar bending machine',qty:'per MT',rate:'₹1,09,125 / MT'},
+      {name:'Rebar 10–12 mm light sections',rate:'₹1,14,750 / MT'},
+      {name:'High-strength rebar 32 mm, heavy sections',rate:'₹1,05,750 / MT'},
+    ]},
+    {kw:['masonry','brick','block','blockwork','brickwork','aac','wall'],results:[
+      {name:'AAC block masonry 150–300 mm superstructure',resources:'AAC blocks · Polymer mortar · Mason × 1 · Helper × 2.5',qty:'1 CUM per CUM',rate:'₹1,32,319 / CUM'},
+      {name:'Solid clay brick wall, 1 brick thick',rate:'₹1,462 / m²'},
+      {name:'AAC block partition, 100 mm',rate:'₹630 / m²'},
+    ]},
+    {kw:['pipe','piping','pipework','laying','ductile','hdpe','pvc'],results:[
+      {name:'HDPE pipe supply & lay, DN 200, PN10',resources:'Excavator · Pipe layer × 2 · Bedding sand',qty:'per m',rate:'₹4,163 / m'},
+      {name:'Ductile iron pipe, DN 300, Class K9',rate:'₹9,450 / m'},
+      {name:'uPVC pressure pipe, DN 110, PN12',rate:'₹1,530 / m'},
+    ]},
+    {kw:['paint','painting','coating','primer','emulsion','epoxy'],results:[
+      {name:'External wall — 2 coats emulsion on plaster',resources:'Painters × 2 · Scaffold · Roller',qty:'per m²',rate:'₹281 / m²'},
+      {name:'Epoxy floor coating, 250 micron DFT',rate:'₹945 / m²'},
+      {name:'Anti-corrosion primer + 2 finish coats',rate:'₹630 / m²'},
+    ]},
+    {kw:['plaster','plastering','render','stucco'],results:[
+      {name:'Cement plaster 15 mm — internal walls',resources:'Mason × 1 · Helper × 2 · Scaffold',qty:'per m²',rate:'₹495 / m²'},
+      {name:'External rendering 20 mm, waterproof additive',rate:'₹720 / m²'},
+      {name:'Skim coat & smooth finish',rate:'₹315 / m²'},
+    ]},
+    {kw:['tile','tiling','ceramic','porcelain','floor finish'],results:[
+      {name:'Ceramic floor tile 600×600, adhesive fix',resources:'Tiler × 1 · Helper · Grout · Adhesive',qty:'per m²',rate:'₹1,462 / m²'},
+      {name:'Porcelain wall tile 300×600',rate:'₹1,620 / m²'},
+      {name:'Natural stone flooring, marble 20 mm',rate:'₹4,050 / m²'},
+    ]},
+  ];
+
+  const CHECK_SVG=`<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+
+  function makeResultsHTML(matches){
+    return matches.map((r,i)=>{
+      if(i===0) return `<div class="aiw-row primary"><div class="aiw-check">${CHECK_SVG}</div><div style="flex:1"><div class="aiw-name">${r.name}</div>${r.resources?`<div class="aiw-res">${r.resources}</div>`:''}<div class="aiw-rate">${r.qty?`<span style="color:#8A7040;font-weight:500;margin-right:8px">${r.qty}</span>`:''}${r.rate}</div></div><button class="aiw-add">+ Add</button></div>`;
+      return `<div class="aiw-row aiw-dim"><div class="aiw-rdot"></div><div><div class="aiw-name">${r.name}</div><div class="aiw-rate">${r.rate}</div></div></div>`;
+    }).join('');
+  }
+
+  function findMatch(query){
+    const q=query.toLowerCase();
+    for(const entry of LIBRARY){if(entry.kw.some(k=>q.includes(k)))return entry.results;}
+    const noun=query.trim().split(/\s+/).slice(0,4).join(' ');
+    return[
+      {name:noun+' — standard assembly',resources:'Foreman × 1 · Labour × 2',rate:'Add to estimate — apply your org rates'},
+      {name:noun+' — alternate specification',rate:'Pending org rate'},
+    ];
+  }
+
+  let userMode=false;
+
+  function activateUserMode(){
+    if(userMode)return;
+    userMode=true;
+    demoEl.classList.add('hidden');
+    inputEl.classList.add('active');
+    resultsEl.classList.remove('visible');
+    thinkingEl.classList.remove('visible');
+    bodyEl.innerHTML='';
+    inputEl.focus();
+  }
+
+  function submitQuery(){
+    const q=inputEl.value.trim();
+    if(!q)return;
+    resultsEl.classList.remove('visible');
+    thinkingEl.classList.add('visible');
+    setTimeout(()=>{
+      thinkingEl.classList.remove('visible');
+      bodyEl.innerHTML=makeResultsHTML(findMatch(q));
+      resultsEl.classList.add('visible');
+    },900+Math.random()*400);
+  }
+
+  wrap.addEventListener('click',activateUserMode);
+  inputEl.addEventListener('focus',activateUserMode);
+  submitBtn.addEventListener('click',()=>{if(!userMode){activateUserMode();return;}submitQuery();});
+  inputEl.addEventListener('keydown',e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();submitQuery();}});
+
+  const DEMOS=[
+    {text:'Backfilling with available fill material, sandy soil, 352 m³',kw:'backfill'},
+    {text:'Excavation in sandy soil, machine cut, 1.5 m depth',kw:'excavat'},
+    {text:'AAC block masonry 200 mm, superstructure to 5th floor',kw:'masonry'},
+    {text:'HDPE pipe DN 200 supply and lay, 240 m run',kw:'pipe'},
+  ];
+  let demoIdx=0,demoTimer=null,demoPhase='idle';
+
+  function runDemo(){
+    if(userMode)return;
+    const demo=DEMOS[demoIdx++%DEMOS.length];
+    demoEl.classList.remove('hidden');
+    demoEl.className='aiw-demo placeholder';
+    demoEl.textContent='Describe your assembly in plain language…';
+    resultsEl.classList.remove('visible');
+    demoPhase='idle';
+    demoTimer=setTimeout(()=>{
+      if(userMode)return;
+      demoEl.className='aiw-demo';
+      demoEl.innerHTML='<span class="aiw-cursor"></span>';
+      demoPhase='typing';
+      let idx=0;
+      const cursor=demoEl.querySelector('.aiw-cursor');
+      const type=()=>{
+        if(userMode)return;
+        if(idx<demo.text.length){demoEl.insertBefore(document.createTextNode(demo.text[idx++]),cursor);demoTimer=setTimeout(type,36+Math.random()*26);}
+        else{
+          demoPhase='showing';
+          demoTimer=setTimeout(()=>{
+            if(userMode)return;
+            const entry=LIBRARY.find(e=>e.kw.some(k=>demo.kw.includes(k)));
+            bodyEl.innerHTML=makeResultsHTML(entry?entry.results:[]);
+            resultsEl.classList.add('visible');
+            demoTimer=setTimeout(runDemo,4800);
+          },700);
+        }
+      };
+      type();
+    },900);
+  }
+
+  const obs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting&&demoPhase==='idle'&&!userMode){obs.disconnect();setTimeout(runDemo,500);}
+  },{threshold:0.3});
+  obs.observe(document.querySelector('.ai-widget'));
+})();
+</script>
+</body>
+</html>
