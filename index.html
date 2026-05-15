@@ -33,15 +33,15 @@ img{max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 
 /* LAYOUT */
-.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
 .section{padding:96px 0}
 .section-sm{padding:72px 0}
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
 .eyebrow-muted{color:var(--muted)}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;height:68px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--divider)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1180px;margin:0 auto;padding:0 40px}
+nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--divider)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
 .nav-logo img{display:block}
 .nav-links{display:flex;align-items:center;gap:6px}
 .nav-links a{font-size:14px;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:8px;transition:color .2s,background .2s}
@@ -54,11 +54,12 @@ nav{position:sticky;top:0;z-index:100;height:68px;background:rgba(255,255,255,.9
 .hero{background:var(--navy);position:relative;overflow:hidden;padding:100px 0 90px}
 .hero::before{content:'';position:absolute;top:-200px;left:-200px;width:800px;height:800px;background:radial-gradient(circle at 30% 30%,rgba(198,167,94,.12) 0%,transparent 65%);pointer-events:none}
 .hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;z-index:1}
+.hero-inner{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;position:relative;z-index:1}
 .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(198,167,94,.12);border:1px solid rgba(198,167,94,.28);border-radius:100px;padding:6px 14px;margin-bottom:22px}
 .hero-badge-chip{background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:3px 9px}
 .hero-badge-text{font-size:13px;color:rgba(255,255,255,.75);font-weight:500}
-.hero h1{font-size:clamp(36px,4.5vw,54px);font-weight:800;color:#fff;line-height:1.12;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,3.2vw,42px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.03em;margin-bottom:20px}
+.h1-line1{display:block;white-space:nowrap}
 .hero h1 em{font-style:normal;color:var(--gold);border-bottom:3px solid var(--gold);padding-bottom:1px}
 .h1-word{color:rgba(255,255,255,.45);transition:color .7s ease,text-shadow .7s ease}
 .h1-word.active{color:var(--gold);text-shadow:0 0 28px rgba(198,167,94,.55)}
@@ -87,7 +88,7 @@ nav{position:sticky;top:0;z-index:100;height:68px;background:rgba(255,255,255,.9
 .aiw-beta{background:var(--gold);color:var(--navy);font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:2px 8px;margin-left:auto}
 .aiw-sub{font-size:12.5px;color:var(--muted)}
 .aiw-input-area{padding:16px 22px;position:relative}
-.aiw-textarea-wrap{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:13px 50px 13px 16px;cursor:text;min-height:72px;position:relative;transition:border-color .2s}
+.aiw-textarea-wrap{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:13px 16px 48px 16px;cursor:text;min-height:72px;position:relative;transition:border-color .2s}
 .aiw-textarea-wrap:hover{border-color:var(--gold)}
 .aiw-demo{font-size:14px;color:var(--ink);line-height:1.55;user-select:none}
 .aiw-demo.placeholder{color:var(--subtle)}
@@ -96,7 +97,7 @@ nav{position:sticky;top:0;z-index:100;height:68px;background:rgba(255,255,255,.9
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 #heroInput{display:none;width:100%;border:none;background:transparent;font-family:var(--font);font-size:14px;color:var(--ink);resize:none;outline:none;line-height:1.55;min-height:48px}
 #heroInput.active{display:block}
-.aiw-submit{position:absolute;right:12px;top:50%;transform:translateY(-50%);width:34px;height:34px;background:var(--navy);border:none;border-radius:9px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.aiw-submit{position:absolute;right:10px;bottom:10px;width:30px;height:30px;background:var(--navy);border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .aiw-submit:hover{background:var(--navy-2)}
 .aiw-submit i{width:15px;height:15px;color:#fff}
 .aiw-thinking{padding:14px 22px 0;display:none;align-items:center;gap:10px}
@@ -282,6 +283,112 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 .status-dot{display:flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,.4)}
 .status-dot::before{content:'';width:7px;height:7px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.2)}
 
+/* PLATFORM TABS */
+.pt-header{text-align:center;max-width:640px;margin:0 auto 44px}
+.pt-header h2{font-size:clamp(30px,4vw,52px);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
+.pt-header h2 em{font-style:normal;color:var(--gold)}
+.pt-header .pt-sub{font-size:16px;color:var(--muted);line-height:1.7}
+.pt-tab-nav-wrap{display:flex;justify-content:center;margin-bottom:32px}
+.pt-tab-nav{background:#fff;border-radius:14px;padding:6px;display:inline-flex;gap:4px;box-shadow:0 2px 14px rgba(11,31,59,.08);border:1px solid var(--border)}
+.pt-tab{background:transparent;border:none;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .22s,color .22s;white-space:nowrap;font-family:var(--font)}
+.pt-tab i{width:15px;height:15px;flex-shrink:0}
+.pt-tab:hover:not(.active){background:var(--bg);color:var(--ink)}
+.pt-tab.active{background:var(--navy);color:#fff}
+.pt-tab-cta{color:var(--gold)!important}
+.pt-tab-cta.active{background:var(--gold)!important;color:var(--navy)!important}
+.pt-panel{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 40px -8px rgba(11,31,59,.12);border:1px solid var(--border)}
+.pt-panel.hidden{display:none}
+.pt-panel-inner{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
+.pt-left{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
+.pt-left .eyebrow{margin-bottom:14px}
+.pt-left h2{font-size:clamp(22px,2.6vw,34px);font-weight:800;color:var(--ink);line-height:1.2;letter-spacing:-.025em;margin-bottom:16px}
+.pt-left h2 em{font-style:normal;color:var(--gold)}
+.pt-left .pt-body{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:26px}
+.pt-items{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
+.pt-item{display:flex;gap:13px;align-items:flex-start}
+.pt-item-icon{width:34px;height:34px;border-radius:9px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.pt-item-icon i{width:15px;height:15px;color:var(--gold)}
+.pt-item h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.pt-item p{font-size:12.5px;color:var(--muted);line-height:1.55}
+.pt-link{font-size:14px;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:7px;margin-top:4px;transition:gap .2s}
+.pt-link:hover{gap:11px}
+.pt-right{background:linear-gradient(150deg,#FAF4E8 0%,#EDE3C4 100%);position:relative;display:flex;align-items:center;justify-content:center;padding:56px 40px}
+.pt-screen-area{position:relative;width:100%}
+.pt-screens{display:grid;grid-template-areas:'stack';border-radius:12px;overflow:hidden;box-shadow:0 20px 52px -16px rgba(11,31,59,.28);border:1px solid rgba(255,255,255,.5)}
+.pt-screen-slide{grid-area:stack;opacity:0;transition:opacity .65s ease}
+.pt-screen-slide.active{opacity:1}
+.pt-screen-slide img{width:100%;display:block}
+.pt-chip{position:absolute;background:#fff;border-radius:10px;padding:10px 14px;box-shadow:0 10px 28px -8px rgba(11,31,59,.22);display:flex;align-items:center;gap:10px;z-index:2;white-space:nowrap}
+.pt-chip i{width:15px;height:15px;color:var(--gold);flex-shrink:0}
+.pt-chip-text{font-size:12.5px;font-weight:700;color:var(--ink)}
+.pt-chip-sub{font-size:10.5px;color:var(--muted);margin-top:1px}
+.pt-chip-top{top:16px;left:16px}
+.pt-chip-br{bottom:16px;right:16px}
+.pt-right-dark{background:var(--navy)!important}
+.gs-form-card{background:#fff;border-radius:16px;padding:28px;width:100%;max-width:380px;box-shadow:0 24px 56px -16px rgba(0,0,0,.35)}
+.gs-form-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--divider)}
+.gs-form-icon{width:40px;height:40px;background:var(--gold-bg);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(198,167,94,.25)}
+.gs-form-icon i{width:18px;height:18px;color:var(--gold)}
+.gs-form-head h4{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gs-form-head p{font-size:12px;color:var(--muted)}
+.gs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gs-field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
+.gs-field label{font-size:12px;font-weight:600;color:var(--ink)}
+.gs-field input{border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13.5px;font-family:var(--font);color:var(--ink);outline:none;transition:border-color .2s}
+.gs-field input:focus{border-color:var(--gold)}
+.gs-field input::placeholder{color:var(--subtle)}
+.btn-gs{width:100%;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:13px;font-size:14.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;margin:12px 0 10px;font-family:var(--font)}
+.btn-gs:hover{background:var(--navy-2)}
+.gs-terms{font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
+.gs-terms a{color:var(--navy);text-decoration:underline}
+.gs-checks{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.gs-checks li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.5}
+.gs-checks li::before{content:'✓';font-weight:700;color:var(--gold);flex-shrink:0}
+
+/* FLOATING LABEL INPUTS */
+.fl-field{position:relative;margin-bottom:10px;min-width:0}
+.fl-field input,.fl-field textarea{width:100%;padding:20px 13px 7px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);color:var(--ink);outline:none;background:#fff;transition:border-color .2s;box-sizing:border-box;-webkit-appearance:none;appearance:none}
+.fl-field textarea{resize:vertical;min-height:90px;padding-top:24px;line-height:1.55}
+.fl-field input:focus,.fl-field textarea:focus{border-color:var(--gold)}
+.fl-field label{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--subtle);pointer-events:none;transition:all .18s ease;background:#fff;padding:0 2px;white-space:nowrap}
+.fl-field textarea~label{top:18px;transform:none}
+.fl-field input:focus~label,.fl-field input:not(:placeholder-shown)~label,
+.fl-field textarea:focus~label,.fl-field textarea:not(:placeholder-shown)~label{top:7px;transform:none;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.fl-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fl-row .fl-field{min-width:0;margin-bottom:0}
+
+/* CONTACT MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(11,31,59,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .22s ease}
+.modal-overlay.open{opacity:1;pointer-events:auto}
+.modal-box{background:#fff;border-radius:20px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px -16px rgba(11,31,59,.45);transform:translateY(20px);transition:transform .25s ease;scrollbar-width:thin}
+.modal-overlay.open .modal-box{transform:none}
+.modal-top{padding:28px 28px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.modal-top-text h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.modal-top-text p{font-size:13.5px;color:var(--muted)}
+.modal-close-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s}
+.modal-close-btn:hover{background:var(--border)}
+.modal-body{padding:20px 28px 28px}
+.mi-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.mi-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.mi-pill{border:1.5px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12.5px;font-weight:600;color:var(--muted);background:#fff;cursor:pointer;transition:all .18s;font-family:var(--font);white-space:nowrap}
+.mi-pill.active{border-color:var(--gold);background:var(--gold-bg);color:var(--ink)}
+.modal-submit{width:100%;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font);transition:background .2s;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
+.modal-submit:hover{background:var(--navy-2)}
+.modal-submit:disabled{opacity:.6;cursor:not-allowed}
+.modal-success{text-align:center;padding:52px 28px;display:none}
+.modal-success.show{display:block}
+.ms-icon{width:60px;height:60px;background:var(--gold-bg);border:2px solid rgba(198,167,94,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.modal-success h3{font-size:22px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.modal-success p{font-size:14.5px;color:var(--muted);line-height:1.7;max-width:380px;margin:0 auto}
+
+/* SCROLL REVEAL */
+.sr{opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.2,.8,.2,1),transform .65s cubic-bezier(.2,.8,.2,1)}
+.sr.sr-d1{transition-delay:.08s}
+.sr.sr-d2{transition-delay:.16s}
+.sr.sr-d3{transition-delay:.24s}
+.sr.sr-d4{transition-delay:.32s}
+.sr.sr-in{opacity:1;transform:none}
+
 /* RESPONSIVE */
 @media(max-width:1080px){
   .hero-inner{grid-template-columns:1fr;gap:32px}
@@ -294,6 +401,9 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   .unified{grid-template-columns:1fr;padding:48px}
   .footer-top{grid-template-columns:1fr;gap:40px}
   .footer-cols{grid-template-columns:repeat(2,1fr)}
+  .pt-panel-inner{grid-template-columns:1fr}
+  .pt-right{padding:40px 28px 48px;min-height:320px}
+  .pt-tab-nav{flex-wrap:wrap;justify-content:center}
 }
 @media(max-width:680px){
   .wrap,.nav-inner{padding:0 22px}
@@ -303,6 +413,8 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   .svc-header{flex-direction:column;align-items:flex-start;gap:20px}
   .footer-cols{grid-template-columns:1fr 1fr}
   .section{padding:64px 0}
+  .pt-left{padding:32px 24px}
+  .pt-tab{padding:8px 14px;font-size:13px}
   .why-grid{grid-template-columns:1fr 1fr}
   .flow{grid-template-columns:1fr}
 }
@@ -314,7 +426,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <img src="mp2jwz89-costimo-icon-annotated-light.webp" alt="COSTiMO" style="height:56px;width:auto">
+      <img src="mp2jwz89-costimo-icon-annotated-light.webp" alt="COSTiMO" style="height:68px;width:auto">
     </a>
     <div class="nav-links">
       <a href="#">Home</a>
@@ -322,7 +434,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
       <a href="#consultancy">Consultancy</a>
       <a href="#use-cases">Use Cases</a>
       <a href="#contact">Contact</a>
-      <a href="#contact" class="nav-cta">Request demo</a>
+      <a href="#" class="nav-cta" data-modal="Platform demo">Request demo</a>
     </div>
   </div>
 </nav>
@@ -334,14 +446,14 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     <div class="hero-inner">
       <!-- Left: text column -->
       <div class="hero-left">
-        <h1><span class="h1-word" id="h1-est">Estimate</span> <span class="h1-arrow">→</span> <span class="h1-word" id="h1-bud">Budget</span> <span class="h1-arrow">→</span> <span class="h1-word" id="h1-ctrl">Control</span><br>construction costs.</h1>
+        <h1><span class="h1-line1"><span class="h1-word" id="h1-est">Estimate</span> <span class="h1-arrow">→</span> <span class="h1-word" id="h1-bud">Budget</span> <span class="h1-arrow">→</span> <span class="h1-word" id="h1-ctrl">Control</span></span>construction costs.</h1>
         <p class="hero-sub">COSTiMO helps construction teams prepare resource-based estimates, convert awarded estimates into approved budgets, and monitor project costs in real time — supported by specialist consultancy in contractor vetting, contract governance, and cost control frameworks.</p>
         <div class="hero-clarify">
           <p>Use your own organisation-approved resource rates. COSTiMO structures the quantities, assemblies, cost elements, dashboards, budget conversion, and cost tracking workflow.</p>
         </div>
         <div class="hero-actions">
-          <button class="btn-gold">Explore the platform</button>
-          <button class="btn-ghost"><i data-lucide="phone-call"></i> Discuss consultancy support</button>
+          <button class="btn-gold" data-modal="Platform demo">Explore the platform</button>
+          <button class="btn-ghost" data-modal="Consultancy"><i data-lucide="phone-call"></i> Discuss consultancy support</button>
         </div>
         <div class="hero-meta">
           <span class="hero-meta-item"><i data-lucide="check-circle"></i> Your rate library, your control</span>
@@ -365,7 +477,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
               <div id="heroText" class="aiw-demo placeholder">Describe your assembly in plain language…</div>
               <textarea id="heroInput" rows="3" placeholder="Describe your assembly in plain language…"></textarea>
               <button class="aiw-submit" id="heroSubmit" aria-label="Submit">
-                <i data-lucide="arrow-up"></i>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11V3M7 3L3.5 6.5M7 3L10.5 6.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </button>
             </div>
           </div>
@@ -432,175 +544,147 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   </div>
 </section>
 
-<!-- PLATFORM FEATURES -->
+<!-- PLATFORM TAB SECTION -->
 <section class="section" id="platform" style="background:var(--bg)">
   <div class="wrap">
-    <div class="plat-head">
-      <p class="eyebrow">Platform</p>
-      <h2>Construction <em>cost platform</em>.</h2>
-      <p class="lead">Structured estimation, budgeting, and cost monitoring for construction projects.</p>
-      <p>COSTiMO gives project teams a practical system to build estimates from resource break-ups, apply organisation-approved rates, review cost composition, approve budgets, and monitor execution costs. Designed to support disciplined project cost governance — not to replace professional commercial judgement.</p>
+    <div class="pt-header sr">
+      <p class="eyebrow">The COSTiMO Platform</p>
+      <h2>Estimate. Budget. <em>Control.</em></h2>
+      <p class="pt-sub">One connected workflow — from the first BOQ line to in-flight cost monitoring. Click a tab to see each stage in action.</p>
     </div>
-    <div class="platform-grid">
-      <div class="pfeat span2">
-        <div class="pfeat-icon"><i data-lucide="layers"></i></div>
-        <h4>Activity resource break-up</h4>
-        <p>Access structured resource requirements for construction activities — including cost elements, units, and quantities per unit of work. The starting point for every reliable estimate.</p>
-      </div>
-      <div class="pfeat span2">
-        <div class="pfeat-icon"><i data-lucide="database"></i></div>
-        <h4>Your own rate library</h4>
-        <p>Maintain resource rates within your organisation library. COSTiMO pulls these rates into estimates to calculate project cost — commercial rate ownership stays with your organisation.</p>
-      </div>
-      <div class="pfeat">
-        <div class="pfeat-icon"><i data-lucide="layout-grid"></i></div>
-        <h4>Assemblies &amp; cost elements</h4>
-        <p>Standardise estimation logic across repeated activities. Break items into labour, materials, equipment, consumables, subcontract, and other elements.</p>
-      </div>
-      <div class="pfeat">
-        <div class="pfeat-icon"><i data-lucide="bar-chart-3"></i></div>
-        <h4>Estimate dashboard</h4>
-        <p>Review estimate values from multiple angles — cost element, work package, BOQ item, activity, resource category, and project summary.</p>
-      </div>
-      <div class="pfeat">
-        <div class="pfeat-icon"><i data-lucide="clipboard-check"></i></div>
-        <h4>Estimate to budget</h4>
-        <p>Convert the estimate of an awarded project into a controlled project budget — with approved baselines and revision discipline.</p>
-      </div>
-      <div class="pfeat">
-        <div class="pfeat-icon"><i data-lucide="activity"></i></div>
-        <h4>Budget to cost monitoring</h4>
-        <p>Use the approved budget to monitor commitments, actual costs, forecast costs, and variances as the project progresses.</p>
-      </div>
-      <div class="pfeat">
-        <div class="pfeat-icon"><i data-lucide="eye"></i></div>
-        <h4>Real-time cost visibility</h4>
-        <p>Track how project costs are moving against budget, and identify areas requiring management attention.</p>
-      </div>
-      <div class="pfeat">
-        <div class="pfeat-icon"><i data-lucide="sparkles"></i></div>
-        <h4>AI-assisted structure</h4>
-        <p>AI assists search, resource structuring, assembly matching, and cost analysis presentation — final rates and approvals stay under user control.</p>
+    <div class="pt-tab-nav-wrap sr sr-d1">
+      <div class="pt-tab-nav" role="tablist">
+        <button class="pt-tab active" data-tab="estimate" role="tab"><i data-lucide="layers"></i>Estimate</button>
+        <button class="pt-tab" data-tab="budget" role="tab"><i data-lucide="clipboard-check"></i>Budget</button>
+        <button class="pt-tab" data-tab="cost-control" role="tab"><i data-lucide="activity"></i>Cost control</button>
+        <button class="pt-tab pt-tab-cta" data-tab="get-started" role="tab"><i data-lucide="rocket"></i>Get started — free</button>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ESTIMATE ENGINE FEATURE SECTION -->
-<section class="section" style="background:#fff">
-  <div class="wrap">
-    <div class="feat">
-      <div class="feat-copy">
-        <p class="eyebrow">Inside the platform</p>
-        <h2>Hierarchical precision, down to the <em>last resource</em>.</h2>
-        <p class="lead">Structure scope as a full WBS tree. Estimate at the lowest level — resources, quantities, units, durations — and let every parent row roll up automatically. Apply your own approved rates to compute project cost.</p>
-        <div class="feat-items">
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="folder-tree"></i></div>
-            <div>
-              <h4>Full WBS hierarchy</h4>
-              <p>Work Packages → Activities → BOQ Items → Resources. No flat lists, no orphan items.</p>
-            </div>
+    <!-- ESTIMATE PANEL -->
+    <div class="pt-panel sr sr-d2" id="panel-estimate" role="tabpanel">
+      <div class="pt-panel-inner">
+        <div class="pt-left">
+          <p class="eyebrow">Estimate</p>
+          <h2>Hierarchical precision, down to the <em>last resource</em>.</h2>
+          <p class="pt-body">Build estimates from a full WBS — work packages, activities, BOQ items, resources — and apply your own organisation-approved rates to compute project cost.</p>
+          <div class="pt-items">
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="folder-tree"></i></div><div><h4>Full WBS hierarchy</h4><p>Work Packages → Activities → BOQ Items → Resources. No flat lists, no orphan items.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="layout-grid"></i></div><div><h4>Reusable assemblies</h4><p>Build organisation-wide resource assemblies once; pull them into every project that needs them.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="database"></i></div><div><h4>Your own rate library</h4><p>Labour, material, equipment, subcontract — commercial control stays with your team.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="git-branch"></i></div><div><h4>Revision discipline</h4><p>Draft → Rev0 → Rev1 with locked history. Compare any two revisions side-by-side.</p></div></div>
           </div>
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="layout-grid"></i></div>
-            <div>
-              <h4>Reusable assemblies</h4>
-              <p>Build organisation-wide resource assemblies once; pull them into every project that needs them.</p>
-            </div>
-          </div>
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="git-branch"></i></div>
-            <div>
-              <h4>Revision discipline</h4>
-              <p>Draft → Rev0 → Rev1 with locked history. Compare any two revisions side-by-side.</p>
-            </div>
-          </div>
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="globe"></i></div>
-            <div>
-              <h4>Multi-currency</h4>
-              <p>INR, SAR, AED — correct ₹ / ﷼ / د.إ symbol rendering per region, always tabular-aligned.</p>
-            </div>
-          </div>
+          <a href="#contact" class="pt-link">Explore estimation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-      </div>
-      <div class="feat-screen-wrap">
-        <div class="feat-glow"></div>
-        <div class="feat-screen-frame">
-          <img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO full WBS view — Wellness Hospital">
-        </div>
-        <div class="feat-floater f1">
-          <i data-lucide="layers"></i>
-          <div>
-            <div class="feat-floater-text">₹133,35,23,142.61</div>
-            <div class="feat-floater-sub">Wellness Hospital · 31 WBS levels</div>
+        <div class="pt-right">
+          <div class="pt-chip pt-chip-top"><i data-lucide="layers"></i><div><div class="pt-chip-text">352 m³ · backfill · sandy fill</div></div></div>
+          <div class="pt-screen-area">
+            <div class="pt-screens" id="screens-estimate">
+              <div class="pt-screen-slide active"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO WBS estimate view"></div>
+              <div class="pt-screen-slide"><img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO assembly view"></div>
+              <div class="pt-screen-slide"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO WBS estimate view"></div>
+            </div>
           </div>
-        </div>
-        <div class="feat-floater f2">
-          <i data-lucide="lock"></i>
-          <div>
-            <div class="feat-floater-text">Rev0 · Locked</div>
-            <div class="feat-floater-sub">31 / 31 priced</div>
-          </div>
+          <div class="pt-chip pt-chip-br"><i data-lucide="lock"></i><div><div class="pt-chip-text">Rev0 · Locked</div><div class="pt-chip-sub">31 / 31 priced</div></div></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- RESOURCE ASSEMBLY FEATURE SECTION -->
-<section class="section" style="background:var(--bg)">
-  <div class="wrap">
-    <div class="feat reversed">
-      <div class="feat-screen-wrap">
-        <div class="feat-glow"></div>
-        <div class="feat-screen-frame">
-          <img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO masonry cost elements panel">
-        </div>
-        <div class="feat-floater f1">
-          <i data-lucide="layers"></i>
-          <div>
-            <div class="feat-floater-text">9,915 CUM Masonry · AAC block</div>
+    <!-- BUDGET PANEL -->
+    <div class="pt-panel hidden" id="panel-budget" role="tabpanel">
+      <div class="pt-panel-inner">
+        <div class="pt-left">
+          <p class="eyebrow">Budget</p>
+          <h2>Convert awarded estimates into <em>approved baselines</em>.</h2>
+          <p class="pt-body">Once a project is awarded, your estimate becomes a controlled budget — with revision discipline, approval workflow, and a complete audit trail.</p>
+          <div class="pt-items">
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="git-merge"></i></div><div><h4>Estimate-to-budget conversion</h4><p>One controlled step from awarded estimate to approved project baseline.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="lock"></i></div><div><h4>Locked baselines</h4><p>Approved budgets are frozen. Any change is a tracked, approved revision.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="bar-chart-3"></i></div><div><h4>Multi-angle breakdown</h4><p>Budget by cost element, work package, activity, resource type, and summary.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="users"></i></div><div><h4>Approval workflow</h4><p>Roles, signatures, and audit logs for every budget revision.</p></div></div>
           </div>
+          <a href="#contact" class="pt-link">Explore budgeting <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="pt-right">
+          <div class="pt-chip pt-chip-top"><i data-lucide="check-circle"></i><div><div class="pt-chip-text">Awarded · Baseline · Rev0 approved</div></div></div>
+          <div class="pt-screen-area">
+            <div class="pt-screens">
+              <div class="pt-screen-slide active"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO budget view"></div>
+            </div>
+          </div>
+          <div class="pt-chip pt-chip-br"><i data-lucide="trending-up"></i><div><div class="pt-chip-text">₹54,71,53,351</div><div class="pt-chip-sub">Approved project budget</div></div></div>
         </div>
       </div>
-      <div class="feat-copy">
-        <p class="eyebrow">Assembly intelligence</p>
-        <h2>Resource break-up for every <em>construction activity</em>.</h2>
-        <p class="lead">Each assembly carries the full resource structure — cost elements, numbers, durations, quantities per unit of work. Scale to project quantities and the cost computes automatically.</p>
-        <div class="feat-items">
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="package"></i></div>
-            <div>
-              <h4>Cost elements by category</h4>
-              <p>Labour, material, equipment, consumables, subcontract — each tracked separately with their own quantity and unit.</p>
+    </div>
+
+    <!-- COST CONTROL PANEL -->
+    <div class="pt-panel hidden" id="panel-cost-control" role="tabpanel">
+      <div class="pt-panel-inner">
+        <div class="pt-left">
+          <p class="eyebrow">Cost Control</p>
+          <h2>Track commitments, actuals, and <em>variances live</em>.</h2>
+          <p class="pt-body">Monitor execution costs against the approved budget at every WBS level. Catch overruns early — before they become unrecoverable.</p>
+          <div class="pt-items">
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="activity"></i></div><div><h4>Live variance tracking</h4><p>Compare budget vs. commitments vs. actuals at every level of the WBS.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="trending-up"></i></div><div><h4>Forecast at completion</h4><p>Forward-looking forecasts that update as work progresses on site.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="eye"></i></div><div><h4>Cost dashboards</h4><p>Executive-level summaries with drill-down audit on every line on demand.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="bell"></i></div><div><h4>Variance alerts</h4><p>Notifications when actuals breach a configurable threshold.</p></div></div>
+          </div>
+          <a href="#contact" class="pt-link">Explore cost control <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="pt-right">
+          <div class="pt-chip pt-chip-top"><i data-lucide="trending-up"></i><div><div class="pt-chip-text">+2.4% · vs. approved budget</div></div></div>
+          <div class="pt-screen-area">
+            <div class="pt-screens" id="screens-cost-control">
+              <div class="pt-screen-slide active"><img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO cost control view"></div>
+              <div class="pt-screen-slide"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO WBS view"></div>
+              <div class="pt-screen-slide"><img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO cost control view"></div>
             </div>
           </div>
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="calculator"></i></div>
-            <div>
-              <h4>Quantity per unit logic</h4>
-              <p>Assemblies define resource quantities per output unit. Scale to 352 m³ or 9,915 CUM — the breakdown scales precisely.</p>
-            </div>
-          </div>
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="copy"></i></div>
-            <div>
-              <h4>Shared costs distribution</h4>
-              <p>Distribute project-wide overhead costs (management, site facilities) pro-rata across all WBS assemblies.</p>
-            </div>
-          </div>
-          <div class="feat-item">
-            <div class="feat-item-icon"><i data-lucide="bar-chart-2"></i></div>
-            <div>
-              <h4>Analytics &amp; composition</h4>
-              <p>Review cost by element type, activity, work package, and project total — before submitting your estimate.</p>
+          <div class="pt-chip pt-chip-br"><i data-lucide="eye"></i><div><div class="pt-chip-text">₹12,662.24</div><div class="pt-chip-sub">Direct cost · live</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GET STARTED PANEL -->
+    <div class="pt-panel hidden" id="panel-get-started" role="tabpanel">
+      <div class="pt-panel-inner">
+        <div class="pt-left">
+          <p class="eyebrow">Free Trial</p>
+          <h2>Get started in <em>60 seconds</em>.</h2>
+          <p class="pt-body">Create a free workspace, import a sample project, and explore the platform with your own rate library. No credit card required.</p>
+          <ul class="gs-checks">
+            <li>Free for the first project — no time limit</li>
+            <li>Your own organisation-approved rate library</li>
+            <li>Unlimited team members during trial</li>
+            <li>Full Estimate · Budget · Cost control workflow</li>
+          </ul>
+        </div>
+        <div class="pt-right pt-right-dark">
+          <div class="gs-form-card">
+            <form id="gsForm" novalidate>
+              <div class="gs-form-head">
+                <div class="gs-form-icon"><i data-lucide="rocket"></i></div>
+                <div><h4>Create your free workspace</h4><p>We'll send your login link to your business email.</p></div>
+              </div>
+              <div class="fl-row" style="margin-bottom:10px">
+                <div class="fl-field"><input type="text" name="firstname" placeholder=" " autocomplete="given-name" required><label>First name *</label></div>
+                <div class="fl-field"><input type="text" name="lastname" placeholder=" " autocomplete="family-name"><label>Last name</label></div>
+              </div>
+              <div class="fl-field" style="margin-bottom:12px"><input type="email" name="email" placeholder=" " autocomplete="email" required><label>Business email *</label></div>
+              <button type="submit" class="btn-gs" id="gsSubmitBtn">Request workspace access <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+              <p class="gs-terms">By signing up you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy policy</a>.</p>
+            </form>
+            <div id="gsSuccess" style="display:none;text-align:center;padding:20px 0">
+              <div class="ms-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#C6A75E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h4 style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">We'll be in touch!</h4>
+              <p style="font-size:13px;color:var(--muted);line-height:1.6">Check your inbox — your workspace details will arrive within one business day.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -614,7 +698,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
         <p class="lead">Advisory support for better contractor decisions, contract discipline, and cost governance.</p>
         <p>COSTiMO provides specialist consultancy services for construction organisations that require practical, contractually sound, and execution-oriented support. The consultancy offering complements the platform by helping companies establish the right processes — before digitising them.</p>
       </div>
-      <button class="btn-outline">Discuss requirement</button>
+      <button class="btn-outline" data-modal="Consultancy">Discuss requirement</button>
     </div>
     <div class="svc-grid">
       <div class="svc-card">
@@ -820,8 +904,8 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     <h2>Bring structure and control<br>to <em>construction project costs.</em></h2>
     <p>Whether you need a resource-based estimation platform, a project budget and cost monitoring system, or consultancy support for contractor vetting and cost governance — COSTiMO provides a practical route to stronger commercial control.</p>
     <div class="cta-actions">
-      <button class="btn-gold btn-gold-lg">Request platform demo</button>
-      <button class="btn-ghost btn-ghost-lg"><i data-lucide="phone-call"></i> Discuss consultancy requirement</button>
+      <button class="btn-gold btn-gold-lg" data-modal="Platform demo">Request platform demo</button>
+      <button class="btn-ghost btn-ghost-lg" data-modal="Consultancy"><i data-lucide="phone-call"></i> Discuss consultancy requirement</button>
     </div>
   </div>
 </section>
@@ -858,13 +942,13 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           <h5>Company</h5>
           <a href="#">About</a>
           <a href="#">Use cases</a>
-          <a href="#">Contact</a>
+          <a href="#" data-modal="General enquiry">Contact</a>
         </div>
         <div class="footer-col">
           <h5>Legal</h5>
-          <a href="#">Privacy policy</a>
-          <a href="#">Terms of service</a>
-          <a href="#">Security</a>
+          <a href="/privacy.html">Privacy policy</a>
+          <a href="/terms.html">Terms of service</a>
+          <a href="/security.html">Security</a>
         </div>
       </div>
     </div>
@@ -874,6 +958,52 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     </div>
   </div>
 </footer>
+
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <div id="modalFormBody">
+      <div class="modal-top">
+        <div class="modal-top-text">
+          <h3 id="modalTitle">Get in touch</h3>
+          <p>We'll respond within one business day.</p>
+        </div>
+        <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p class="mi-label">I'm interested in</p>
+        <div class="mi-pills">
+          <button class="mi-pill" data-interest="Platform demo">Platform demo</button>
+          <button class="mi-pill" data-interest="Consultancy">Consultancy</button>
+          <button class="mi-pill" data-interest="Free trial">Free trial</button>
+          <button class="mi-pill" data-interest="General enquiry">General enquiry</button>
+        </div>
+        <form id="contactForm" novalidate>
+          <div class="fl-row" style="margin-bottom:10px">
+            <div class="fl-field"><input type="text" name="name" placeholder=" " required autocomplete="name"><label>Full name *</label></div>
+            <div class="fl-field"><input type="text" name="company" placeholder=" " autocomplete="organization"><label>Company</label></div>
+          </div>
+          <div class="fl-row" style="margin-bottom:10px">
+            <div class="fl-field"><input type="email" name="email" placeholder=" " required autocomplete="email"><label>Business email *</label></div>
+            <div class="fl-field"><input type="tel" name="phone" placeholder=" " autocomplete="tel"><label>Phone (optional)</label></div>
+          </div>
+          <div class="fl-field" style="margin-bottom:4px">
+            <textarea name="message" placeholder=" " rows="3" required></textarea>
+            <label>Message *</label>
+          </div>
+          <button type="submit" class="modal-submit" id="modalSubmitBtn">Send enquiry</button>
+        </form>
+      </div>
+    </div>
+    <div class="modal-success" id="modalSuccess">
+      <div class="ms-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#C6A75E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Message received!</h3>
+      <p>Thank you for reaching out. We'll be in touch within one business day.</p>
+    </div>
+  </div>
+</div>
 
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script>
@@ -1051,6 +1181,177 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     if(entries[0].isIntersecting&&demoPhase==='idle'&&!userMode){obs.disconnect();setTimeout(runDemo,500);}
   },{threshold:0.3});
   obs.observe(document.querySelector('.ai-widget'));
+})();
+</script>
+
+<script>
+/* ── Contact modal ── */
+(function(){
+  var overlay  = document.getElementById('contactModal');
+  var closeBtn = document.getElementById('modalCloseBtn');
+  var form     = document.getElementById('contactForm');
+  var submitBtn= document.getElementById('modalSubmitBtn');
+  var success  = document.getElementById('modalSuccess');
+  var formBody = document.getElementById('modalFormBody');
+  var pills    = document.querySelectorAll('.mi-pill');
+
+  function openModal(interest){
+    pills.forEach(function(p){ p.classList.remove('active'); });
+    if(interest){
+      var t = document.querySelector('.mi-pill[data-interest="'+interest+'"]');
+      if(t) t.classList.add('active');
+    } else { pills[0].classList.add('active'); }
+    formBody.style.display = '';
+    success.classList.remove('show');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send enquiry';
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* Open on any [data-modal] element */
+  document.addEventListener('click', function(e){
+    var el = e.target.closest('[data-modal]');
+    if(el){ e.preventDefault(); openModal(el.dataset.modal); }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){
+      pills.forEach(function(x){ x.classList.remove('active'); });
+      p.classList.add('active');
+    });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var activePill = document.querySelector('.mi-pill.active');
+    var interest = activePill ? activePill.dataset.interest : 'General enquiry';
+    var data = {
+      name:    form.querySelector('[name=name]').value.trim(),
+      email:   form.querySelector('[name=email]').value.trim(),
+      company: form.querySelector('[name=company]').value.trim(),
+      phone:   form.querySelector('[name=phone]').value.trim(),
+      message: form.querySelector('[name=message]').value.trim(),
+      interest: interest
+    };
+    if(!data.name || !data.email || !data.message){ return; }
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(r); })
+      .then(function(){ formBody.style.display='none'; success.classList.add('show'); })
+      .catch(function(){ submitBtn.disabled=false; submitBtn.textContent='Send enquiry'; alert('Something went wrong. Please email admin@costimo.ai directly.'); });
+  });
+})();
+
+/* ── Get Started tab inline form ── */
+(function(){
+  var form = document.getElementById('gsForm');
+  var btn  = document.getElementById('gsSubmitBtn');
+  var succ = document.getElementById('gsSuccess');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var data = {
+      name:    (form.querySelector('[name=firstname]').value + ' ' + form.querySelector('[name=lastname]').value).trim(),
+      email:   form.querySelector('[name=email]').value.trim(),
+      interest:'Free trial', message:'Workspace access request'
+    };
+    if(!data.name || !data.email){ return; }
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(r); })
+      .then(function(){ form.style.display='none'; succ.style.display='block'; })
+      .catch(function(){ btn.disabled=false; btn.textContent='Request workspace access'; alert('Something went wrong. Please email admin@costimo.ai directly.'); });
+  });
+})();
+
+/* ── Platform tabs ── */
+(function(){
+  var tabs = document.querySelectorAll('.pt-tab');
+  var panels = document.querySelectorAll('.pt-panel');
+  var timers = {};
+
+  function cycleScreens(id, interval){
+    var el = document.getElementById(id);
+    if(!el) return null;
+    var slides = el.querySelectorAll('.pt-screen-slide');
+    var i = 0;
+    return setInterval(function(){
+      slides[i].classList.remove('active');
+      i = (i+1) % slides.length;
+      slides[i].classList.add('active');
+    }, interval || 3200);
+  }
+
+  function stopAll(){
+    Object.values(timers).forEach(clearInterval);
+    timers = {};
+  }
+
+  function activateTab(tab){
+    var target = tab.dataset.tab;
+    tabs.forEach(function(t){ t.classList.remove('active'); });
+    panels.forEach(function(p){ p.classList.add('hidden'); });
+    tab.classList.add('active');
+    var panel = document.getElementById('panel-'+target);
+    panel.classList.remove('hidden');
+    lucide.createIcons();
+    stopAll();
+    if(target==='estimate')     timers.est  = cycleScreens('screens-estimate', 3000);
+    if(target==='cost-control') timers.cc   = cycleScreens('screens-cost-control', 3000);
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){ activateTab(tab); });
+  });
+
+  /* start estimate cycling on load */
+  timers.est = cycleScreens('screens-estimate', 3000);
+})();
+
+/* ── Scroll reveal ── */
+(function(){
+  var selectors = [
+    '.pos-head','.poscard',
+    '.svc-head','.svc-card',
+    '.unified-left','.unified-block',
+    '.flow-head','.flow-step',
+    '.why-head','.why-card',
+    '.uc-head','.uc-card',
+    '.cta-block h2','.cta-block p','.cta-actions',
+    '.sr'
+  ];
+  var all = Array.from(document.querySelectorAll(selectors.join(',')));
+
+  /* group sibling cards for stagger */
+  all.forEach(function(el){
+    if(el.classList.contains('sr')) return; /* already handled */
+    el.classList.add('sr');
+    var siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
+    var idx = siblings.indexOf(el);
+    if(idx > 0 && idx <= 4) el.classList.add('sr-d'+idx);
+  });
+
+  var obs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('sr-in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, {threshold: 0.1, rootMargin:'0px 0px -32px 0px'});
+
+  all.forEach(function(el){ obs.observe(el); });
 })();
 </script>
 </body>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Security Statement — COSTiMO</title>
+<link rel="icon" type="image/svg+xml" href="movu8uza-costimo-favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1F3B;--navy-2:#142a4d;--navy-deep:#070f1e;
+  --gold:#C6A75E;--gold-bg:#FFFBEC;
+  --ink:#0B1F3B;--text:#1F2937;--muted:#62707F;--subtle:#94A3B8;
+  --bg:#F3F5F8;--card:#FFFFFF;--border:#D8DFE8;--divider:#ECF0F5;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--divider)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
+.nav-logo img{display:block}
+.nav-back{font-size:14px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--border);transition:color .2s,border-color .2s}
+.nav-back:hover{color:var(--ink);border-color:var(--navy)}
+.nav-back svg{width:14px;height:14px}
+.legal-hero{background:var(--navy);padding:56px 0 48px;position:relative;overflow:hidden}
+.legal-hero::before{content:'';position:absolute;top:-160px;right:-160px;width:500px;height:500px;background:radial-gradient(circle,rgba(198,167,94,.1) 0%,transparent 65%);pointer-events:none}
+.wrap{max-width:800px;margin:0 auto;padding:0 clamp(24px,5vw,48px)}
+.legal-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.legal-hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.legal-meta{display:flex;flex-wrap:wrap;gap:20px}
+.legal-meta-item{font-size:13px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px}
+.legal-meta-item span{color:rgba(255,255,255,.75);font-weight:500}
+.legal-content{background:#fff;padding:56px 0 72px}
+.legal-intro{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:48px;padding-bottom:32px;border-bottom:2px solid var(--divider)}
+.legal-section{margin-bottom:44px}
+.legal-section h2{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--divider);display:flex;align-items:center;gap:12px}
+.legal-section h2 .sec-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.3);border-radius:7px;font-size:12px;font-weight:800;color:var(--gold);flex-shrink:0}
+.legal-section p{font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+.legal-section ul{padding-left:0;list-style:none;margin-bottom:12px}
+.legal-section ul li{font-size:14.5px;color:var(--muted);line-height:1.7;padding:5px 0 5px 22px;position:relative}
+.legal-section ul li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.security-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:12px}
+.sec-card{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:20px 22px}
+.sec-card-icon{width:36px;height:36px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.sec-card-icon svg{width:16px;height:16px;color:#C6A75E;stroke:#C6A75E}
+.sec-card h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.sec-card p{font-size:12.5px;color:var(--muted);line-height:1.6;margin-bottom:0}
+.notice{background:rgba(198,167,94,.08);border:1px solid rgba(198,167,94,.3);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:16px}
+.notice p{margin-bottom:0;font-size:14px;color:var(--ink)}
+.legal-contact{background:var(--bg);border-radius:14px;padding:28px;border:1px solid var(--border);margin-top:48px}
+.legal-contact h3{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.legal-contact p{font-size:14px;color:var(--muted);margin-bottom:6px}
+.legal-contact a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.toc{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:40px}
+.toc h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.toc ol{counter-reset:toc;list-style:none;padding:0;columns:2;column-gap:32px}
+.toc ol li{counter-increment:toc;padding:3px 0;font-size:13px}
+.toc ol li::before{content:counter(toc)'. ';font-weight:700;color:var(--gold)}
+.toc ol li a{color:var(--navy);transition:color .15s}
+.toc ol li a:hover{color:var(--gold)}
+footer{background:var(--navy-deep);padding:36px 0;text-align:center}
+.footer-bottom-legal{font-size:13px;color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.footer-bottom-legal a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-bottom-legal a:hover{color:rgba(255,255,255,.9)}
+@media(max-width:680px){.toc ol{columns:1}.legal-hero{padding:40px 0 36px}.security-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="mp2jwz89-costimo-icon-annotated-light.webp" alt="COSTiMO" style="height:68px;width:auto">
+    </a>
+    <a href="/" class="nav-back">
+      <svg viewBox="0 0 14 14" fill="none"><path d="M9 1L3 7l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to home
+    </a>
+  </div>
+</nav>
+
+<div class="legal-hero">
+  <div class="wrap">
+    <p class="legal-eyebrow">Legal</p>
+    <h1>Security Statement</h1>
+    <div class="legal-meta">
+      <div class="legal-meta-item">Effective date: <span>15 May 2026</span></div>
+      <div class="legal-meta-item">Website: <span>costimo.ai</span></div>
+      <div class="legal-meta-item">Application: <span>app.costimo.ai</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="legal-content">
+  <div class="wrap">
+
+    <p class="legal-intro">Costimo.ai is designed as a professional construction cost-management platform. We recognise that users may store and process confidential project, estimate, budget, vendor, and commercial information through the platform. This Security Statement summarises the general security approach followed by Costimo.ai.</p>
+
+    <div class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#s1">Security Commitment</a></li>
+        <li><a href="#s2">Cloud Infrastructure</a></li>
+        <li><a href="#s3">Access Control</a></li>
+        <li><a href="#s4">Data Protection Measures</a></li>
+        <li><a href="#s5">User Responsibilities</a></li>
+        <li><a href="#s6">Incident Handling</a></li>
+        <li><a href="#s7">Confidential Project Data</a></li>
+        <li><a href="#s8">No Absolute Guarantee</a></li>
+        <li><a href="#s9">Reporting Security Issues</a></li>
+      </ol>
+    </div>
+
+    <div class="legal-section" id="s1">
+      <h2><span class="sec-num">1</span> Security Commitment</h2>
+      <p>Costimo.ai uses reasonable technical and organisational measures to protect user accounts, project data, and platform infrastructure against unauthorised access, misuse, loss, alteration, or disclosure. Security is treated as an important part of platform development, hosting, access control, and operational maintenance.</p>
+    </div>
+
+    <div class="legal-section" id="s2">
+      <h2><span class="sec-num">2</span> Cloud Infrastructure</h2>
+      <p>Costimo.ai uses cloud-based infrastructure and managed service providers for hosting, application delivery, storage, database, authentication, and related services. We aim to use reputable service providers with established security practices. However, security also depends on correct user configuration, access control, and responsible account management.</p>
+    </div>
+
+    <div class="legal-section" id="s3">
+      <h2><span class="sec-num">3</span> Access Control</h2>
+      <p>Access to Costimo.ai is controlled through user accounts and authentication mechanisms. Depending on the applicable plan and configuration, Costimo.ai may support role-based access control, such as administrator, editor, viewer, or other permission levels.</p>
+      <p>Users and subscribing organisations are responsible for:</p>
+      <ul>
+        <li>Assigning correct user roles and removing access for persons who no longer require it</li>
+        <li>Protecting login credentials and preventing credential sharing</li>
+        <li>Reviewing access permissions periodically</li>
+      </ul>
+    </div>
+
+    <div class="legal-section" id="s4">
+      <h2><span class="sec-num">4</span> Data Protection Measures</h2>
+      <p>Costimo.ai may apply the following security measures, where applicable:</p>
+      <div class="security-grid">
+        <div class="sec-card">
+          <div class="sec-card-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="12" height="8" rx="2"/><path d="M5 7V5a3 3 0 016 0v2"/></svg></div>
+          <h4>Authentication &amp; Access Controls</h4>
+          <p>Controlled user authentication and role-based permission management.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2l2.5 5h5l-4 3 1.5 5L8 12l-5 3 1.5-5-4-3h5z"/></svg></div>
+          <h4>Secure Cloud Hosting</h4>
+          <p>Industry-standard cloud infrastructure with built-in security controls.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1L2 4v4c0 3.3 2.5 6.4 6 7 3.5-.6 6-3.7 6-7V4L8 1z"/></svg></div>
+          <h4>Encrypted Transmission</h4>
+          <p>Encrypted data in transit where supported by the platform and infrastructure.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 2"/></svg></div>
+          <h4>Logging &amp; Monitoring</h4>
+          <p>Application-level access logging and security monitoring.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10c0 2.2-1.8 4-4 4H4a3 3 0 010-6h.5A4.5 4.5 0 0113 6.5c.6.4 1 1.1 1 1.8V10z"/></svg></div>
+          <h4>Backup &amp; Recovery</h4>
+          <p>Backup and recovery arrangements to protect against data loss.</p>
+        </div>
+        <div class="sec-card">
+          <div class="sec-card-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8h12M8 2l6 6-6 6"/></svg></div>
+          <h4>Regular Maintenance</h4>
+          <p>Regular maintenance, dependency updates, and security patching.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="legal-section" id="s5">
+      <h2><span class="sec-num">5</span> User Responsibilities</h2>
+      <p>Users are responsible for maintaining secure use of the platform, including:</p>
+      <ul>
+        <li>Keeping passwords confidential and using strong login methods</li>
+        <li>Restricting account access to authorised personnel only</li>
+        <li>Reviewing project data before relying on it for decisions</li>
+        <li>Avoiding uploading of malicious files or unauthorised third-party data</li>
+        <li>Ensuring they have authority to upload confidential or third-party information</li>
+        <li>Promptly reporting suspected unauthorised access to us</li>
+      </ul>
+    </div>
+
+    <div class="legal-section" id="s6">
+      <h2><span class="sec-num">6</span> Incident Handling</h2>
+      <p>If we become aware of a security incident affecting user data or platform access, we will take reasonable steps to investigate, contain, and address the matter. Where required by applicable law or contractual obligation, we will notify affected users or organisations.</p>
+    </div>
+
+    <div class="legal-section" id="s7">
+      <h2><span class="sec-num">7</span> Confidential Project Data</h2>
+      <p>Costimo.ai may contain commercially sensitive data such as tender estimates, resource rates, BOQs, budgets, cost-control records, and vendor information. Users should apply appropriate internal controls before granting access to such data. Costimo.ai should be used as part of a broader organisational cost-governance and approval process.</p>
+    </div>
+
+    <div class="legal-section" id="s8">
+      <h2><span class="sec-num">8</span> No Absolute Guarantee</h2>
+      <div class="notice">
+        <p>While Costimo.ai applies reasonable security measures, no internet-based service, software system, or cloud platform can be guaranteed to be completely secure or uninterrupted. Users should maintain appropriate internal backups, approvals, and verification procedures for business-critical information.</p>
+      </div>
+    </div>
+
+    <div class="legal-section" id="s9">
+      <h2><span class="sec-num">9</span> Reporting Security Issues</h2>
+      <p>If you discover a suspected security vulnerability, misconfiguration, or unauthorised access, please contact us promptly so we can investigate and respond appropriately.</p>
+    </div>
+
+    <div class="legal-contact">
+      <h3>Report a security concern</h3>
+      <p>Email: <a href="mailto:admin@costimo.ai">admin@costimo.ai</a></p>
+      <p>Website: <a href="https://costimo.ai">costimo.ai</a></p>
+      <p style="margin-top:10px;font-size:13px;color:var(--subtle)">Please include as much detail as possible. We aim to respond within two business days.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="max-width:1440px;padding:0 clamp(24px,5vw,80px)">
+    <div class="footer-bottom-legal">
+      <span style="color:rgba(255,255,255,.25)">© 2026 COSTiMO.ai. All rights reserved.</span>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/security.html">Security</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — COSTiMO</title>
+<link rel="icon" type="image/svg+xml" href="movu8uza-costimo-favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1F3B;--navy-2:#142a4d;--navy-deep:#070f1e;
+  --gold:#C6A75E;--gold-bg:#FFFBEC;
+  --ink:#0B1F3B;--text:#1F2937;--muted:#62707F;--subtle:#94A3B8;
+  --bg:#F3F5F8;--card:#FFFFFF;--border:#D8DFE8;--divider:#ECF0F5;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--divider)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
+.nav-logo img{display:block}
+.nav-back{font-size:14px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--border);transition:color .2s,border-color .2s}
+.nav-back:hover{color:var(--ink);border-color:var(--navy)}
+.nav-back svg{width:14px;height:14px}
+
+/* LEGAL HERO */
+.legal-hero{background:var(--navy);padding:56px 0 48px;position:relative;overflow:hidden}
+.legal-hero::before{content:'';position:absolute;top:-160px;right:-160px;width:500px;height:500px;background:radial-gradient(circle,rgba(198,167,94,.1) 0%,transparent 65%);pointer-events:none}
+.wrap{max-width:800px;margin:0 auto;padding:0 clamp(24px,5vw,48px)}
+.legal-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.legal-hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.legal-meta{display:flex;flex-wrap:wrap;gap:20px}
+.legal-meta-item{font-size:13px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px}
+.legal-meta-item span{color:rgba(255,255,255,.75);font-weight:500}
+
+/* CONTENT */
+.legal-content{background:#fff;padding:56px 0 72px}
+.legal-intro{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:48px;padding-bottom:32px;border-bottom:2px solid var(--divider)}
+.legal-section{margin-bottom:44px}
+.legal-section h2{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--divider);display:flex;align-items:center;gap:12px}
+.legal-section h2 .sec-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.3);border-radius:7px;font-size:12px;font-weight:800;color:var(--gold);flex-shrink:0}
+.legal-section h3{font-size:14.5px;font-weight:700;color:var(--ink);margin:20px 0 10px}
+.legal-section p{font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+.legal-section ul,.legal-section ol{padding-left:0;list-style:none;margin-bottom:12px}
+.legal-section ul li,.legal-section ol li{font-size:14.5px;color:var(--muted);line-height:1.7;padding:5px 0 5px 22px;position:relative}
+.legal-section ul li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.legal-section ol{counter-reset:ol-counter}
+.legal-section ol li{counter-increment:ol-counter}
+.legal-section ol li::before{content:counter(ol-counter)'.';position:absolute;left:0;top:5px;font-size:13px;font-weight:700;color:var(--gold)}
+.legal-contact{background:var(--bg);border-radius:14px;padding:28px 28px;border:1px solid var(--border);margin-top:48px}
+.legal-contact h3{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.legal-contact p{font-size:14px;color:var(--muted);margin-bottom:6px}
+.legal-contact a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+
+/* TOC */
+.toc{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:40px}
+.toc h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.toc ol{counter-reset:toc;list-style:none;padding:0;columns:2;column-gap:32px}
+.toc ol li{counter-increment:toc;padding:3px 0;font-size:13px}
+.toc ol li::before{content:counter(toc)'. ';font-weight:700;color:var(--gold)}
+.toc ol li a{color:var(--navy);transition:color .15s}
+.toc ol li a:hover{color:var(--gold)}
+
+/* FOOTER */
+footer{background:var(--navy-deep);padding:36px 0;text-align:center}
+.footer-bottom-legal{font-size:13px;color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.footer-bottom-legal a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-bottom-legal a:hover{color:rgba(255,255,255,.9)}
+
+@media(max-width:680px){
+  .toc ol{columns:1}
+  .legal-hero{padding:40px 0 36px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="mp2jwz89-costimo-icon-annotated-light.webp" alt="COSTiMO" style="height:68px;width:auto">
+    </a>
+    <a href="/" class="nav-back">
+      <svg viewBox="0 0 14 14" fill="none"><path d="M9 1L3 7l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to home
+    </a>
+  </div>
+</nav>
+
+<div class="legal-hero">
+  <div class="wrap">
+    <p class="legal-eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <div class="legal-meta">
+      <div class="legal-meta-item">Effective date: <span>15 May 2026</span></div>
+      <div class="legal-meta-item">Website: <span>costimo.ai</span></div>
+      <div class="legal-meta-item">Application: <span>app.costimo.ai</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="legal-content">
+  <div class="wrap">
+
+    <p class="legal-intro">Costimo.ai is a construction project cost management platform designed to support estimation, budgeting, cost control, resource analysis, and related project-cost governance functions. This Privacy Policy explains how Costimo.ai collects, uses, stores, and protects information when users access our website, use our application, communicate with us, or submit information through our platform. By using Costimo.ai, you agree to the practices described in this Privacy Policy.</p>
+
+    <div class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#s1">Information We Collect</a></li>
+        <li><a href="#s2">How We Use Information</a></li>
+        <li><a href="#s3">Project Data &amp; Confidentiality</a></li>
+        <li><a href="#s4">Third-Party Service Providers</a></li>
+        <li><a href="#s5">Cookies</a></li>
+        <li><a href="#s6">Data Sharing &amp; Disclosure</a></li>
+        <li><a href="#s7">Data Security</a></li>
+        <li><a href="#s8">Data Retention</a></li>
+        <li><a href="#s9">User Rights</a></li>
+        <li><a href="#s10">Organisation Accounts</a></li>
+        <li><a href="#s11">International Processing</a></li>
+        <li><a href="#s12">Children's Privacy</a></li>
+        <li><a href="#s13">Changes to Policy</a></li>
+        <li><a href="#s14">Contact</a></li>
+      </ol>
+    </div>
+
+    <div class="legal-section" id="s1">
+      <h2><span class="sec-num">1</span> Information We Collect</h2>
+      <h3>1.1 Account and User Information</h3>
+      <p>When you create an account, access the application, or communicate with us, we may collect:</p>
+      <ul>
+        <li>Name, email address, company name, designation or role</li>
+        <li>Contact details and login / authentication information</li>
+        <li>User role, permissions, and access level within the platform</li>
+      </ul>
+      <h3>1.2 Project and Commercial Information</h3>
+      <p>Users may upload, create, or process project-related information within the platform, including:</p>
+      <ul>
+        <li>Project names, descriptions, estimates, and cost breakdowns</li>
+        <li>BOQ items, resource data, and budget information</li>
+        <li>Cost-control records and vendor or subcontractor rates</li>
+        <li>Labour, material, equipment, and productivity data</li>
+        <li>Attachments, documents, spreadsheets, or other project files</li>
+      </ul>
+      <p>Such data remains the responsibility of the user or subscribing organisation.</p>
+      <h3>1.3 Technical and Usage Information</h3>
+      <p>We may automatically collect certain technical information, including IP address, browser type, device and operating system, pages visited, login activity, usage and error logs, and date and time of access. This information is used for security, performance monitoring, troubleshooting, and improvement of the platform.</p>
+      <h3>1.4 Communication Information</h3>
+      <p>When you contact us by email, website form, or other communication channels, we may retain that information for support, enquiry handling, and business correspondence.</p>
+    </div>
+
+    <div class="legal-section" id="s2">
+      <h2><span class="sec-num">2</span> How We Use Information</h2>
+      <p>We may use the information collected for the following purposes:</p>
+      <ul>
+        <li>To provide access to Costimo.ai services and manage user accounts</li>
+        <li>To operate estimate, budget, and cost-control functions</li>
+        <li>To process, store, and retrieve user-created project data</li>
+        <li>To provide customer support and improve platform performance</li>
+        <li>To maintain security and prevent unauthorised access</li>
+        <li>To troubleshoot errors and communicate important updates</li>
+        <li>To comply with legal, regulatory, or contractual obligations</li>
+        <li>To protect our rights, platform, users, and business interests</li>
+      </ul>
+      <p>We do not sell user data.</p>
+    </div>
+
+    <div class="legal-section" id="s3">
+      <h2><span class="sec-num">3</span> Project Data and Confidentiality</h2>
+      <p>Costimo.ai may process commercially sensitive construction project information. We treat such information as confidential and use it only for the purpose of providing the platform services, support, maintenance, and security.</p>
+      <p>Users are responsible for ensuring that they have the necessary authority to upload, enter, process, or share any project, commercial, vendor, contractual, or third-party information through the platform.</p>
+      <p>Costimo.ai does not claim ownership over project data entered or uploaded by users.</p>
+    </div>
+
+    <div class="legal-section" id="s4">
+      <h2><span class="sec-num">4</span> Third-Party Service Providers</h2>
+      <p>Costimo.ai may use trusted third-party service providers for hosting, authentication, storage, database services, analytics, email, security, and application infrastructure. These providers may process information only as required to support the operation of Costimo.ai. Service categories may include:</p>
+      <ul>
+        <li>Cloud hosting and edge infrastructure</li>
+        <li>Authentication services and database / file storage</li>
+        <li>Email and communication tools</li>
+        <li>Error monitoring and analytics</li>
+        <li>Payment or subscription management, where applicable</li>
+      </ul>
+      <p>We take reasonable steps to use reputable service providers. However, each provider may have its own privacy and security practices.</p>
+    </div>
+
+    <div class="legal-section" id="s5">
+      <h2><span class="sec-num">5</span> Cookies and Similar Technologies</h2>
+      <p>Costimo.ai may use cookies or similar technologies for login sessions, authentication, user preferences, security, performance monitoring, and analytics. Users may control cookies through their browser settings. Disabling certain cookies may affect the proper functioning of the application.</p>
+    </div>
+
+    <div class="legal-section" id="s6">
+      <h2><span class="sec-num">6</span> Data Sharing and Disclosure</h2>
+      <p>We may share information only in limited circumstances:</p>
+      <ul>
+        <li>With authorised service providers supporting the platform</li>
+        <li>With the user's organisation or account administrators, where applicable</li>
+        <li>When required by law, regulation, legal process, or government request</li>
+        <li>To protect our legal rights or prevent fraud, misuse, or security threats</li>
+        <li>In connection with a merger, acquisition, or transfer of business assets</li>
+      </ul>
+      <p>We do not sell personal information or project data to third parties.</p>
+    </div>
+
+    <div class="legal-section" id="s7">
+      <h2><span class="sec-num">7</span> Data Security</h2>
+      <p>We use reasonable technical and organisational measures to protect user information and project data against unauthorised access, loss, misuse, alteration, or disclosure. These may include access controls, authentication, cloud security controls, encrypted transmission where supported, role-based permissions, secure infrastructure, and monitoring.</p>
+      <p>No digital platform, internet transmission, or storage system can be guaranteed to be completely secure. Users are responsible for maintaining the confidentiality of their login credentials and for controlling access within their organisation.</p>
+    </div>
+
+    <div class="legal-section" id="s8">
+      <h2><span class="sec-num">8</span> Data Retention</h2>
+      <p>We retain personal information and project data for as long as reasonably necessary to provide the services, maintain user accounts, comply with legal or contractual obligations, resolve disputes, enforce agreements, and support backup and disaster-recovery requirements. Users may request deletion of certain data, subject to legal, contractual, technical, and legitimate business requirements.</p>
+    </div>
+
+    <div class="legal-section" id="s9">
+      <h2><span class="sec-num">9</span> User Rights and Requests</h2>
+      <p>Depending on applicable law, users may have rights to access, correct, delete, or restrict processing of personal information, or to request a data export. Requests may be submitted using the contact details below. We may need to verify the identity and authority of the requester before acting.</p>
+    </div>
+
+    <div class="legal-section" id="s10">
+      <h2><span class="sec-num">10</span> Organisation Accounts and Admin Users</h2>
+      <p>Where Costimo.ai is used by a company or organisation, the organisation may control access to project data and user accounts. Account administrators may be able to view, manage, export, restrict, or delete data associated with their organisation's account. Users accessing Costimo.ai through an organisation should contact their authorised administrator for account-level requests.</p>
+    </div>
+
+    <div class="legal-section" id="s11">
+      <h2><span class="sec-num">11</span> International Data Processing</h2>
+      <p>Costimo.ai may use cloud-based infrastructure and service providers located in different jurisdictions. By using the platform, users acknowledge that information may be processed or stored outside their country of residence or business operation, subject to applicable laws and service-provider controls.</p>
+    </div>
+
+    <div class="legal-section" id="s12">
+      <h2><span class="sec-num">12</span> Children's Privacy</h2>
+      <p>Costimo.ai is intended for professional and business use. It is not intended for use by children or minors. We do not knowingly collect personal information from children.</p>
+    </div>
+
+    <div class="legal-section" id="s13">
+      <h2><span class="sec-num">13</span> Changes to this Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. The updated version will be posted on this page with a revised effective date. Continued use of Costimo.ai after publication of updates constitutes acceptance of the revised Privacy Policy.</p>
+    </div>
+
+    <div class="legal-section" id="s14">
+      <h2><span class="sec-num">14</span> Contact</h2>
+      <p>For privacy-related questions, requests, or concerns, please contact us.</p>
+    </div>
+
+    <div class="legal-contact">
+      <h3>Costimo.ai</h3>
+      <p>Email: <a href="mailto:admin@costimo.ai">admin@costimo.ai</a></p>
+      <p>Website: <a href="https://costimo.ai">costimo.ai</a></p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="max-width:1440px;padding:0 clamp(24px,5vw,80px)">
+    <div class="footer-bottom-legal">
+      <span style="color:rgba(255,255,255,.25)">© 2026 COSTiMO.ai. All rights reserved.</span>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/security.html">Security</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

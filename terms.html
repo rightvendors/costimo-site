@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — COSTiMO</title>
+<link rel="icon" type="image/svg+xml" href="movu8uza-costimo-favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0B1F3B;--navy-2:#142a4d;--navy-deep:#070f1e;
+  --gold:#C6A75E;--gold-bg:#FFFBEC;
+  --ink:#0B1F3B;--text:#1F2937;--muted:#62707F;--subtle:#94A3B8;
+  --bg:#F3F5F8;--card:#FFFFFF;--border:#D8DFE8;--divider:#ECF0F5;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--divider)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
+.nav-logo img{display:block}
+.nav-back{font-size:14px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:8px;border:1.5px solid var(--border);transition:color .2s,border-color .2s}
+.nav-back:hover{color:var(--ink);border-color:var(--navy)}
+.nav-back svg{width:14px;height:14px}
+.legal-hero{background:var(--navy);padding:56px 0 48px;position:relative;overflow:hidden}
+.legal-hero::before{content:'';position:absolute;top:-160px;right:-160px;width:500px;height:500px;background:radial-gradient(circle,rgba(198,167,94,.1) 0%,transparent 65%);pointer-events:none}
+.wrap{max-width:800px;margin:0 auto;padding:0 clamp(24px,5vw,48px)}
+.legal-eyebrow{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.legal-hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;color:#fff;line-height:1.15;letter-spacing:-.02em;margin-bottom:14px}
+.legal-meta{display:flex;flex-wrap:wrap;gap:20px}
+.legal-meta-item{font-size:13px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px}
+.legal-meta-item span{color:rgba(255,255,255,.75);font-weight:500}
+.legal-content{background:#fff;padding:56px 0 72px}
+.legal-intro{font-size:16px;color:var(--muted);line-height:1.75;margin-bottom:48px;padding-bottom:32px;border-bottom:2px solid var(--divider)}
+.legal-section{margin-bottom:44px}
+.legal-section h2{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--divider);display:flex;align-items:center;gap:12px}
+.legal-section h2 .sec-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.3);border-radius:7px;font-size:12px;font-weight:800;color:var(--gold);flex-shrink:0}
+.legal-section h3{font-size:14.5px;font-weight:700;color:var(--ink);margin:20px 0 10px}
+.legal-section p{font-size:14.5px;color:var(--muted);line-height:1.75;margin-bottom:12px}
+.legal-section ul,.legal-section ol{padding-left:0;list-style:none;margin-bottom:12px}
+.legal-section ul li,.legal-section ol li{font-size:14.5px;color:var(--muted);line-height:1.7;padding:5px 0 5px 22px;position:relative}
+.legal-section ul li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+.legal-section ol{counter-reset:ol-counter}
+.legal-section ol li{counter-increment:ol-counter}
+.legal-section ol li::before{content:counter(ol-counter)'.';position:absolute;left:0;top:5px;font-size:13px;font-weight:700;color:var(--gold)}
+.notice{background:rgba(198,167,94,.08);border:1px solid rgba(198,167,94,.3);border-left:3px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 18px;margin-bottom:16px}
+.notice p{margin-bottom:0;font-size:14px;color:var(--ink)}
+.legal-contact{background:var(--bg);border-radius:14px;padding:28px;border:1px solid var(--border);margin-top:48px}
+.legal-contact h3{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.legal-contact p{font-size:14px;color:var(--muted);margin-bottom:6px}
+.legal-contact a{color:var(--navy);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+.toc{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:24px 28px;margin-bottom:40px}
+.toc h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+.toc ol{counter-reset:toc;list-style:none;padding:0;columns:2;column-gap:32px}
+.toc ol li{counter-increment:toc;padding:3px 0;font-size:13px}
+.toc ol li::before{content:counter(toc)'. ';font-weight:700;color:var(--gold)}
+.toc ol li a{color:var(--navy);transition:color .15s}
+.toc ol li a:hover{color:var(--gold)}
+footer{background:var(--navy-deep);padding:36px 0;text-align:center}
+.footer-bottom-legal{font-size:13px;color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap}
+.footer-bottom-legal a{color:rgba(255,255,255,.5);transition:color .2s}
+.footer-bottom-legal a:hover{color:rgba(255,255,255,.9)}
+@media(max-width:680px){.toc ol{columns:1}.legal-hero{padding:40px 0 36px}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <img src="mp2jwz89-costimo-icon-annotated-light.webp" alt="COSTiMO" style="height:68px;width:auto">
+    </a>
+    <a href="/" class="nav-back">
+      <svg viewBox="0 0 14 14" fill="none"><path d="M9 1L3 7l6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to home
+    </a>
+  </div>
+</nav>
+
+<div class="legal-hero">
+  <div class="wrap">
+    <p class="legal-eyebrow">Legal</p>
+    <h1>Terms of Service</h1>
+    <div class="legal-meta">
+      <div class="legal-meta-item">Effective date: <span>15 May 2026</span></div>
+      <div class="legal-meta-item">Website: <span>costimo.ai</span></div>
+      <div class="legal-meta-item">Application: <span>app.costimo.ai</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="legal-content">
+  <div class="wrap">
+
+    <p class="legal-intro">These Terms of Service govern access to and use of Costimo.ai, including the website, application, tools, features, content, and related services. By accessing or using Costimo.ai, you agree to these Terms. If you are using Costimo.ai on behalf of a company or organisation, you represent that you have authority to bind that organisation to these Terms.</p>
+
+    <div class="toc">
+      <h4>Contents</h4>
+      <ol>
+        <li><a href="#s1">About Costimo.ai</a></li>
+        <li><a href="#s2">User Accounts</a></li>
+        <li><a href="#s3">Organisation Use</a></li>
+        <li><a href="#s4">User &amp; Project Data</a></li>
+        <li><a href="#s5">Accuracy of Outputs</a></li>
+        <li><a href="#s6">Acceptable Use</a></li>
+        <li><a href="#s7">Confidentiality</a></li>
+        <li><a href="#s8">Intellectual Property</a></li>
+        <li><a href="#s9">Standard Libraries</a></li>
+        <li><a href="#s10">Subscription &amp; Fees</a></li>
+        <li><a href="#s11">Availability &amp; Changes</a></li>
+        <li><a href="#s12">Third-Party Services</a></li>
+        <li><a href="#s13">Limitation of Liability</a></li>
+        <li><a href="#s14">Indemnity</a></li>
+        <li><a href="#s15">Termination</a></li>
+        <li><a href="#s16">Governing Law</a></li>
+        <li><a href="#s17">Changes to Terms</a></li>
+        <li><a href="#s18">Contact</a></li>
+      </ol>
+    </div>
+
+    <div class="legal-section" id="s1">
+      <h2><span class="sec-num">1</span> About Costimo.ai</h2>
+      <p>Costimo.ai is a construction project cost platform intended to support:</p>
+      <ul>
+        <li>Cost estimation, resource analysis, and budget preparation</li>
+        <li>Budget conversion, control, and cost tracking</li>
+        <li>Variance monitoring and project cost governance</li>
+        <li>Related construction cost-management workflows</li>
+      </ul>
+      <div class="notice">
+        <p><strong>Important:</strong> Costimo.ai is a professional support tool. It does not replace the independent judgement of qualified estimators, engineers, quantity surveyors, project managers, commercial managers, accountants, or legal advisors.</p>
+      </div>
+    </div>
+
+    <div class="legal-section" id="s2">
+      <h2><span class="sec-num">2</span> User Accounts</h2>
+      <p>Users may be required to create an account to access the platform. Users are responsible for:</p>
+      <ul>
+        <li>Providing accurate account information</li>
+        <li>Maintaining confidentiality of login credentials</li>
+        <li>Ensuring that only authorised persons access the account</li>
+        <li>Managing user roles and permissions within their organisation</li>
+        <li>Promptly notifying us of any unauthorised access or suspected breach</li>
+      </ul>
+      <p>We may suspend or restrict access if we reasonably believe that an account is being misused or accessed in an unauthorised manner.</p>
+    </div>
+
+    <div class="legal-section" id="s3">
+      <h2><span class="sec-num">3</span> Organisation Use</h2>
+      <p>Where an account is created or used for a company, contractor, consultant, client, or other organisation, the organisation is responsible for all activities conducted through its authorised users. The organisation shall ensure that its users comply with these Terms.</p>
+    </div>
+
+    <div class="legal-section" id="s4">
+      <h2><span class="sec-num">4</span> User Data and Project Data</h2>
+      <p>Users may create, upload, import, or process project data, estimates, budgets, resources, cost records, vendor rates, documents, and related information. Users retain responsibility for the accuracy, legality, completeness, and reliability of such data.</p>
+      <p>Costimo.ai does not claim ownership of user-created project data. However, users grant Costimo.ai the limited right to process, host, store, transmit, display, and back up such data as required to provide the services.</p>
+    </div>
+
+    <div class="legal-section" id="s5">
+      <h2><span class="sec-num">5</span> Accuracy of Estimates and Outputs</h2>
+      <p>Costimo.ai may generate calculations, reports, cost summaries, rate-analysis outputs, budget conversions, cost-control dashboards, or other project-cost information. All such outputs are provided as decision-support information only.</p>
+      <p>Users are responsible for independently verifying all quantities, rates, productivity assumptions, resource requirements, taxes, overheads, margins, contractual provisions, local market conditions, project-specific risks, and applicable standards before relying on any platform output.</p>
+      <div class="notice">
+        <p><strong>Costimo.ai shall not be responsible for commercial loss, tender loss, under-estimation, over-estimation, incorrect budgeting, project loss, contractual dispute, or business decision made based on unverified platform outputs.</strong></p>
+      </div>
+    </div>
+
+    <div class="legal-section" id="s6">
+      <h2><span class="sec-num">6</span> Acceptable Use</h2>
+      <p>Users shall not:</p>
+      <ul>
+        <li>Use the platform for unlawful purposes</li>
+        <li>Attempt unauthorised access to systems, data, or accounts</li>
+        <li>Interfere with platform security or performance</li>
+        <li>Upload malicious code, viruses, or harmful files</li>
+        <li>Reverse engineer, copy, or misuse the platform</li>
+        <li>Use automated scraping or abusive traffic</li>
+        <li>Upload data without the right or authority to do so</li>
+        <li>Violate intellectual-property rights or confidentiality obligations</li>
+        <li>Use the platform in a manner that may damage Costimo.ai or other users</li>
+      </ul>
+    </div>
+
+    <div class="legal-section" id="s7">
+      <h2><span class="sec-num">7</span> Confidentiality</h2>
+      <p>Users may process confidential commercial and project information through Costimo.ai. Costimo.ai will take reasonable steps to protect such information. Users must ensure that access rights are properly controlled within their organisation and that confidential information is uploaded only where authorised.</p>
+    </div>
+
+    <div class="legal-section" id="s8">
+      <h2><span class="sec-num">8</span> Intellectual Property</h2>
+      <p>Costimo.ai, including its software, interface, design, workflows, templates, databases, standard libraries, logos, trademarks, documentation, and proprietary methods, is owned by Costimo.ai or its licensors. Users shall not copy, reproduce, modify, distribute, sell, sublicense, or create derivative works from Costimo.ai except as expressly permitted. User-created project data remains the responsibility of the user or subscribing organisation.</p>
+    </div>
+
+    <div class="legal-section" id="s9">
+      <h2><span class="sec-num">9</span> Standard Libraries and Reference Data</h2>
+      <p>Costimo.ai may provide standard resource libraries, assemblies, templates, rate-analysis structures, productivity references, or sample cost data. Such data is provided for reference and convenience only. Users must review, validate, and adjust all such information before use in actual tenders, budgets, contracts, procurement, execution, or cost-control decisions.</p>
+    </div>
+
+    <div class="legal-section" id="s10">
+      <h2><span class="sec-num">10</span> Subscription, Fees, and Payments</h2>
+      <p>Certain features may be offered under free, trial, paid, subscription, or enterprise plans. Where fees apply, users agree to pay the applicable charges in accordance with the selected plan, invoice, proposal, or agreement. Unless expressly agreed otherwise, fees are non-refundable once services are activated or made available. Additional commercial terms may be agreed separately in writing for enterprise customers.</p>
+    </div>
+
+    <div class="legal-section" id="s11">
+      <h2><span class="sec-num">11</span> Availability and Changes</h2>
+      <p>We aim to maintain reliable access to Costimo.ai. However, we do not guarantee uninterrupted, error-free, or permanent availability. We may modify, suspend, improve, restrict, or discontinue features from time to time for maintenance, security, business, legal, or technical reasons.</p>
+    </div>
+
+    <div class="legal-section" id="s12">
+      <h2><span class="sec-num">12</span> Third-Party Services</h2>
+      <p>Costimo.ai may integrate with or rely upon third-party services for hosting, authentication, storage, analytics, payment, communication, artificial intelligence, or other infrastructure functions. We are not responsible for outages, changes, data handling, or service limitations of third-party providers beyond our reasonable control.</p>
+    </div>
+
+    <div class="legal-section" id="s13">
+      <h2><span class="sec-num">13</span> Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, Costimo.ai shall not be liable for:</p>
+      <ul>
+        <li>Loss of profit, revenue, or business opportunity</li>
+        <li>Loss of tender or contract, or project cost overrun</li>
+        <li>Incorrect estimate, budget, or cost-control output</li>
+        <li>Loss of data or indirect, incidental, special, or consequential damages</li>
+        <li>Claims arising from user reliance on unverified platform outputs</li>
+      </ul>
+      <p>The platform is provided on an "as available" and "as is" basis, subject to the express terms agreed with the user or organisation.</p>
+    </div>
+
+    <div class="legal-section" id="s14">
+      <h2><span class="sec-num">14</span> Indemnity</h2>
+      <p>Users agree to indemnify and hold Costimo.ai harmless from claims, damages, liabilities, costs, or expenses arising from misuse of the platform, breach of these Terms, upload or use of unauthorised data, violation of third-party rights, reliance on unverified outputs, or unauthorised access caused by failure to protect credentials or permissions.</p>
+    </div>
+
+    <div class="legal-section" id="s15">
+      <h2><span class="sec-num">15</span> Termination or Suspension</h2>
+      <p>We may suspend or terminate access where these Terms are breached, fees remain unpaid, the platform is misused, security risks are identified, or continued access may expose Costimo.ai or other users to legal, operational, or security risk. Users may discontinue use of the platform at any time, subject to applicable subscription or contractual obligations.</p>
+    </div>
+
+    <div class="legal-section" id="s16">
+      <h2><span class="sec-num">16</span> Governing Law</h2>
+      <p>These Terms shall be governed by the laws of India, unless otherwise agreed in a separate written contract with the customer. For enterprise or international customers, governing law and dispute resolution may be separately agreed in the applicable proposal, order form, subscription agreement, or service contract.</p>
+    </div>
+
+    <div class="legal-section" id="s17">
+      <h2><span class="sec-num">17</span> Changes to Terms</h2>
+      <p>We may update these Terms of Service from time to time. Updated Terms will be posted on this page with a revised effective date. Continued use of Costimo.ai after publication of updated Terms constitutes acceptance of the revised Terms.</p>
+    </div>
+
+    <div class="legal-section" id="s18">
+      <h2><span class="sec-num">18</span> Contact</h2>
+      <p>For questions regarding these Terms, please contact us.</p>
+    </div>
+
+    <div class="legal-contact">
+      <h3>Costimo.ai</h3>
+      <p>Email: <a href="mailto:admin@costimo.ai">admin@costimo.ai</a></p>
+      <p>Website: <a href="https://costimo.ai">costimo.ai</a></p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="wrap" style="max-width:1440px;padding:0 clamp(24px,5vw,80px)">
+    <div class="footer-bottom-legal">
+      <span style="color:rgba(255,255,255,.25)">© 2026 COSTiMO.ai. All rights reserved.</span>
+      <a href="/privacy.html">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="/security.html">Security</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
