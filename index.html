@@ -334,18 +334,8 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 .pt-item p{font-size:12.5px;color:var(--muted);line-height:1.55}
 .pt-link{font-size:14px;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:7px;margin-top:4px;transition:gap .2s}
 .pt-link:hover{gap:11px}
-.pt-right{background:linear-gradient(150deg,#FAF4E8 0%,#EDE3C4 100%);position:relative;display:flex;align-items:center;justify-content:center;padding:56px 40px}
-.pt-screen-area{position:relative;width:100%}
-.pt-screens{display:grid;grid-template-areas:'stack';border-radius:12px;overflow:hidden;box-shadow:0 20px 52px -16px rgba(11,31,59,.28);border:1px solid rgba(255,255,255,.5)}
-.pt-screen-slide{grid-area:stack;opacity:0;transition:opacity .65s ease}
-.pt-screen-slide.active{opacity:1}
-.pt-screen-slide img{width:100%;display:block}
-.pt-chip{position:absolute;background:#fff;border-radius:10px;padding:10px 14px;box-shadow:0 10px 28px -8px rgba(11,31,59,.22);display:flex;align-items:center;gap:10px;z-index:2;white-space:nowrap}
-.pt-chip i{width:15px;height:15px;color:var(--gold);flex-shrink:0}
-.pt-chip-text{font-size:12.5px;font-weight:700;color:var(--ink)}
-.pt-chip-sub{font-size:10.5px;color:var(--muted);margin-top:1px}
-.pt-chip-top{top:16px;left:16px}
-.pt-chip-br{bottom:16px;right:16px}
+.pt-right{background:linear-gradient(150deg,#0d2040 0%,#152e54 100%);position:relative;display:flex;align-items:center;justify-content:center;padding:32px 32px}
+.pt-video{width:100%;display:block;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px -12px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.12)}
 .pt-right-dark{background:var(--navy)!important}
 .gs-form-card{background:#fff;border-radius:16px;padding:28px;width:100%;max-width:380px;box-shadow:0 24px 56px -16px rgba(0,0,0,.35)}
 .gs-form-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--divider)}
@@ -627,15 +617,9 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           <a href="#contact" class="pt-link">Explore estimation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="pt-right">
-          <div class="pt-chip pt-chip-top"><i data-lucide="layers"></i><div><div class="pt-chip-text">352 m³ · backfill · sandy fill</div></div></div>
-          <div class="pt-screen-area">
-            <div class="pt-screens" id="screens-estimate">
-              <div class="pt-screen-slide active"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO WBS estimate view"></div>
-              <div class="pt-screen-slide"><img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO assembly view"></div>
-              <div class="pt-screen-slide"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO WBS estimate view"></div>
-            </div>
-          </div>
-          <div class="pt-chip pt-chip-br"><i data-lucide="lock"></i><div><div class="pt-chip-text">Rev0 · Locked</div><div class="pt-chip-sub">31 / 31 priced</div></div></div>
+          <video class="pt-video" id="vid-estimate" autoplay muted loop playsinline controls>
+            <source src="platform-demo.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -656,13 +640,9 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           <a href="#contact" class="pt-link">Explore budgeting <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="pt-right">
-          <div class="pt-chip pt-chip-top"><i data-lucide="check-circle"></i><div><div class="pt-chip-text">Awarded · Baseline · Rev0 approved</div></div></div>
-          <div class="pt-screen-area">
-            <div class="pt-screens">
-              <div class="pt-screen-slide active"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO budget view"></div>
-            </div>
-          </div>
-          <div class="pt-chip pt-chip-br"><i data-lucide="trending-up"></i><div><div class="pt-chip-text">₹54,71,53,351</div><div class="pt-chip-sub">Approved project budget</div></div></div>
+          <video class="pt-video" id="vid-budget" autoplay muted loop playsinline controls>
+            <source src="platform-demo.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -683,15 +663,9 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           <a href="#contact" class="pt-link">Explore cost control <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
         <div class="pt-right">
-          <div class="pt-chip pt-chip-top"><i data-lucide="trending-up"></i><div><div class="pt-chip-text">+2.4% · vs. approved budget</div></div></div>
-          <div class="pt-screen-area">
-            <div class="pt-screens" id="screens-cost-control">
-              <div class="pt-screen-slide active"><img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO cost control view"></div>
-              <div class="pt-screen-slide"><img src="mp2htauu-Screenshot_WBS_homepage.jpeg" alt="COSTiMO WBS view"></div>
-              <div class="pt-screen-slide"><img src="mp2htau1-Screenshot_assembly_homepage.jpeg" alt="COSTiMO cost control view"></div>
-            </div>
-          </div>
-          <div class="pt-chip pt-chip-br"><i data-lucide="eye"></i><div><div class="pt-chip-text">₹12,662.24</div><div class="pt-chip-sub">Direct cost · live</div></div></div>
+          <video class="pt-video" id="vid-cost-control" autoplay muted loop playsinline controls>
+            <source src="platform-demo.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -1412,23 +1386,10 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 (function(){
   var tabs = document.querySelectorAll('.pt-tab');
   var panels = document.querySelectorAll('.pt-panel');
-  var timers = {};
 
-  function cycleScreens(id, interval){
-    var el = document.getElementById(id);
-    if(!el) return null;
-    var slides = el.querySelectorAll('.pt-screen-slide');
-    var i = 0;
-    return setInterval(function(){
-      slides[i].classList.remove('active');
-      i = (i+1) % slides.length;
-      slides[i].classList.add('active');
-    }, interval || 3200);
-  }
-
-  function stopAll(){
-    Object.values(timers).forEach(clearInterval);
-    timers = {};
+  function playPanelVideo(panel){
+    var vid = panel.querySelector('video.pt-video');
+    if(vid){ vid.play().catch(function(){}); }
   }
 
   function activateTab(tab){
@@ -1439,17 +1400,16 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     var panel = document.getElementById('panel-'+target);
     panel.classList.remove('hidden');
     lucide.createIcons();
-    stopAll();
-    if(target==='estimate')     timers.est  = cycleScreens('screens-estimate', 3000);
-    if(target==='cost-control') timers.cc   = cycleScreens('screens-cost-control', 3000);
+    playPanelVideo(panel);
   }
 
   tabs.forEach(function(tab){
     tab.addEventListener('click', function(){ activateTab(tab); });
   });
 
-  /* start estimate cycling on load */
-  timers.est = cycleScreens('screens-estimate', 3000);
+  /* play video in initial active panel */
+  var initPanel = document.getElementById('panel-estimate');
+  if(initPanel){ playPanelVideo(initPanel); }
 })();
 
 /* ── Scroll reveal ── */
