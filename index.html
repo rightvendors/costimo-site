@@ -190,35 +190,57 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 .feat-floater-sub{font-size:10.5px;color:var(--muted);margin-top:1px}
 
 /* CONSULTANCY */
-.svc-header{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px}
-.svc-head{flex:1}
-.svc-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
-.svc-head h2 em{font-style:normal;color:var(--gold)}
-.svc-head .lead{font-size:17px;color:var(--text);font-weight:500;margin-bottom:12px}
-.svc-head p{font-size:14.5px;color:var(--muted);line-height:1.7;max-width:580px}
-.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--navy);border-radius:10px;padding:12px 24px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
-.btn-outline:hover{background:var(--navy);color:#fff}
-.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.svc-card{background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:30px 28px;transition:border-color .2s,transform .2s,box-shadow .2s}
-.svc-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:var(--shadow-card)}
-.svc-card-icon{width:46px;height:46px;border-radius:12px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.svc-card-icon i{width:21px;height:21px;color:var(--gold)}
-.svc-card h4{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:10px}
-.svc-card p{font-size:13.5px;color:var(--muted);line-height:1.65}
-
-/* UNIFIED */
-.section-dark{background:var(--navy);padding:88px 0}
-.unified{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:80px;background:linear-gradient(135deg,var(--navy),#152e54);border-radius:18px;position:relative;overflow:hidden}
-.unified::before{content:'';position:absolute;top:-120px;right:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(198,167,94,.14) 0%,transparent 65%);pointer-events:none}
-.unified-left h2{font-size:clamp(24px,2.8vw,36px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.025em;margin-bottom:20px}
-.unified-left h2 em{font-style:normal;color:var(--gold)}
-.unified-left .eyebrow{color:var(--gold)}
-.unified-left p{font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:14px}
-.unified-right{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-content:start;position:relative;z-index:1}
-.unified-block{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:22px 20px;backdrop-filter:blur(8px)}
-.unified-block i{width:20px;height:20px;color:var(--gold);margin-bottom:12px}
-.unified-block h4{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:7px}
-.unified-block p{font-size:12.5px;color:rgba(255,255,255,.55);line-height:1.6}
+/* CONSULTANCY (cs-section) */
+.cs-section{--cs-ink:#0B1F3B;--cs-ink-2:#1B2A4A;--cs-text:#1F2937;--cs-muted:#62707F;--cs-gold:#C6A75E;--cs-gold-hover:#B8963F;--cs-gold-light:#F5EDDA;--cs-gold-bg:#FFFBEC;--cs-bg-page:#F3F5F8;--cs-bg-card:#FFFFFF;--cs-bg-subtle:#F5F7FB;--cs-bg-sand:#FAF6EC;--cs-border:#D8DFE8;--cs-border-sub:#ECF0F5;--cs-shadow-card:0 1px 0 rgba(11,31,59,.04),0 1px 2px rgba(11,31,59,.04);--cs-shadow-card-hover:0 6px 24px rgba(11,31,59,.08),0 1px 0 rgba(11,31,59,.04);--cs-shadow-gold:0 4px 20px rgba(198,167,94,.22);--cs-shadow-focus:0 0 0 3px rgba(198,167,94,.20);--cs-ease:cubic-bezier(0.2,0.8,0.2,1);background:#fff;-webkit-font-smoothing:antialiased}
+.cs-section *,.cs-section *::before,.cs-section *::after{box-sizing:border-box}
+.cs-section p{margin:0}
+.cs-section h1,.cs-section h2,.cs-section h3{margin:0;color:var(--cs-ink);letter-spacing:-0.025em}
+.cs-wrap{max-width:1200px;margin:0 auto;padding:56px 20px 64px}
+.cs-eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 'Inter',sans-serif;text-transform:uppercase;letter-spacing:.18em;color:var(--cs-muted)}
+.cs-eyebrow::before{content:'';width:22px;height:1px;background:var(--cs-gold)}
+.cs-hero{display:grid;grid-template-columns:1fr;gap:18px;padding-bottom:28px;border-bottom:1px solid var(--cs-border-sub);margin-bottom:28px}
+.cs-hero-headline{font-weight:700;font-size:clamp(32px,6vw,56px);line-height:1.04;letter-spacing:-.035em;color:var(--cs-ink);max-width:13ch}
+.cs-hero-headline em{font-style:normal;color:var(--cs-gold)}
+.cs-hero-sub{font-size:clamp(15px,1.6vw,17px);line-height:1.55;color:var(--cs-muted);max-width:56ch}
+.cs-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:6px}
+.cs-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:10px;font:600 14px/1 'Inter',sans-serif;letter-spacing:-.005em;text-decoration:none;border:0;cursor:pointer;transition:background var(--cs-ease) 160ms,transform 80ms ease,box-shadow var(--cs-ease) 160ms}
+.cs-btn:active:not(:disabled){transform:scale(0.98)}
+.cs-btn:focus-visible{outline:0;box-shadow:var(--cs-shadow-focus)}
+.cs-btn-primary{background:var(--cs-gold);color:var(--cs-ink);box-shadow:var(--cs-shadow-gold)}
+.cs-btn-primary:hover{background:var(--cs-gold-hover)}
+.cs-btn-ghost{background:transparent;color:var(--cs-ink);font-weight:600;padding:13px 6px}
+.cs-btn-ghost:hover{color:var(--cs-gold-hover)}
+.cs-btn-ghost .cs-icon-chev{transition:transform 160ms var(--cs-ease)}
+.cs-btn-ghost:hover .cs-icon-chev{transform:translateX(3px)}
+.cs-grid{display:grid;grid-template-columns:1fr;gap:14px}
+.cs-card{position:relative;background:var(--cs-bg-card);border:1px solid var(--cs-border-sub);border-radius:14px;overflow:hidden;box-shadow:var(--cs-shadow-card);transition:border-color 160ms var(--cs-ease),box-shadow 200ms var(--cs-ease),transform 200ms var(--cs-ease);cursor:default}
+.cs-card:hover{border-color:rgba(198,167,94,.55);box-shadow:var(--cs-shadow-card-hover)}
+.cs-banner{position:relative;background:linear-gradient(135deg,#0B1F3B 0%,#14305A 100%);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:14px;overflow:hidden}
+.cs-banner::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'><path d='M30 22v16M22 30h16'/></g></svg>");background-size:60px 60px;pointer-events:none}
+.cs-banner::after{content:'';position:absolute;left:18px;right:18px;bottom:0;height:2px;background:var(--cs-gold);transform:scaleX(0.18);transform-origin:left center;transition:transform 320ms var(--cs-ease)}
+.cs-card:hover .cs-banner::after{transform:scaleX(1)}
+.cs-icon-tile{position:relative;flex:0 0 42px;width:42px;height:42px;border-radius:9px;background:linear-gradient(180deg,rgba(198,167,94,.22),rgba(198,167,94,.12));border:1px solid rgba(198,167,94,.45);display:inline-flex;align-items:center;justify-content:center;color:var(--cs-gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
+.cs-icon-tile svg{width:20px;height:20px}
+.cs-banner-text{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
+.cs-banner-num{font:600 10.5px/1 'Inter',sans-serif;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.cs-banner-punch{font:700 16px/1.2 'Inter',sans-serif;letter-spacing:-.02em;color:#fff}
+.cs-banner-arrow{flex:0 0 auto;width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,.10);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:color 160ms var(--cs-ease),border-color 160ms var(--cs-ease),background 160ms var(--cs-ease)}
+.cs-card:hover .cs-banner-arrow{color:var(--cs-gold);border-color:rgba(198,167,94,.55);background:rgba(198,167,94,.10)}
+.cs-banner-arrow svg{width:16px;height:16px}
+.cs-body{padding:18px 18px 20px}
+.cs-card-title{font:700 17px/1.3 'Inter',sans-serif;letter-spacing:-.02em;color:var(--cs-ink)}
+.cs-card-desc{margin-top:8px;font:400 14.5px/1.6 'Inter',sans-serif;color:var(--cs-muted)}
+.cs-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.cs-chip{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 'Inter',sans-serif;color:var(--cs-ink-2);background:var(--cs-bg-subtle);border:1px solid var(--cs-border-sub);padding:6px 10px;border-radius:999px;letter-spacing:-.005em;white-space:nowrap}
+.cs-chip::before{content:'';width:5px;height:5px;border-radius:999px;background:var(--cs-gold);opacity:.85}
+.cs-closing{margin-top:28px;background:linear-gradient(135deg,#0B1F3B 0%,#14305A 70%,#1B3B6B 100%);border-radius:16px;padding:26px 22px;color:#fff;position:relative;overflow:hidden}
+.cs-closing::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'><path d='M30 22v16M22 30h16'/></g></svg>");background-size:60px 60px;pointer-events:none}
+.cs-closing-inner{position:relative;display:flex;flex-direction:column;gap:14px}
+.cs-closing-eyebrow{font:600 11px/1 'Inter',sans-serif;letter-spacing:.20em;text-transform:uppercase;color:var(--cs-gold);display:inline-flex;align-items:center;gap:10px}
+.cs-closing-eyebrow::before{content:'';width:22px;height:1px;background:var(--cs-gold)}
+.cs-section .cs-closing-headline{font:700 22px/1.2 'Inter',sans-serif;letter-spacing:-.025em;color:#fff;max-width:22ch}
+.cs-closing-sub{font:400 14px/1.55 'Inter',sans-serif;color:rgba(255,255,255,.65);max-width:50ch}
+.cs-closing-cta{margin-top:4px;align-self:flex-start}
 
 /* HOW IT WORKS */
 .flow-head{text-align:center;max-width:620px;margin:0 auto 56px}
@@ -396,9 +418,9 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   .feat.reversed .feat-screen-wrap{order:-1}
   .platform-grid{grid-template-columns:repeat(2,1fr)}
   .pfeat.span2{grid-column:span 2}
-  .poscards,.svc-grid{grid-template-columns:repeat(2,1fr)}
+  .poscards{grid-template-columns:repeat(2,1fr)}
+  .cs-grid{grid-template-columns:1fr 1fr;gap:20px}
   .flow,.why-grid,.uc-grid{grid-template-columns:1fr}
-  .unified{grid-template-columns:1fr;padding:48px}
   .footer-top{grid-template-columns:1fr;gap:40px}
   .footer-cols{grid-template-columns:repeat(2,1fr)}
   .pt-panel-inner{grid-template-columns:1fr}
@@ -410,13 +432,41 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   .nav-links a:not(.nav-cta):not(.nav-signin){display:none}
   .platform-grid,.poscards,.why-grid,.uc-grid{grid-template-columns:1fr}
   .pfeat.span2{grid-column:span 1}
-  .svc-header{flex-direction:column;align-items:flex-start;gap:20px}
+  .cs-grid{grid-template-columns:1fr}
+  .cs-wrap{padding:56px 22px 64px}
   .footer-cols{grid-template-columns:1fr 1fr}
   .section{padding:64px 0}
   .pt-left{padding:32px 24px}
   .pt-tab{padding:8px 14px;font-size:13px}
   .why-grid{grid-template-columns:1fr 1fr}
   .flow{grid-template-columns:1fr}
+}
+@media(min-width:760px){
+  .cs-wrap{padding:80px 32px 96px}
+  .cs-hero{grid-template-columns:1.15fr 1fr;grid-template-rows:auto 1fr auto;column-gap:64px;row-gap:16px;padding-bottom:40px;margin-bottom:40px}
+  .cs-hero .cs-eyebrow{grid-column:1;grid-row:1;align-self:start}
+  .cs-hero-headline{grid-column:1;grid-row:2/4;align-self:end}
+  .cs-hero-sub{grid-column:2;grid-row:1/3;align-self:end}
+  .cs-hero-actions{grid-column:2;grid-row:3;align-self:end;margin-top:0}
+  .cs-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .cs-card-title{font-size:18px}
+  .cs-body{padding:20px 22px 22px}
+  .cs-banner{padding:18px 22px}
+  .cs-closing{padding:36px 40px;margin-top:36px}
+  .cs-closing-inner{flex-direction:row;align-items:center;justify-content:space-between;gap:32px}
+  .cs-section .cs-closing-headline{font-size:26px}
+  .cs-closing-cta{margin-top:0;align-self:center;flex:0 0 auto}
+  .cs-closing-text{flex:1 1 auto}
+}
+@media(min-width:1024px){
+  .cs-wrap{padding:96px 40px 112px}
+  .cs-banner-punch{font-size:17px}
+  .cs-card-title{font-size:19px}
+  .cs-icon-tile{width:46px;height:46px;flex-basis:46px}
+  .cs-icon-tile svg{width:22px;height:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  .cs-section *,.cs-section *::before,.cs-section *::after{transition:none!important;animation:none!important}
 }
 </style>
 </head>
@@ -689,75 +739,158 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 </section>
 
 <!-- CONSULTANCY -->
-<section class="section" id="consultancy" style="background:#fff">
-  <div class="wrap">
-    <div class="svc-header">
-      <div class="svc-head">
-        <p class="eyebrow">Consultancy</p>
-        <h2>Construction <em>project consultancy</em>.</h2>
-        <p class="lead">Advisory support for better contractor decisions, contract discipline, and cost governance.</p>
-        <p>COSTiMO provides specialist consultancy services for construction organisations that require practical, contractually sound, and execution-oriented support. The consultancy offering complements the platform by helping companies establish the right processes — before digitising them.</p>
-      </div>
-      <button class="btn-outline" data-modal="Consultancy">Discuss requirement</button>
-    </div>
-    <div class="svc-grid">
-      <div class="svc-card">
-        <div class="svc-card-icon"><i data-lucide="shield-check"></i></div>
-        <h4>Contractor vetting &amp; pre-qualification</h4>
-        <p>Evaluate contractors on financial capacity, technical capability, execution history, safety systems, manpower, equipment, litigation profile, and project suitability — before award.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-card-icon"><i data-lucide="scroll-text"></i></div>
-        <h4>Contract governance</h4>
-        <p>Develop and review contract conditions, SOPs, approval workflows, variation procedures, payment controls, and dispute prevention mechanisms.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-card-icon"><i data-lucide="bar-chart-3"></i></div>
-        <h4>Cost control frameworks</h4>
-        <p>Implement project cost codes, budget structures, commitment tracking, cost reporting formats, variance review procedures, and management dashboards.</p>
-      </div>
-      <div class="svc-card">
-        <div class="svc-card-icon"><i data-lucide="monitor"></i></div>
-        <h4>Custom construction web apps</h4>
-        <p>Design and develop practical web-based tools for vendor management, project estimation, cost tracking, approvals, document workflows, and reporting.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="cs-section" id="consultancy" aria-labelledby="cs-heading">
+  <div class="cs-wrap">
 
-<!-- UNIFIED VALUE -->
-<section class="section-dark">
-  <div class="wrap">
-    <div class="unified">
-      <div class="unified-left" style="position:relative;z-index:1">
-        <p class="eyebrow">One brand, two halves</p>
-        <h2>Cost platform <em>and</em> project governance.</h2>
-        <p>Construction cost control does not start after expenses are incurred. It begins with a structured estimate, continues through an approved budget, and succeeds only when actual project costs are measured against a clear baseline.</p>
-        <p>COSTiMO brings these stages together through a combination of software and consultancy. The platform provides the structure, dashboards, and workflow. The consultancy provides the professional judgement, governance framework, and implementation support.</p>
+    <!-- Hero -->
+    <header class="cs-hero sr">
+      <span class="cs-eyebrow">Consultancy</span>
+
+      <h1 class="cs-hero-headline" id="cs-heading">
+        Process first.<br />
+        <em>Software second.</em>
+      </h1>
+
+      <p class="cs-hero-sub">
+        Specialist advisory for construction organisations that need practical, contractually-sound, execution-oriented support — before they digitise it on the platform.
+      </p>
+
+      <div class="cs-hero-actions">
+        <button class="cs-btn cs-btn-primary" data-modal="Consultancy">
+          Discuss requirement
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <button class="cs-btn cs-btn-ghost" data-modal="Consultancy">
+          Book a 30-min call
+          <svg class="cs-icon-chev" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
       </div>
-      <div class="unified-right">
-        <div class="unified-block">
-          <i data-lucide="layout-grid"></i>
-          <h4>The platform</h4>
-          <p>Structure, dashboards, and workflow — for estimation, budgeting, and cost monitoring.</p>
+    </header>
+
+    <!-- Services grid -->
+    <div class="cs-grid" role="list">
+
+      <!-- 01 -->
+      <article class="cs-card sr" role="listitem">
+        <div class="cs-banner">
+          <span class="cs-icon-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <span class="cs-banner-text">
+            <span class="cs-banner-num">Service 01</span>
+            <span class="cs-banner-punch">Vet before you award.</span>
+          </span>
+          <span class="cs-banner-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </span>
         </div>
-        <div class="unified-block">
-          <i data-lucide="users"></i>
-          <h4>The consultancy</h4>
-          <p>Professional judgement, governance framework, and implementation support.</p>
+        <div class="cs-body">
+          <h3 class="cs-card-title">Contractor vetting &amp; pre-qualification</h3>
+          <p class="cs-card-desc">Financial capacity, technical capability, execution history, safety systems, manpower &amp; equipment, and litigation profile — all checked end-to-end before contract.</p>
+          <div class="cs-chips">
+            <span class="cs-chip">Financial</span>
+            <span class="cs-chip">Technical</span>
+            <span class="cs-chip">Safety</span>
+            <span class="cs-chip">Litigation</span>
+          </div>
         </div>
-        <div class="unified-block">
-          <i data-lucide="database"></i>
-          <h4>Your data</h4>
-          <p>Approved rates, assemblies, vendor library — all stay within your organisation.</p>
+      </article>
+
+      <!-- 02 -->
+      <article class="cs-card sr" role="listitem">
+        <div class="cs-banner">
+          <span class="cs-icon-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 12h-5M15 8h-5M19 17V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2c0 1.1.9 2 2 2h2v12a3 3 0 0 0 3 3h11a3 3 0 0 0 3-3v-2h-5a2 2 0 0 1-2-2z"/></svg>
+          </span>
+          <span class="cs-banner-text">
+            <span class="cs-banner-num">Service 02</span>
+            <span class="cs-banner-punch">Tighten the contract.</span>
+          </span>
+          <span class="cs-banner-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </span>
         </div>
-        <div class="unified-block">
-          <i data-lucide="check-circle"></i>
-          <h4>Your approvals</h4>
-          <p>Final rates, variations, and budget approvals always remain under user control.</p>
+        <div class="cs-body">
+          <h3 class="cs-card-title">Contract governance</h3>
+          <p class="cs-card-desc">SOPs, approval workflows, variation procedures, payment controls and dispute prevention — codified into runbooks your project managers actually follow.</p>
+          <div class="cs-chips">
+            <span class="cs-chip">SOPs</span>
+            <span class="cs-chip">Approvals</span>
+            <span class="cs-chip">Variations</span>
+            <span class="cs-chip">Payments</span>
+          </div>
         </div>
-      </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="cs-card sr" role="listitem">
+        <div class="cs-banner">
+          <span class="cs-icon-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16V11"/><path d="M11 16V8"/><path d="M15 16v-3"/><path d="M19 16V6"/></svg>
+          </span>
+          <span class="cs-banner-text">
+            <span class="cs-banner-num">Service 03</span>
+            <span class="cs-banner-punch">Control every rupee.</span>
+          </span>
+          <span class="cs-banner-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </span>
+        </div>
+        <div class="cs-body">
+          <h3 class="cs-card-title">Cost control frameworks</h3>
+          <p class="cs-card-desc">Project cost codes, budget structures, commitment tracking, variance review procedures and management dashboards — built around how your team actually works.</p>
+          <div class="cs-chips">
+            <span class="cs-chip">Cost codes</span>
+            <span class="cs-chip">Budgets</span>
+            <span class="cs-chip">Variance</span>
+            <span class="cs-chip">Dashboards</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="cs-card sr" role="listitem">
+        <div class="cs-banner">
+          <span class="cs-icon-tile" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="m7 8 2 2-2 2M11 12h4"/></svg>
+          </span>
+          <span class="cs-banner-text">
+            <span class="cs-banner-num">Service 04</span>
+            <span class="cs-banner-punch">Built-to-fit tooling.</span>
+          </span>
+          <span class="cs-banner-arrow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </span>
+        </div>
+        <div class="cs-body">
+          <h3 class="cs-card-title">Custom construction web apps</h3>
+          <p class="cs-card-desc">Practical web tools for vendor management, estimation, cost tracking, approvals, document workflows and reporting — when off-the-shelf software won't fit.</p>
+          <div class="cs-chips">
+            <span class="cs-chip">Vendors</span>
+            <span class="cs-chip">Estimation</span>
+            <span class="cs-chip">Approvals</span>
+            <span class="cs-chip">Reporting</span>
+          </div>
+        </div>
+      </article>
+
     </div>
+
+    <!-- Closing band -->
+    <aside class="cs-closing sr">
+      <div class="cs-closing-inner">
+        <div class="cs-closing-text">
+          <div class="cs-closing-eyebrow">Not sure which fits?</div>
+          <h2 class="cs-closing-headline">Tell us the situation. We'll scope a 30-minute call.</h2>
+          <p class="cs-closing-sub">A working session with the team — no slide-deck pitch, no obligation.</p>
+        </div>
+        <button class="cs-btn cs-btn-primary cs-closing-cta" data-modal="Consultancy">
+          Discuss requirement
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </aside>
+
   </div>
 </section>
 
@@ -1323,8 +1456,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 (function(){
   var selectors = [
     '.pos-head','.poscard',
-    '.svc-head','.svc-card',
-    '.unified-left','.unified-block',
+    '.cs-card','.cs-closing',
     '.flow-head','.flow-step',
     '.why-head','.why-card',
     '.uc-head','.uc-card',
