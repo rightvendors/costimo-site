@@ -51,10 +51,10 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 .nav-cta:hover{background:var(--navy-2)!important}
 
 /* HERO */
-.hero{background:var(--navy);position:relative;overflow:hidden;padding:100px 0 90px}
+.hero{background:var(--navy);position:relative;overflow:hidden;padding:100px 0 90px;min-height:100vh;display:flex;flex-direction:column;justify-content:center}
 .hero::before{content:'';position:absolute;top:-200px;left:-200px;width:800px;height:800px;background:radial-gradient(circle at 30% 30%,rgba(198,167,94,.12) 0%,transparent 65%);pointer-events:none}
 .hero-dots{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
-.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:1;width:100%}
 /* hero left */
 .hero-left{display:flex;flex-direction:column}
 .stacked{display:flex;flex-direction:column;line-height:0.95;margin-bottom:13px}
@@ -78,7 +78,8 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 .hero-meta-item svg{width:14px;height:14px;color:#C9A740;flex-shrink:0;stroke:#C9A740}
 
 /* AI WIDGET */
-.ai-widget{background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);border-radius:18px;overflow:visible;position:relative}
+.ai-widget{background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);border-radius:18px;overflow:visible;position:relative;display:flex;flex-direction:column;min-height:520px}
+.aiw-body{flex:1;display:flex;flex-direction:column}
 .aiw-header{padding:20px 22px 16px;border-bottom:1px solid rgba(198,167,94,.18)}
 .aiw-header-row{display:flex;align-items:center;gap:10px;margin-bottom:5px}
 .aiw-header-row i{width:18px;height:18px;color:var(--gold)}
@@ -120,7 +121,8 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 .aiw-rate{font-size:12px;color:var(--steel);font-weight:600}
 .aiw-add{margin-left:auto;flex-shrink:0;background:var(--navy);color:#fff;border:none;border-radius:7px;padding:5px 12px;font-size:11.5px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
 .aiw-add:hover{background:var(--navy-2)}
-.aiw-footer{padding:12px 22px 16px;border-top:1px solid rgba(198,167,94,.18);display:flex;align-items:center;gap:8px}
+.aiw-spacer{flex:1}
+.aiw-footer{padding:12px 22px 16px;border-top:1px solid rgba(198,167,94,.18);display:flex;align-items:center;gap:8px;margin-top:auto}
 .aiw-footer i{width:13px;height:13px;color:var(--gold);flex-shrink:0}
 .aiw-footer-text{font-size:12px;color:var(--muted)}
 
@@ -522,26 +524,29 @@ footer{background:var(--navy-deep);padding:72px 0 0}
             </div>
             <p class="aiw-sub">Type any construction item — get matched assemblies with your org rates</p>
           </div>
-          <div class="aiw-input-area">
-            <div class="aiw-textarea-wrap" id="heroTextareaWrap">
-              <div id="heroText" class="aiw-demo placeholder">Describe your assembly in plain language…</div>
-              <textarea id="heroInput" rows="3" placeholder="Describe your assembly in plain language…"></textarea>
-              <button class="aiw-submit" id="heroSubmit" aria-label="Submit">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11V3M7 3L3.5 6.5M7 3L10.5 6.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
+          <div class="aiw-body">
+            <div class="aiw-input-area">
+              <div class="aiw-textarea-wrap" id="heroTextareaWrap">
+                <div id="heroText" class="aiw-demo placeholder">Describe your assembly in plain language…</div>
+                <textarea id="heroInput" rows="3" placeholder="Describe your assembly in plain language…"></textarea>
+                <button class="aiw-submit" id="heroSubmit" aria-label="Submit">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 11V3M7 3L3.5 6.5M7 3L10.5 6.5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="aiw-thinking" id="heroThinking">
-            <div class="aiw-dots">
-              <div class="aiw-dot"></div>
-              <div class="aiw-dot"></div>
-              <div class="aiw-dot"></div>
+            <div class="aiw-thinking" id="heroThinking">
+              <div class="aiw-dots">
+                <div class="aiw-dot"></div>
+                <div class="aiw-dot"></div>
+                <div class="aiw-dot"></div>
+              </div>
+              <span class="aiw-thinking-text">Matching against your rate library…</span>
             </div>
-            <span class="aiw-thinking-text">Matching against your rate library…</span>
-          </div>
-          <div class="aiw-results" id="heroResults">
-            <div class="aiw-results-label">Matched assemblies</div>
-            <div id="heroResultsBody"></div>
+            <div class="aiw-results" id="heroResults">
+              <div class="aiw-results-label">Matched assemblies</div>
+              <div id="heroResultsBody"></div>
+            </div>
+            <div class="aiw-spacer"></div>
           </div>
           <div class="aiw-footer">
             <i data-lucide="zap"></i>
