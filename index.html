@@ -21,22 +21,26 @@
 <link rel="icon" type="image/svg+xml" href="movu8uza-costimo-favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --navy:#0B1F3B;--navy-2:#142a4d;--navy-deep:#070f1e;--steel:#1F4E79;
-  --gold:#C6A75E;--gold-h:#B8963F;--gold-l:#F5EDDA;--gold-bg:#FFFBEC;--sand:#FAF6EC;
-  --ink:#0B1F3B;--text:#1F2937;--muted:#62707F;--subtle:#94A3B8;
+  --gold:#C6A75E;--gold-text:#80651E;--gold-h:#B8963F;--gold-l:#F5EDDA;--gold-bg:#FFFBEC;--sand:#FAF6EC;
+  --ink:#0B1F3B;--text:#1F2937;--muted:#62707F;--subtle:#6B7280;
   --bg:#F3F5F8;--bg-2:#EDF1F6;--card:#FFFFFF;--border:#D8DFE8;--divider:#ECF0F5;
   --font:'Inter',system-ui,-apple-system,sans-serif;
-  --serif:'Fraunces',Georgia,serif;
   --ease:cubic-bezier(0.2,0.8,0.2,1);
-  --shadow-card:0 1px 0 rgba(11,31,59,.04),0 8px 24px -12px rgba(11,31,59,.10);
-  --shadow-pop:0 24px 64px -16px rgba(11,31,59,.30);
+  --radius-input:6px;--radius-button:8px;--radius-chip:12px;--radius-card:14px;--radius-panel:20px;--radius-pill:999px;
+  --shadow-sm:0 1px 2px rgba(11,31,59,.04);
+  --shadow-md:0 6px 24px rgba(11,31,59,.08),0 1px 0 rgba(11,31,59,.04);
+  --shadow-lg:0 24px 60px -16px rgba(11,31,59,.22);
+  --shadow-xl:0 32px 80px -16px rgba(11,31,59,.45);
+  --shadow-card:var(--shadow-md);
+  --shadow-pop:var(--shadow-xl);
 }
 html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
 img{max-width:100%;height:auto}
 a{text-decoration:none;color:inherit}
 
@@ -44,7 +48,7 @@ a{text-decoration:none;color:inherit}
 .wrap{max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
 .section{padding:96px 0}
 .section-sm{padding:72px 0}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.10em;text-transform:uppercase;color:var(--gold-text);margin-bottom:12px}
 .eyebrow-muted{color:var(--muted)}
 
 /* NAV */
@@ -52,10 +56,10 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%;max-width:1440px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
 .nav-logo img{display:block}
 .nav-links{display:flex;align-items:center;gap:6px}
-.nav-links a{font-size:14px;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:8px;transition:color .2s,background .2s}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);padding:6px 12px;border-radius:var(--radius-button);transition:color .2s,background .2s}
 .nav-links a:hover{color:var(--ink);background:var(--bg)}
 .nav-signin{color:var(--ink)!important;font-weight:600!important}
-.nav-cta{background:var(--navy)!important;color:#fff!important;border-radius:8px;padding:8px 16px!important;font-weight:600!important;transition:background .2s!important}
+.nav-cta{background:var(--navy)!important;color:#fff!important;border-radius:var(--radius-button);padding:8px 16px!important;font-weight:600!important;transition:background .2s!important}
 .nav-cta:hover{background:var(--navy-2)!important}
 
 /* HERO */
@@ -66,18 +70,18 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 /* hero left */
 .hero-left{display:flex;flex-direction:column}
 .stacked{display:flex;flex-direction:column;line-height:0.95;margin-bottom:22px}
-.word{font-size:clamp(48px,5.4vw,76px);font-weight:800;letter-spacing:-0.04em;display:block}
+.word{font-size:clamp(48px,5.4vw,76px);font-weight:700;letter-spacing:-0.025em;display:block}
 .word-1{color:#7D8DA3}
 .word-2{color:#AAB6C6}
 .word-3{color:#C9A740}
 .tagline{font-size:22px;font-weight:400;color:#9AABBF;line-height:1.5;max-width:680px;margin-bottom:40px}
 .cta-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.btn-cta{background:#C9A740;color:#0C0E10;border:none;height:56px;padding:0 32px;border-radius:8px;font-size:16px;font-weight:700;letter-spacing:-0.01em;cursor:pointer;transition:background .18s,transform .12s;font-family:var(--font);display:inline-flex;align-items:center;justify-content:center}
+.btn-cta{background:#C9A740;color:#0C0E10;border:none;height:56px;padding:0 32px;border-radius:var(--radius-button);font-size:16px;font-weight:700;letter-spacing:-0.01em;cursor:pointer;transition:background .18s,transform .12s;font-family:var(--font);display:inline-flex;align-items:center;justify-content:center}
 .btn-cta:hover{background:#D4B54A;transform:translateY(-1px)}
-.btn-ghost{background:transparent;color:#9AABBF;border:1px solid #1C2D42;height:56px;padding:0 32px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:color .18s,border-color .18s;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font)}
+.btn-ghost{background:transparent;color:#9AABBF;border:1px solid #1C2D42;height:56px;padding:0 32px;border-radius:var(--radius-button);font-size:16px;font-weight:700;cursor:pointer;transition:color .18s,border-color .18s;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font)}
 .btn-ghost:hover{color:#E6E2D8;border-color:#364F6A}
 .btn-ghost i{width:16px;height:16px;flex-shrink:0}
-.btn-gold{background:var(--gold);color:var(--navy);font-size:14px;font-weight:700;border:none;border-radius:10px;padding:12px 24px;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
+.btn-gold{background:var(--gold);color:var(--navy);font-size:14px;font-weight:700;border:none;border-radius:var(--radius-button);padding:12px 24px;cursor:pointer;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:8px}
 .btn-gold:hover{background:var(--gold-h);transform:translateY(-1px)}
 .btn-gold-lg{font-size:15px;padding:14px 28px}
 .btn-ghost-lg{font-size:15px;padding:14px 26px}
@@ -86,16 +90,16 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 .hero-meta-item svg{width:16px;height:16px;color:#D6B13F;flex-shrink:0;stroke:#D6B13F}
 
 /* AI WIDGET */
-.ai-widget{background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);border-radius:18px;overflow:visible;position:relative;display:flex;flex-direction:column;min-height:520px}
+.ai-widget{background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);border-radius:var(--radius-panel);overflow:visible;position:relative;display:flex;flex-direction:column;min-height:520px}
 .aiw-body{flex:1;display:flex;flex-direction:column}
 .aiw-header{padding:20px 22px 16px;border-bottom:1px solid rgba(198,167,94,.18)}
 .aiw-header-row{display:flex;align-items:center;gap:10px;margin-bottom:5px}
-.aiw-header-row i{width:18px;height:18px;color:var(--gold)}
+.aiw-header-row i{width:18px;height:18px;color:var(--gold-text)}
 .aiw-title{font-size:15px;font-weight:700;color:var(--ink)}
-.aiw-beta{background:var(--gold);color:var(--navy);font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:2px 8px;margin-left:auto}
-.aiw-sub{font-size:12.5px;color:var(--muted)}
+.aiw-beta{background:var(--gold);color:var(--navy);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:var(--radius-pill);padding:2px 8px;margin-left:auto}
+.aiw-sub{font-size:13px;color:var(--muted)}
 .aiw-input-area{padding:16px 22px;position:relative}
-.aiw-textarea-wrap{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:13px 16px 48px 16px;cursor:text;min-height:72px;position:relative;transition:border-color .2s}
+.aiw-textarea-wrap{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-chip);padding:12px 16px 48px;cursor:text;min-height:72px;position:relative;transition:border-color .2s}
 .aiw-textarea-wrap:hover{border-color:var(--gold)}
 .aiw-demo{font-size:14px;color:var(--ink);line-height:1.55;user-select:none}
 .aiw-demo.placeholder{color:var(--subtle)}
@@ -104,7 +108,7 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
 #heroInput{display:none;width:100%;border:none;background:transparent;font-family:var(--font);font-size:14px;color:var(--ink);resize:none;outline:none;line-height:1.55;min-height:48px}
 #heroInput.active{display:block}
-.aiw-submit{position:absolute;right:10px;bottom:10px;width:30px;height:30px;background:var(--navy);border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.aiw-submit{position:absolute;right:10px;bottom:10px;width:32px;height:32px;background:var(--navy);border:none;border-radius:var(--radius-button);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
 .aiw-submit:hover{background:var(--navy-2)}
 .aiw-submit i{width:15px;height:15px;color:#fff}
 .aiw-thinking{padding:14px 22px 0;display:none;align-items:center;gap:10px}
@@ -114,263 +118,244 @@ nav{position:sticky;top:0;z-index:100;height:84px;background:rgba(255,255,255,.9
 .aiw-dot:nth-child(2){animation-delay:.2s}
 .aiw-dot:nth-child(3){animation-delay:.4s}
 @keyframes dotpulse{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
-.aiw-thinking-text{font-size:13px;color:var(--muted);font-style:italic}
+.aiw-thinking-text{font-size:14px;color:var(--muted);font-style:italic}
 .aiw-results{padding:0 22px 16px;opacity:0;transform:translateY(8px);transition:opacity .35s var(--ease),transform .35s var(--ease);pointer-events:none}
 .aiw-results.visible{opacity:1;transform:translateY(0);pointer-events:auto}
-.aiw-results-label{font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;margin-top:14px}
-.aiw-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:10px;background:#fff;border:1px solid var(--divider);margin-bottom:7px}
+.aiw-results-label{font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;margin-top:14px}
+.aiw-row{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border-radius:var(--radius-chip);background:#fff;border:1px solid var(--divider);margin-bottom:8px}
 .aiw-row.primary{border-color:rgba(198,167,94,.35);background:rgba(255,251,236,.6)}
 .aiw-row.aiw-dim{opacity:.7}
 .aiw-check{width:22px;height:22px;background:var(--gold);border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px}
 .aiw-check svg{width:11px;height:11px}
 .aiw-rdot{width:8px;height:8px;border-radius:50%;background:var(--border);flex-shrink:0;margin-top:7px}
-.aiw-name{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px}
-.aiw-res{font-size:11.5px;color:var(--muted);margin-bottom:4px}
+.aiw-name{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.aiw-res{font-size:12px;color:var(--muted);margin-bottom:4px}
 .aiw-rate{font-size:12px;color:var(--steel);font-weight:600}
-.aiw-add{margin-left:auto;flex-shrink:0;background:var(--navy);color:#fff;border:none;border-radius:7px;padding:5px 12px;font-size:11.5px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
+.aiw-add{margin-left:auto;flex-shrink:0;background:var(--navy);color:#fff;border:none;border-radius:var(--radius-button);padding:6px 12px;min-height:28px;font-size:12px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
 .aiw-add:hover{background:var(--navy-2)}
 .aiw-spacer{flex:1}
 .aiw-footer{padding:12px 22px 16px;border-top:1px solid rgba(198,167,94,.18);display:flex;align-items:center;gap:8px;margin-top:auto}
-.aiw-footer i{width:13px;height:13px;color:var(--gold);flex-shrink:0}
+.aiw-footer i{width:13px;height:13px;color:var(--gold-text);flex-shrink:0}
 .aiw-footer-text{font-size:12px;color:var(--muted)}
 
 /* HERO CHIPS */
-.hero-chip{position:absolute;display:flex;align-items:center;gap:9px;padding:9px 14px;border-radius:12px;background:#fff;box-shadow:0 12px 28px -8px rgba(11,31,59,.4);font-size:12px;color:var(--ink);font-weight:600;z-index:2}
+.hero-chip{position:absolute;display:flex;align-items:center;gap:9px;padding:8px 14px;border-radius:var(--radius-chip);background:#fff;box-shadow:var(--shadow-lg);font-size:12px;color:var(--ink);font-weight:600;z-index:2}
 .hero-chip i{width:14px;height:14px}
 .hero-chip.chip-tl{top:-10px;left:-12px;color:#0B6B3A}
 .hero-chip.chip-tl i{color:#16a34a}
 .hero-chip.chip-br{bottom:-12px;right:-10px}
-.hero-chip.chip-br i{color:var(--gold)}
+.hero-chip.chip-br i{color:var(--gold-text)}
 .hero-chip-sub{display:block;font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;margin-top:1px}
 
 /* POSITIONING STRIP */
 .pos-strip{background:#fff;padding:88px 0}
 .pos-head{text-align:center;max-width:640px;margin:0 auto 56px}
-.pos-head h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:14px}
-.pos-head h2 em{font-style:normal;color:var(--gold)}
+.pos-head h2{font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--ink);line-height:1.18;letter-spacing:-.015em;margin-bottom:14px}
+.pos-head h2 em{font-style:normal;color:var(--gold-text)}
 .pos-head p{font-size:16px;color:var(--muted);line-height:1.7}
 .poscards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.poscard{background:var(--bg);border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:box-shadow .2s,transform .2s}
+.poscard{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-card);padding:28px 24px;transition:box-shadow .2s,transform .2s}
 .poscard:hover{box-shadow:var(--shadow-card);transform:translateY(-2px)}
-.poscard-icon{width:44px;height:44px;border-radius:12px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.poscard-icon i{width:20px;height:20px;color:var(--gold)}
+.poscard-icon{width:44px;height:44px;border-radius:var(--radius-chip);background:var(--gold-bg);border:1px solid rgba(198,167,94,.25);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.poscard-icon i{width:20px;height:20px;color:var(--gold-text)}
 .poscard h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
-.poscard p{font-size:13.5px;color:var(--muted);line-height:1.6}
+.poscard p{font-size:14px;color:var(--muted);line-height:1.6}
 
 /* PLATFORM FEATURES */
 .plat-head{max-width:680px;margin-bottom:56px}
-.plat-head h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
-.plat-head h2 em{font-style:normal;color:var(--gold)}
+.plat-head h2{font-size:clamp(28px,3.5vw,40px);font-weight:700;color:var(--ink);line-height:1.18;letter-spacing:-.015em;margin-bottom:12px}
+.plat-head h2 em{font-style:normal;color:var(--gold-text)}
 .plat-head .lead{font-size:17px;color:var(--text);font-weight:500;margin-bottom:14px}
-.plat-head p{font-size:14.5px;color:var(--muted);line-height:1.7}
-.platform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden}
+.plat-head p{font-size:15px;color:var(--muted);line-height:1.7}
+.platform-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--radius-card);overflow:hidden}
 .pfeat{background:var(--card);padding:28px 26px;transition:background .2s}
 .pfeat:hover{background:#fdfeff}
 .pfeat.span2{grid-column:span 2;background:var(--sand)}
 .pfeat.span2:hover{background:var(--gold-bg)}
-.pfeat-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.pfeat-icon i{width:18px;height:18px;color:var(--gold)}
-.pfeat h4{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:8px}
-.pfeat p{font-size:13px;color:var(--muted);line-height:1.6}
+.pfeat-icon{width:40px;height:40px;border-radius:var(--radius-chip);background:var(--gold-bg);border:1px solid rgba(198,167,94,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.pfeat-icon i{width:18px;height:18px;color:var(--gold-text)}
+.pfeat h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.pfeat p{font-size:14px;color:var(--muted);line-height:1.6}
 
 /* FEATURE SECTIONS */
 .feat{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
 .feat.reversed{grid-template-columns:1.05fr 1fr}
-.feat-copy h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:14px}
-.feat-copy h2 em{font-style:normal;color:var(--gold)}
+.feat-copy h2{font-size:clamp(28px,3.2vw,40px);font-weight:700;color:var(--ink);line-height:1.18;letter-spacing:-.015em;margin-bottom:14px}
+.feat-copy h2 em{font-style:normal;color:var(--gold-text)}
 .feat-copy .lead{font-size:16px;color:var(--text);line-height:1.7;margin-bottom:28px}
 .feat-items{display:flex;flex-direction:column;gap:22px}
 .feat-item{display:flex;gap:15px;align-items:flex-start}
-.feat-item-icon{width:38px;height:38px;border-radius:10px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.feat-item-icon i{width:17px;height:17px;color:var(--gold)}
+.feat-item-icon{width:38px;height:38px;border-radius:var(--radius-chip);background:var(--gold-bg);border:1px solid rgba(198,167,94,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.feat-item-icon i{width:17px;height:17px;color:var(--gold-text)}
 .feat-item h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
-.feat-item p{font-size:13px;color:var(--muted);line-height:1.6}
+.feat-item p{font-size:14px;color:var(--muted);line-height:1.6}
 .feat-screen-wrap{position:relative}
-.feat-screen-frame{border-radius:14px;overflow:hidden;border:1px solid var(--border);box-shadow:0 24px 60px -16px rgba(11,31,59,.22)}
+.feat-screen-frame{border-radius:var(--radius-card);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-lg)}
 .feat-screen-frame img{width:100%;display:block}
-.feat-glow{position:absolute;inset:-2px;border-radius:16px;background:radial-gradient(ellipse at 50% 0%,rgba(198,167,94,.12) 0%,transparent 60%);pointer-events:none;z-index:0}
+.feat-glow{position:absolute;inset:-2px;border-radius:var(--radius-panel);background:radial-gradient(ellipse at 50% 0%,rgba(198,167,94,.12) 0%,transparent 60%);pointer-events:none;z-index:0}
 .feat-screen-wrap>*:not(.feat-glow){position:relative;z-index:1}
-.feat-floater{position:absolute;background:#fff;border-radius:12px;padding:12px 15px;box-shadow:0 16px 36px -10px rgba(11,31,59,.22);border:1px solid var(--divider);display:flex;align-items:center;gap:11px;z-index:2}
+.feat-floater{position:absolute;background:#fff;border-radius:var(--radius-chip);padding:12px 16px;box-shadow:var(--shadow-lg);border:1px solid var(--divider);display:flex;align-items:center;gap:12px;z-index:2}
 .feat-floater.f1{bottom:24px;left:-28px}
 .feat-floater.f2{top:32px;right:-28px}
-.feat-floater i{width:16px;height:16px;color:var(--gold);flex-shrink:0}
-.feat-floater-text{font-size:12.5px;font-weight:700;color:var(--ink)}
-.feat-floater-sub{font-size:10.5px;color:var(--muted);margin-top:1px}
+.feat-floater i{width:16px;height:16px;color:var(--gold-text);flex-shrink:0}
+.feat-floater-text{font-size:12px;font-weight:700;color:var(--ink)}
+.feat-floater-sub{font-size:11px;color:var(--muted);margin-top:1px}
 
 /* CONSULTANCY */
 /* CONSULTANCY (cs-section) */
-.cs-section{--cs-ink:#0B1F3B;--cs-ink-2:#1B2A4A;--cs-text:#1F2937;--cs-muted:#62707F;--cs-gold:#C6A75E;--cs-gold-hover:#B8963F;--cs-gold-light:#F5EDDA;--cs-gold-bg:#FFFBEC;--cs-bg-page:#F3F5F8;--cs-bg-card:#FFFFFF;--cs-bg-subtle:#F5F7FB;--cs-bg-sand:#FAF6EC;--cs-border:#D8DFE8;--cs-border-sub:#ECF0F5;--cs-shadow-card:0 1px 0 rgba(11,31,59,.04),0 1px 2px rgba(11,31,59,.04);--cs-shadow-card-hover:0 6px 24px rgba(11,31,59,.08),0 1px 0 rgba(11,31,59,.04);--cs-shadow-gold:0 4px 20px rgba(198,167,94,.22);--cs-shadow-focus:0 0 0 3px rgba(198,167,94,.20);--cs-ease:cubic-bezier(0.2,0.8,0.2,1);background:#fff;-webkit-font-smoothing:antialiased}
+.cs-section{--cs-ink:#0B1F3B;--cs-ink-2:#1B2A4A;--cs-text:#1F2937;--cs-muted:#62707F;--cs-gold:#C6A75E;--cs-gold-text:#80651E;--cs-gold-hover:#B8963F;--cs-gold-light:#F5EDDA;--cs-gold-bg:#FFFBEC;--cs-bg-page:#F3F5F8;--cs-bg-card:#FFFFFF;--cs-bg-subtle:#F5F7FB;--cs-bg-sand:#FAF6EC;--cs-border:#D8DFE8;--cs-border-sub:#ECF0F5;--cs-shadow-card:var(--shadow-sm);--cs-shadow-card-hover:var(--shadow-md);--cs-shadow-gold:0 4px 20px rgba(198,167,94,.22);--cs-shadow-focus:0 0 0 3px rgba(198,167,94,.20);--cs-ease:cubic-bezier(0.2,0.8,0.2,1);background:#fff;-webkit-font-smoothing:antialiased}
 .cs-section *,.cs-section *::before,.cs-section *::after{box-sizing:border-box}
 .cs-section p{margin:0}
-.cs-section h1,.cs-section h2,.cs-section h3{margin:0;color:var(--cs-ink);letter-spacing:-0.025em}
+.cs-section h1,.cs-section h2,.cs-section h3{margin:0;color:var(--cs-ink);letter-spacing:-0.015em}
 .cs-wrap{max-width:1200px;margin:0 auto;padding:56px 20px 64px}
 .cs-eyebrow{display:inline-flex;align-items:center;gap:10px;font:600 12px/1 'Inter',sans-serif;text-transform:uppercase;letter-spacing:.18em;color:var(--cs-muted)}
 .cs-eyebrow::before{content:'';width:22px;height:1px;background:var(--cs-gold)}
 .cs-hero{display:grid;grid-template-columns:1fr;gap:18px;padding-bottom:28px;border-bottom:1px solid var(--cs-border-sub);margin-bottom:28px}
-.cs-hero-headline{font-weight:700;font-size:clamp(32px,6vw,56px);line-height:1.04;letter-spacing:-.035em;color:var(--cs-ink);max-width:13ch}
-.cs-hero-headline em{font-style:normal;color:var(--cs-gold)}
+.cs-hero-headline{font-weight:700;font-size:clamp(32px,6vw,56px);line-height:1.04;letter-spacing:-.025em;color:var(--cs-ink);max-width:13ch}
+.cs-hero-headline em{font-style:normal;color:var(--cs-gold-text)}
 .cs-hero-sub{font-size:clamp(15px,1.6vw,17px);line-height:1.55;color:var(--cs-muted);max-width:56ch}
 .cs-hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:6px}
-.cs-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:10px;font:600 14px/1 'Inter',sans-serif;letter-spacing:-.005em;text-decoration:none;border:0;cursor:pointer;transition:background var(--cs-ease) 160ms,transform 80ms ease,box-shadow var(--cs-ease) 160ms}
+.cs-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:var(--radius-button);font:600 14px/1 'Inter',sans-serif;letter-spacing:-.005em;text-decoration:none;border:0;cursor:pointer;transition:background var(--cs-ease) 160ms,transform 80ms ease,box-shadow var(--cs-ease) 160ms}
 .cs-btn:active:not(:disabled){transform:scale(0.98)}
 .cs-btn:focus-visible{outline:0;box-shadow:var(--cs-shadow-focus)}
 .cs-btn-primary{background:var(--cs-gold);color:var(--cs-ink);box-shadow:var(--cs-shadow-gold)}
 .cs-btn-primary:hover{background:var(--cs-gold-hover)}
-.cs-btn-ghost{background:transparent;color:var(--cs-ink);font-weight:600;padding:13px 6px}
-.cs-btn-ghost:hover{color:var(--cs-gold-hover)}
+.cs-btn-ghost{background:transparent;color:var(--cs-ink);font-weight:600;padding:12px 8px}
+.cs-btn-ghost:hover{color:var(--cs-gold-text)}
 .cs-btn-ghost .cs-icon-chev{transition:transform 160ms var(--cs-ease)}
 .cs-btn-ghost:hover .cs-icon-chev{transform:translateX(3px)}
 .cs-grid{display:grid;grid-template-columns:1fr;gap:14px}
-.cs-card{position:relative;background:var(--cs-bg-card);border:1px solid var(--cs-border-sub);border-radius:14px;overflow:hidden;box-shadow:var(--cs-shadow-card);transition:border-color 160ms var(--cs-ease),box-shadow 200ms var(--cs-ease),transform 200ms var(--cs-ease);cursor:default}
+.cs-card{position:relative;background:var(--cs-bg-card);border:1px solid var(--cs-border-sub);border-radius:var(--radius-card);overflow:hidden;box-shadow:var(--cs-shadow-card);transition:border-color 160ms var(--cs-ease),box-shadow 200ms var(--cs-ease),transform 200ms var(--cs-ease);cursor:default}
 .cs-card:hover{border-color:rgba(198,167,94,.55);box-shadow:var(--cs-shadow-card-hover)}
 .cs-banner{position:relative;background:linear-gradient(135deg,#0B1F3B 0%,#14305A 100%);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:14px;overflow:hidden}
 .cs-banner::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'><path d='M30 22v16M22 30h16'/></g></svg>");background-size:60px 60px;pointer-events:none}
 .cs-banner::after{content:'';position:absolute;left:18px;right:18px;bottom:0;height:2px;background:var(--cs-gold);transform:scaleX(0.18);transform-origin:left center;transition:transform 320ms var(--cs-ease)}
 .cs-card:hover .cs-banner::after{transform:scaleX(1)}
-.cs-icon-tile{position:relative;flex:0 0 42px;width:42px;height:42px;border-radius:9px;background:linear-gradient(180deg,rgba(198,167,94,.22),rgba(198,167,94,.12));border:1px solid rgba(198,167,94,.45);display:inline-flex;align-items:center;justify-content:center;color:var(--cs-gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
+.cs-icon-tile{position:relative;flex:0 0 42px;width:42px;height:42px;border-radius:var(--radius-chip);background:linear-gradient(180deg,rgba(198,167,94,.22),rgba(198,167,94,.12));border:1px solid rgba(198,167,94,.45);display:inline-flex;align-items:center;justify-content:center;color:var(--cs-gold);box-shadow:inset 0 1px 0 rgba(255,255,255,.10)}
 .cs-icon-tile svg{width:20px;height:20px}
 .cs-banner-text{display:flex;flex-direction:column;gap:4px;min-width:0;flex:1}
-.cs-banner-num{font:600 10.5px/1 'Inter',sans-serif;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.cs-banner-num{font:600 11px/1 'Inter',sans-serif;letter-spacing:.20em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 .cs-banner-punch{font:700 16px/1.2 'Inter',sans-serif;letter-spacing:-.02em;color:#fff}
-.cs-banner-arrow{flex:0 0 auto;width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,.10);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:color 160ms var(--cs-ease),border-color 160ms var(--cs-ease),background 160ms var(--cs-ease)}
+.cs-banner-arrow{flex:0 0 auto;width:32px;height:32px;border-radius:var(--radius-button);border:1px solid rgba(255,255,255,.10);display:inline-flex;align-items:center;justify-content:center;color:rgba(255,255,255,.55);transition:color 160ms var(--cs-ease),border-color 160ms var(--cs-ease),background 160ms var(--cs-ease)}
 .cs-card:hover .cs-banner-arrow{color:var(--cs-gold);border-color:rgba(198,167,94,.55);background:rgba(198,167,94,.10)}
 .cs-banner-arrow svg{width:16px;height:16px}
 .cs-body{padding:18px 18px 20px}
 .cs-card-title{font:700 17px/1.3 'Inter',sans-serif;letter-spacing:-.02em;color:var(--cs-ink)}
 .cs-card-desc{margin-top:8px;font:400 14.5px/1.6 'Inter',sans-serif;color:var(--cs-muted)}
 .cs-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
-.cs-chip{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 'Inter',sans-serif;color:var(--cs-ink-2);background:var(--cs-bg-subtle);border:1px solid var(--cs-border-sub);padding:6px 10px;border-radius:999px;letter-spacing:-.005em;white-space:nowrap}
+.cs-chip{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 'Inter',sans-serif;color:var(--cs-ink-2);background:var(--cs-bg-subtle);border:1px solid var(--cs-border-sub);padding:6px 10px;border-radius:var(--radius-pill);letter-spacing:-.005em;white-space:nowrap}
 .cs-chip::before{content:'';width:5px;height:5px;border-radius:999px;background:var(--cs-gold);opacity:.85}
-.cs-closing{margin-top:28px;background:linear-gradient(135deg,#0B1F3B 0%,#14305A 70%,#1B3B6B 100%);border-radius:16px;padding:26px 22px;color:#fff;position:relative;overflow:hidden}
+.cs-closing{margin-top:28px;background:linear-gradient(135deg,#0B1F3B 0%,#14305A 70%,#1B3B6B 100%);border-radius:var(--radius-panel);padding:28px 24px;color:#fff;position:relative;overflow:hidden}
 .cs-closing::before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'><g fill='none' stroke='%23ffffff' stroke-opacity='0.05' stroke-width='1'><path d='M30 22v16M22 30h16'/></g></svg>");background-size:60px 60px;pointer-events:none}
 .cs-closing-inner{position:relative;display:flex;flex-direction:column;gap:14px}
-.cs-closing-eyebrow{font:600 11px/1 'Inter',sans-serif;letter-spacing:.20em;text-transform:uppercase;color:var(--cs-gold);display:inline-flex;align-items:center;gap:10px}
+.cs-closing-eyebrow{font:600 12px/1 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--cs-gold);display:inline-flex;align-items:center;gap:10px}
 .cs-closing-eyebrow::before{content:'';width:22px;height:1px;background:var(--cs-gold)}
-.cs-section .cs-closing-headline{font:700 22px/1.2 'Inter',sans-serif;letter-spacing:-.025em;color:#fff;max-width:22ch}
+.cs-section .cs-closing-headline{font:700 22px/1.2 'Inter',sans-serif;letter-spacing:-.015em;color:#fff;max-width:22ch}
 .cs-closing-sub{font:400 14px/1.55 'Inter',sans-serif;color:rgba(255,255,255,.65);max-width:50ch}
 .cs-closing-cta{margin-top:4px;align-self:flex-start}
 
-/* HOW IT WORKS */
-.flow-head{text-align:center;max-width:620px;margin:0 auto 56px}
-.flow-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
-.flow-head h2 em{font-style:normal;color:var(--gold)}
-.flow-head p{font-size:15px;color:var(--muted);line-height:1.7}
-.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-radius:14px;overflow:hidden}
-.flow-step{background:#fff;padding:34px 32px;display:flex;flex-direction:column;gap:14px}
-.flow-num-row{display:flex;align-items:baseline;gap:12px}
-.flow-num span{font-family:var(--serif);font-size:42px;font-weight:600;color:var(--ink);letter-spacing:-.025em;line-height:1}
-.flow-num-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.flow-step h4{font-size:17px;font-weight:700;color:var(--ink)}
-.flow-step p{font-size:13.5px;color:var(--muted);line-height:1.65}
-
-/* WHY COSTIMO */
-.bg-navy{background:var(--navy);padding:88px 0}
-.why-head{text-align:center;max-width:600px;margin:0 auto 52px}
-.why-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
-.why-head h2 em{font-style:normal;color:var(--gold)}
-.why-head p{font-size:15px;color:rgba(255,255,255,.6);line-height:1.7}
-.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:28px 22px;backdrop-filter:blur(8px);transition:background .2s,border-color .2s}
-.why-card:hover{background:rgba(255,255,255,.09);border-color:rgba(198,167,94,.3)}
-.why-icon{width:44px;height:44px;border-radius:11px;background:rgba(198,167,94,.38);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.why-icon i{width:20px;height:20px;color:#fff}
-.why-card h4{font-size:13.5px;font-weight:700;color:#fff;margin-bottom:8px}
-.why-card p{font-size:12.5px;color:rgba(255,255,255,.5);line-height:1.6}
-
-/* USE CASES */
-.uc-head{text-align:center;max-width:580px;margin:0 auto 52px}
-.uc-head h2{font-size:clamp(26px,3vw,38px);font-weight:800;color:var(--ink);line-height:1.18;letter-spacing:-.025em;margin-bottom:12px}
-.uc-head h2 em{font-style:normal;color:var(--gold)}
-.uc-head p{font-size:15px;color:var(--muted);line-height:1.7}
-.uc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.uc-card{background:#fff;border:1.5px solid var(--border);border-radius:13px;padding:26px 22px;transition:background .2s,border-color .2s,transform .2s}
-.uc-card:hover{background:var(--bg);border-color:var(--gold);transform:translateY(-2px)}
-.uc-icon{width:40px;height:40px;border-radius:10px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.2);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.uc-icon i{width:18px;height:18px;color:var(--gold)}
-.uc-card h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:7px}
-.uc-card p{font-size:12.5px;color:var(--muted);line-height:1.6}
-
-/* CTA BLOCK */
-.cta-block{background:var(--navy);padding:96px 0;text-align:center;position:relative;overflow:hidden}
-.cta-block::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse at 50% 20%,rgba(198,167,94,.14) 0%,transparent 60%);pointer-events:none}
-.cta-block h2{font-size:clamp(28px,3.5vw,46px);font-weight:800;color:#fff;line-height:1.18;letter-spacing:-.03em;margin-bottom:18px;position:relative}
-.cta-block h2 em{font-style:normal;color:var(--gold)}
-.cta-block p{font-size:16px;color:rgba(255,255,255,.65);max-width:580px;margin:0 auto 36px;line-height:1.7;position:relative}
-.cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative}
+/* WITH / WITHOUT COSTIMO */
+.ww-section{background:var(--bg);padding:96px 0}
+.ww-wrap{max-width:1200px;margin:0 auto;padding:0 clamp(24px,5vw,80px)}
+.ww-head{margin-bottom:56px}
+.ww-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:var(--radius-button);margin-bottom:24px}
+.ww-eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.ww-head h2{font-size:clamp(34px,4.8vw,54px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:var(--ink);max-width:780px;margin-bottom:16px}
+.ww-head h2 em{font-style:normal;color:var(--gold-text)}
+.ww-head p{font-size:15px;color:var(--muted);line-height:1.65;max-width:520px}
+.ww-compare{border-radius:var(--radius-card);border:1px solid #C5C6CE;overflow:hidden;background:#fff;box-shadow:var(--shadow-md)}
+.ww-colbar,.ww-row{display:grid;grid-template-columns:1fr 52px 1fr}
+.ww-colbar{border-bottom:1px solid #C5C6CE}
+.ww-col-left,.ww-col-mid,.ww-col-right{padding:12px 28px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center}
+.ww-col-left,.ww-col-mid{background:#EBECF0;color:var(--muted)}
+.ww-col-mid{border-left:1px solid #C5C6CE;border-right:1px solid #C5C6CE;padding:0}
+.ww-col-right{background:var(--navy);color:#fff;gap:8px}
+.ww-col-right::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.ww-row{border-bottom:1px solid #E2E4E9}
+.ww-row:last-child{border-bottom:none}
+.ww-left{background:var(--bg);background-image:radial-gradient(circle,#C5C6CE .8px,transparent .8px);background-size:16px 16px;padding:28px;display:flex;flex-direction:column;gap:9px}
+.ww-mid{background:#fff;display:flex;align-items:center;justify-content:center;border-left:1px solid #C5C6CE;border-right:1px solid #C5C6CE}
+.ww-arrow{width:26px;height:26px;border-radius:50%;border:1.5px solid #C5C6CE;display:flex;align-items:center;justify-content:center;color:var(--muted);background:#fff}
+.ww-right{background:#fff;padding:28px;display:flex;flex-direction:column;gap:9px;border-left:3px solid var(--gold);transition:background .15s ease}
+.ww-row:hover .ww-right{background:var(--gold-bg)}
+.ww-tag{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ww-text{font-size:14px;line-height:1.68}
+.ww-left .ww-text{color:var(--muted)}
+.ww-right .ww-text{color:var(--text);font-weight:500}
 
 /* FOOTER */
 footer{background:var(--navy-deep);padding:72px 0 0}
 .footer-top{display:grid;grid-template-columns:320px 1fr;gap:80px;margin-bottom:56px}
-.footer-brand p{font-size:13.5px;color:rgba(255,255,255,.5);line-height:1.7;margin-top:16px;margin-bottom:18px}
+.footer-brand p{font-size:14px;color:rgba(255,255,255,.62);line-height:1.7;margin-top:16px;margin-bottom:18px}
 .footer-pills{display:flex;gap:8px;flex-wrap:wrap}
-.footer-pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:5px 14px;font-size:11.5px;color:rgba(255,255,255,.5);font-weight:600}
+.footer-pill{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius-pill);padding:6px 14px;font-size:12px;color:rgba(255,255,255,.5);font-weight:600}
 .footer-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
-.footer-col h5{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:16px}
-.footer-col a{display:block;font-size:13.5px;color:rgba(255,255,255,.55);margin-bottom:10px;transition:color .2s}
+.footer-col h5{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:16px}
+.footer-col a{display:flex;align-items:center;min-height:28px;padding:2px 0;font-size:14px;color:rgba(255,255,255,.62);margin-bottom:8px;transition:color .2s}
 .footer-col a:hover{color:rgba(255,255,255,.9)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:20px 0;display:flex;align-items:center;justify-content:space-between}
-.footer-copy{font-size:13px;color:rgba(255,255,255,.35)}
-.status-dot{display:flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,.4)}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.55)}
+.status-dot{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.55)}
 .status-dot::before{content:'';width:7px;height:7px;border-radius:50%;background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.2)}
 
 /* PLATFORM TABS */
 .pt-header{text-align:center;max-width:640px;margin:0 auto 44px}
-.pt-header h2{font-size:clamp(30px,4vw,52px);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1;margin-bottom:12px}
-.pt-header h2 em{font-style:normal;color:var(--gold)}
+.pt-header h2{font-size:clamp(30px,4vw,52px);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.1;margin-bottom:12px}
+.pt-header h2 em{font-style:normal;color:var(--gold-text)}
 .pt-header .pt-sub{font-size:16px;color:var(--muted);line-height:1.7}
 .pt-tab-nav-wrap{display:flex;justify-content:center;margin-bottom:32px}
-.pt-tab-nav{background:#fff;border-radius:14px;padding:6px;display:inline-flex;gap:4px;box-shadow:0 2px 14px rgba(11,31,59,.08);border:1px solid var(--border)}
-.pt-tab{background:transparent;border:none;border-radius:10px;padding:10px 20px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .22s,color .22s;white-space:nowrap;font-family:var(--font)}
+.pt-tab-nav{background:#fff;border-radius:var(--radius-card);padding:6px;display:inline-flex;gap:4px;box-shadow:var(--shadow-md);border:1px solid var(--border)}
+.pt-tab{background:transparent;border:none;border-radius:var(--radius-button);padding:10px 20px;font-size:14px;font-weight:600;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:background .22s,color .22s;white-space:nowrap;font-family:var(--font)}
 .pt-tab i{width:15px;height:15px;flex-shrink:0}
 .pt-tab:hover:not(.active){background:var(--bg);color:var(--ink)}
 .pt-tab.active{background:var(--navy);color:#fff}
-.pt-tab-cta{color:var(--gold)!important}
+.pt-tab-cta{color:var(--gold-text)!important}
 .pt-tab-cta.active{background:var(--gold)!important;color:var(--navy)!important}
-.pt-panel{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 40px -8px rgba(11,31,59,.12);border:1px solid var(--border)}
+.pt-panel{background:#fff;border-radius:var(--radius-panel);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--border)}
 .pt-panel.hidden{display:none}
 .pt-panel-inner{display:grid;grid-template-columns:1fr 1fr;min-height:560px}
 .pt-left{padding:52px 48px;display:flex;flex-direction:column;justify-content:center}
 .pt-left .eyebrow{margin-bottom:14px}
-.pt-left h2{font-size:clamp(22px,2.6vw,34px);font-weight:800;color:var(--ink);line-height:1.2;letter-spacing:-.025em;margin-bottom:16px}
-.pt-left h2 em{font-style:normal;color:var(--gold)}
+.pt-left h2{font-size:clamp(28px,3.2vw,40px);font-weight:700;color:var(--ink);line-height:1.2;letter-spacing:-.015em;margin-bottom:16px}
+.pt-left h2 em{font-style:normal;color:var(--gold-text)}
 .pt-left .pt-body{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:26px}
 .pt-items{display:flex;flex-direction:column;gap:16px;margin-bottom:28px}
 .pt-item{display:flex;gap:13px;align-items:flex-start}
-.pt-item-icon{width:34px;height:34px;border-radius:9px;background:var(--gold-bg);border:1px solid rgba(198,167,94,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-.pt-item-icon i{width:15px;height:15px;color:var(--gold)}
-.pt-item h4{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
-.pt-item p{font-size:12.5px;color:var(--muted);line-height:1.55}
+.pt-item-icon{width:34px;height:34px;border-radius:var(--radius-chip);background:var(--gold-bg);border:1px solid rgba(198,167,94,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.pt-item-icon i{width:15px;height:15px;color:var(--gold-text)}
+.pt-item h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.pt-item p{font-size:14px;color:var(--muted);line-height:1.6}
 .pt-link{font-size:14px;font-weight:700;color:var(--navy);display:inline-flex;align-items:center;gap:7px;margin-top:4px;transition:gap .2s}
 .pt-link:hover{gap:11px}
 .pt-right{background:linear-gradient(150deg,#0d2040 0%,#152e54 100%);position:relative;display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden}
 .pt-video{width:100%;height:auto;display:block;object-fit:contain}
 .pt-right-dark{background:var(--navy)!important;align-items:center;justify-content:center;padding:56px 40px}
-.gs-form-card{background:#fff;border-radius:16px;padding:28px;width:100%;max-width:380px;box-shadow:0 24px 56px -16px rgba(0,0,0,.35)}
+.gs-form-card{background:#fff;border-radius:var(--radius-card);padding:28px;width:100%;max-width:380px;box-shadow:var(--shadow-lg)}
 .gs-form-head{display:flex;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid var(--divider)}
-.gs-form-icon{width:40px;height:40px;background:var(--gold-bg);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(198,167,94,.25)}
-.gs-form-icon i{width:18px;height:18px;color:var(--gold)}
-.gs-form-head h4{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.gs-form-icon{width:40px;height:40px;background:var(--gold-bg);border-radius:var(--radius-chip);display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(198,167,94,.25)}
+.gs-form-icon i{width:18px;height:18px;color:var(--gold-text)}
+.gs-form-head h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:3px}
 .gs-form-head p{font-size:12px;color:var(--muted)}
 .gs-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .gs-field{display:flex;flex-direction:column;gap:5px;margin-bottom:10px}
 .gs-field label{font-size:12px;font-weight:600;color:var(--ink)}
-.gs-field input{border:1.5px solid var(--border);border-radius:8px;padding:9px 12px;font-size:13.5px;font-family:var(--font);color:var(--ink);outline:none;transition:border-color .2s}
-.gs-field input:focus{border-color:var(--gold)}
+.gs-field input{border:1.5px solid var(--border);border-radius:var(--radius-input);padding:8px 12px;font-size:14px;font-family:var(--font);color:var(--ink);outline:none;transition:border-color .2s}
+.gs-field input:focus{border-color:var(--gold-text)}
 .gs-field input::placeholder{color:var(--subtle)}
-.btn-gs{width:100%;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:13px;font-size:14.5px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;margin:12px 0 10px;font-family:var(--font)}
+.btn-gs{width:100%;background:var(--navy);color:#fff;border:none;border-radius:var(--radius-button);padding:12px;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:background .2s;margin:12px 0 10px;font-family:var(--font)}
 .btn-gs:hover{background:var(--navy-2)}
 .gs-terms{font-size:11px;color:var(--muted);text-align:center;line-height:1.5}
 .gs-terms a{color:var(--navy);text-decoration:underline}
 .gs-checks{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
 .gs-checks li{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--text);line-height:1.5}
-.gs-checks li::before{content:'✓';font-weight:700;color:var(--gold);flex-shrink:0}
+.gs-checks li::before{content:'✓';font-weight:700;color:var(--gold-text);flex-shrink:0}
 
 /* FLOATING LABEL INPUTS */
 .fl-field{position:relative;margin-bottom:10px;min-width:0}
-.fl-field input,.fl-field textarea{width:100%;padding:20px 13px 7px;border:1.5px solid var(--border);border-radius:8px;font-size:14px;font-family:var(--font);color:var(--ink);outline:none;background:#fff;transition:border-color .2s;box-sizing:border-box;-webkit-appearance:none;appearance:none}
+.fl-field input,.fl-field textarea{width:100%;padding:20px 12px 8px;border:1.5px solid var(--border);border-radius:var(--radius-input);font-size:14px;font-family:var(--font);color:var(--ink);outline:none;background:#fff;transition:border-color .2s;box-sizing:border-box;-webkit-appearance:none;appearance:none}
 .fl-field textarea{resize:vertical;min-height:90px;padding-top:24px;line-height:1.55}
-.fl-field input:focus,.fl-field textarea:focus{border-color:var(--gold)}
-.fl-field label{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--subtle);pointer-events:none;transition:all .18s ease;background:#fff;padding:0 2px;white-space:nowrap}
+.fl-field input:focus,.fl-field textarea:focus{border-color:var(--gold-text)}
+.fl-field label{position:absolute;left:12px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--subtle);pointer-events:none;transition:top .18s ease,transform .18s ease,font-size .18s ease,color .18s ease,font-weight .18s ease,letter-spacing .18s ease;background:#fff;padding:0 2px;white-space:nowrap}
 .fl-field textarea~label{top:18px;transform:none}
 .fl-field input:focus~label,.fl-field input:not(:placeholder-shown)~label,
 .fl-field textarea:focus~label,.fl-field textarea:not(:placeholder-shown)~label{top:7px;transform:none;font-size:11px;font-weight:600;color:var(--muted);letter-spacing:.02em}
@@ -380,26 +365,86 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 /* CONTACT MODAL */
 .modal-overlay{position:fixed;inset:0;background:rgba(11,31,59,.62);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);z-index:2000;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .22s ease}
 .modal-overlay.open{opacity:1;pointer-events:auto}
-.modal-box{background:#fff;border-radius:20px;width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:0 32px 80px -16px rgba(11,31,59,.45);transform:translateY(20px);transition:transform .25s ease;scrollbar-width:thin}
+.modal-box{background:#fff;border-radius:var(--radius-panel);width:100%;max-width:540px;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-xl);transform:translateY(20px);transition:transform .25s ease;scrollbar-width:thin}
 .modal-overlay.open .modal-box{transform:none}
 .modal-top{padding:28px 28px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
-.modal-top-text h3{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:4px}
-.modal-top-text p{font-size:13.5px;color:var(--muted)}
-.modal-close-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s}
+.modal-top-text h3{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.modal-top-text p{font-size:14px;color:var(--muted)}
+.modal-close-btn{background:var(--bg);border:1.5px solid var(--border);border-radius:var(--radius-button);width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:background .2s}
 .modal-close-btn:hover{background:var(--border)}
 .modal-body{padding:20px 28px 28px}
 .mi-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .mi-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
-.mi-pill{border:1.5px solid var(--border);border-radius:100px;padding:6px 14px;font-size:12.5px;font-weight:600;color:var(--muted);background:#fff;cursor:pointer;transition:all .18s;font-family:var(--font);white-space:nowrap}
-.mi-pill.active{border-color:var(--gold);background:var(--gold-bg);color:var(--ink)}
-.modal-submit{width:100%;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font);transition:background .2s;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
+.mi-pill{border:1.5px solid var(--border);border-radius:var(--radius-pill);padding:6px 14px;font-size:12px;font-weight:600;color:var(--muted);background:#fff;cursor:pointer;transition:border-color .18s,background .18s,color .18s;font-family:var(--font);white-space:nowrap}
+.mi-pill.active{border-color:var(--gold-text);background:var(--gold-bg);color:var(--ink)}
+.modal-submit{width:100%;background:var(--navy);color:#fff;border:none;border-radius:var(--radius-button);padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font);transition:background .2s;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:8px}
 .modal-submit:hover{background:var(--navy-2)}
 .modal-submit:disabled{opacity:.6;cursor:not-allowed}
 .modal-success{text-align:center;padding:52px 28px;display:none}
 .modal-success.show{display:block}
 .ms-icon{width:60px;height:60px;background:var(--gold-bg);border:2px solid rgba(198,167,94,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.modal-success h3{font-size:22px;font-weight:800;color:var(--ink);margin-bottom:10px}
-.modal-success p{font-size:14.5px;color:var(--muted);line-height:1.7;max-width:380px;margin:0 auto}
+.modal-success h3{font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.modal-success p{font-size:14px;color:var(--muted);line-height:1.7;max-width:380px;margin:0 auto}
+
+/* REQUEST DEMO DRAWER */
+.rd-overlay{position:fixed;inset:0;background:rgba(11,31,59,.35);opacity:0;pointer-events:none;z-index:2100;transition:opacity .3s ease}
+.rd-overlay.show{opacity:1;pointer-events:auto}
+.rd-drawer{position:fixed;top:0;right:0;bottom:0;width:440px;max-width:100vw;background:#fff;box-shadow:var(--shadow-lg);display:flex;flex-direction:column;z-index:2200;transform:translateX(100%);transition:transform .36s cubic-bezier(.30,0,.10,1);will-change:transform}
+.rd-drawer.open{transform:translateX(0)}
+.rd-drawer::before{content:'';position:absolute;top:0;bottom:0;left:0;width:3px;background:linear-gradient(180deg,transparent 0%,var(--gold) 30%,var(--gold) 70%,transparent 100%);opacity:.6}
+.rd-head{padding:28px 28px 22px;border-bottom:1px solid #E4E7EB;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-shrink:0}
+.rd-title{font-size:20px;font-weight:700;color:var(--navy);letter-spacing:-.015em}
+.rd-sub{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.5}
+.rd-close{width:40px;height:40px;display:grid;place-items:center;background:var(--bg);border:1px solid #E4E7EB;border-radius:var(--radius-input);color:var(--muted);cursor:pointer;flex-shrink:0;transition:background .15s,border-color .15s,color .15s}
+.rd-close:hover{background:#fff;border-color:var(--navy);color:var(--navy)}
+.rd-body{padding:28px 28px 24px;flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:26px}
+.rd-label{font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.rd-pills{display:flex;flex-wrap:wrap;gap:7px}
+.rd-pill{padding:8px 16px;border-radius:var(--radius-pill);border:1.5px solid #E4E7EB;background:transparent;font-family:var(--font);font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;transition:border-color .15s,background .15s,color .15s,box-shadow .15s;line-height:1}
+.rd-pill:hover{border-color:#CBD0D8;color:var(--navy)}
+.rd-pill.active{border-color:var(--gold-text);background:rgba(198,167,94,.10);color:var(--navy);font-weight:600;box-shadow:0 0 0 3px rgba(198,167,94,.25)}
+.rd-fields{display:flex;flex-direction:column;gap:14px}
+.rd-field{position:relative}
+.rd-field input{width:100%;height:58px;padding:22px 16px 8px;border:1.5px solid #E4E7EB;border-radius:var(--radius-input);background:#fff;font-family:var(--font);font-size:15px;font-weight:400;color:var(--text);outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
+.rd-field input:hover{border-color:#CBD0D8}
+.rd-field input:focus{border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,31,59,.08)}
+.rd-field label{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:15px;color:var(--muted);pointer-events:none;transform-origin:left top;transition:top .18s cubic-bezier(.4,0,.2,1),font-size .18s cubic-bezier(.4,0,.2,1),color .18s,font-weight .18s}
+.rd-field input:focus+label,.rd-field input.has-val+label{top:10px;font-size:11px;color:var(--navy);font-weight:600;letter-spacing:.02em;transform:none}
+.rd-field input::placeholder{color:transparent}
+.rd-optional{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:500;color:var(--muted);background:var(--bg);border-radius:var(--radius-input);padding:2px 8px;pointer-events:none;transition:opacity .15s}
+.rd-field input:focus~.rd-optional,.rd-field input.has-val~.rd-optional{opacity:0}
+.rd-error{font-size:12px;color:#DC2626;margin-top:5px;padding-left:4px;display:none}
+.rd-field.show-error .rd-error{display:block}
+.rd-field.show-error input{border-color:#DC2626;box-shadow:0 0 0 3px rgba(220,38,38,.07)}
+.rd-foot{padding:0 28px 28px;flex-shrink:0}
+.rd-submit{width:100%;height:50px;background:var(--navy);color:#fff;border:none;border-radius:var(--radius-button);font-family:var(--font);font-size:15px;font-weight:600;letter-spacing:-.01em;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden;transition:background .18s,box-shadow .18s,transform .1s}
+.rd-submit:hover:not(:disabled){background:var(--navy-deep);box-shadow:var(--shadow-md)}
+.rd-submit:active:not(:disabled){transform:scale(.99)}
+.rd-submit:disabled{opacity:.7;cursor:not-allowed}
+.rd-submit.loading::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,255,255,.12) 50%,transparent 100%);animation:rd-shimmer 1s infinite}
+@keyframes rd-shimmer{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.rd-privacy{font-size:12px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.5}
+.rd-success{display:none;flex-direction:column;align-items:center;text-align:center;padding:48px 28px 40px;gap:14px;flex:1}
+.rd-success.show{display:flex}
+.rd-check{width:60px;height:60px;border-radius:50%;background:rgba(198,167,94,.10);border:1.5px solid rgba(198,167,94,.25);display:grid;place-items:center;animation:rd-pop .45s cubic-bezier(.34,1.56,.64,1) both}
+@keyframes rd-pop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+.rd-success-title{font-size:20px;font-weight:700;color:var(--navy);letter-spacing:-.015em;margin-top:4px}
+.rd-success-body{font-size:14px;color:var(--muted);max-width:300px;line-height:1.6}
+.rd-success-close{margin-top:12px;padding:12px 24px;border:1.5px solid #CBD0D8;border-radius:var(--radius-button);background:transparent;font-family:var(--font);font-size:14px;font-weight:500;color:var(--navy);cursor:pointer;transition:background .15s,border-color .15s}
+.rd-success-close:hover{background:var(--bg);border-color:var(--navy)}
+@media(max-width:500px){
+  .rd-drawer{width:100vw}
+  .rd-drawer::before{display:none}
+  .rd-head,.rd-body,.rd-foot{padding-left:20px;padding-right:20px}
+}
+
+/* KEYBOARD FOCUS */
+:where(a,button,input,textarea,[tabindex]):focus-visible,
+.cs-btn:focus-visible{
+  outline:2px solid #fff!important;
+  outline-offset:2px;
+  box-shadow:0 0 0 4px var(--navy)!important;
+}
 
 /* SCROLL REVEAL */
 .sr{opacity:0;transform:translateY(26px);transition:opacity .65s cubic-bezier(.2,.8,.2,1),transform .65s cubic-bezier(.2,.8,.2,1)}
@@ -418,7 +463,6 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   .pfeat.span2{grid-column:span 2}
   .poscards{grid-template-columns:repeat(2,1fr)}
   .cs-grid{grid-template-columns:1fr 1fr;gap:20px}
-  .flow,.why-grid,.uc-grid{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr;gap:40px}
   .footer-cols{grid-template-columns:repeat(2,1fr)}
   .pt-panel-inner{grid-template-columns:1fr}
@@ -433,7 +477,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   .hero-meta{gap:14px;margin-top:32px}
   .wrap,.nav-inner{padding:0 22px}
   .nav-links a:not(.nav-cta):not(.nav-signin){display:none}
-  .platform-grid,.poscards,.why-grid,.uc-grid{grid-template-columns:1fr}
+  .platform-grid,.poscards{grid-template-columns:1fr}
   .pfeat.span2{grid-column:span 1}
   .cs-grid{grid-template-columns:1fr}
   .cs-wrap{padding:56px 22px 64px}
@@ -441,8 +485,14 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   .section{padding:64px 0}
   .pt-left{padding:32px 24px}
   .pt-tab{padding:8px 14px;font-size:13px}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .flow{grid-template-columns:1fr}
+  .ww-section{padding:64px 0}
+  .ww-wrap{padding:0 22px}
+  .ww-head{margin-bottom:36px}
+  .ww-colbar{display:none}
+  .ww-row{grid-template-columns:1fr}
+  .ww-left{background-image:none;padding:20px 20px 16px;border-bottom:1px solid #E2E4E9}
+  .ww-mid{justify-content:flex-start;padding:10px 20px;border-left:none;border-right:none;border-bottom:1px solid #E2E4E9}
+  .ww-right{border-left:none;border-top:3px solid var(--gold);padding:20px 20px 24px}
 }
 @media(min-width:760px){
   .cs-wrap{padding:80px 32px 96px}
@@ -502,10 +552,9 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           <span class="word word-2">Budget.</span>
           <span class="word word-3">Control.</span>
         </div>
-        <p class="tagline">A practical cost platform for construction teams to prepare AI-assisted resource-based estimates, convert awarded work into budgets, and monitor costs with discipline.</p>
+        <p class="tagline">Build estimates faster. Control budgets better. Protect project margins.</p>
         <div class="cta-row">
-          <button class="btn-cta" data-modal="Platform demo">Explore Cost Platform</button>
-          <button class="btn-ghost" data-modal="Consultancy">Discuss Consultancy</button>
+          <button class="btn-cta" data-modal="Platform demo">Request Demo</button>
         </div>
         <div class="hero-meta">
           <span class="hero-meta-item">
@@ -571,30 +620,30 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 <section class="pos-strip">
   <div class="wrap">
     <div class="pos-head">
-      <p class="eyebrow">Built for disciplined cost management</p>
-      <h2>For teams that take <em>cost control</em> seriously.</h2>
-      <p>COSTiMO is designed for contractors, developers, project owners, and consultants who need better control over project estimates, budgets, commitments, actual costs, and commercial risk.</p>
+      <p class="eyebrow">Built for commercial outcomes</p>
+      <h2>For teams whose estimates must stand up to review — and whose margins must be protected.</h2>
+      <p>When every estimate, budget, and variance affects project margin, teams need more than spreadsheets and instinct.</p>
     </div>
     <div class="poscards">
       <div class="poscard">
         <div class="poscard-icon"><i data-lucide="layers"></i></div>
-        <h4>Resource-based estimation</h4>
-        <p>Create estimates from assemblies, activities, cost elements, units, and required quantities.</p>
+        <h4>Estimates you can defend, line by line</h4>
+        <p>Every cost linked to a clear cost element and productivity assumption, so teams can review the estimate from every key cost dimension.</p>
       </div>
       <div class="poscard">
         <div class="poscard-icon"><i data-lucide="database"></i></div>
-        <h4>Organisation rate library</h4>
-        <p>Maintain your own approved labour, material, equipment, and subcontract rates.</p>
+        <h4>Your rates, your rules, your approvals</h4>
+        <p>No market-rate suggestions. Just your approved library, applied consistently.</p>
       </div>
       <div class="poscard">
         <div class="poscard-icon"><i data-lucide="trending-up"></i></div>
-        <h4>Budget &amp; cost control</h4>
-        <p>Convert awarded estimates into budgets and monitor project costs against approved baselines.</p>
+        <h4>Budgets that stay connected to the estimate</h4>
+        <p>Convert approved estimates into controlled budgets with baselines and revision discipline, reducing the gap between estimation and execution.</p>
       </div>
       <div class="poscard">
         <div class="poscard-icon"><i data-lucide="shield-check"></i></div>
-        <h4>Project consultancy</h4>
-        <p>Strengthen contractor evaluation, contract governance, cost control processes, and digital workflows.</p>
+        <h4>Know the real cost of the work performed</h4>
+        <p>Allocate commitments and actual costs to WBS items, compare them with allowable budgets, and see actual unit costs against executed quantities.</p>
       </div>
     </div>
   </div>
@@ -605,15 +654,15 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   <div class="wrap">
     <div class="pt-header sr">
       <p class="eyebrow">The COSTiMO Platform</p>
-      <h2>Estimate. Budget. <em>Control.</em></h2>
-      <p class="pt-sub">One connected workflow — from the first BOQ line to in-flight cost monitoring. Click a tab to see each stage in action.</p>
+      <h2>From estimate to handover. <em>No surprises.</em></h2>
+      <p class="pt-sub">One system carries the project from first estimate to final cost, so nothing is lost between the estimation team, the budget, and the site.</p>
     </div>
     <div class="pt-tab-nav-wrap sr sr-d1">
       <div class="pt-tab-nav" role="tablist">
         <button class="pt-tab active" data-tab="estimate" role="tab"><i data-lucide="layers"></i>Estimate</button>
         <button class="pt-tab" data-tab="budget" role="tab"><i data-lucide="clipboard-check"></i>Budget</button>
         <button class="pt-tab" data-tab="cost-control" role="tab"><i data-lucide="activity"></i>Cost control</button>
-        <button class="pt-tab pt-tab-cta" data-tab="get-started" role="tab"><i data-lucide="rocket"></i>Get started — free</button>
+        <button class="pt-tab pt-tab-cta" data-tab="ai-assistance" role="tab"><i data-lucide="sparkles"></i>AI Assistance</button>
       </div>
     </div>
 
@@ -622,13 +671,12 @@ footer{background:var(--navy-deep);padding:72px 0 0}
       <div class="pt-panel-inner">
         <div class="pt-left">
           <p class="eyebrow">Estimate</p>
-          <h2>Hierarchical precision, down to the <em>last resource</em>.</h2>
-          <p class="pt-body">Build estimates from a full WBS — work packages, activities, BOQ items, resources — and apply your own organisation-approved rates to compute project cost.</p>
+          <h2>Build estimates faster. <em>Defend every number.</em></h2>
+          <p class="pt-body">Build resource-based estimates from assemblies, quantities, approved rates, and productivity assumptions, ready for review, refinement, and submission.</p>
           <div class="pt-items">
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="folder-tree"></i></div><div><h4>Full WBS hierarchy</h4><p>Work Packages → Activities → BOQ Items → Resources. No flat lists, no orphan items.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="layout-grid"></i></div><div><h4>Reusable assemblies</h4><p>Build organisation-wide resource assemblies once; pull them into every project that needs them.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="database"></i></div><div><h4>Your own rate library</h4><p>Labour, material, equipment, subcontract — commercial control stays with your team.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="git-branch"></i></div><div><h4>Revision discipline</h4><p>Draft → Rev0 → Rev1 with locked history. Compare any two revisions side-by-side.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="layout-grid"></i></div><div><h4>Reuse proven assemblies</h4><p>Bring tested resource build-ups into new estimates without rebuilding from scratch.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="database"></i></div><div><h4>Apply approved rates</h4><p>Use approved manpower, material, equipment, subcontractor, and consumable rates consistently.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="bar-chart-3"></i></div><div><h4>Review every cost dimension</h4><p>View costs by work package, activity, BOQ item, and cost element.</p></div></div>
           </div>
           <a href="#contact" class="pt-link">Explore estimation <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
@@ -645,13 +693,12 @@ footer{background:var(--navy-deep);padding:72px 0 0}
       <div class="pt-panel-inner">
         <div class="pt-left">
           <p class="eyebrow">Budget</p>
-          <h2>Convert awarded estimates into <em>approved baselines</em>.</h2>
-          <p class="pt-body">Once a project is awarded, your estimate becomes a controlled budget — with revision discipline, approval workflow, and a complete audit trail.</p>
+          <h2>The approved budget becomes the <em>control baseline</em>.</h2>
+          <p class="pt-body">Promote the final estimate into a locked execution budget. Commitments, actual costs, forecasts, and variances are then measured against the same approved baseline.</p>
           <div class="pt-items">
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="git-merge"></i></div><div><h4>Estimate-to-budget conversion</h4><p>One controlled step from awarded estimate to approved project baseline.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="lock"></i></div><div><h4>Locked baselines</h4><p>Approved budgets are frozen. Any change is a tracked, approved revision.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="bar-chart-3"></i></div><div><h4>Multi-angle breakdown</h4><p>Budget by cost element, work package, activity, resource type, and summary.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="users"></i></div><div><h4>Approval workflow</h4><p>Roles, signatures, and audit logs for every budget revision.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="lock"></i></div><div><h4>No silent drift</h4><p>Keep the approved budget locked, with changes allowed only through controlled revision and approval.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="git-merge"></i></div><div><h4>One coding structure, end to end</h4><p>Carry the same WBS, cost codes, BOQ items, activities, and cost elements from estimate to execution reporting.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="git-branch"></i></div><div><h4>Revisions you can trust</h4><p>Track approved changes with clear history and sign-off, not scattered spreadsheet versions.</p></div></div>
           </div>
           <a href="#contact" class="pt-link">Explore budgeting <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
@@ -668,13 +715,12 @@ footer{background:var(--navy-deep);padding:72px 0 0}
       <div class="pt-panel-inner">
         <div class="pt-left">
           <p class="eyebrow">Cost Control</p>
-          <h2>Track commitments, actuals, and <em>variances live</em>.</h2>
-          <p class="pt-body">Monitor execution costs against the approved budget at every WBS level. Catch overruns early — before they become unrecoverable.</p>
+          <h2>Know the real cost of the <em>work performed</em>.</h2>
+          <p class="pt-body">Allocate commitments and actual costs to WBS items, activities, cost elements, and executed quantities, so teams can compare allowable budget with actual unit cost.</p>
           <div class="pt-items">
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="activity"></i></div><div><h4>Live variance tracking</h4><p>Compare budget vs. commitments vs. actuals at every level of the WBS.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="trending-up"></i></div><div><h4>Forecast at completion</h4><p>Forward-looking forecasts that update as work progresses on site.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="eye"></i></div><div><h4>Cost dashboards</h4><p>Executive-level summaries with drill-down audit on every line on demand.</p></div></div>
-            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="bell"></i></div><div><h4>Variance alerts</h4><p>Notifications when actuals breach a configurable threshold.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="clipboard-list"></i></div><div><h4>Commitments captured at source</h4><p>Track purchase orders, subcontract commitments, and expected liabilities against the relevant work item before they become actual costs.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="activity"></i></div><div><h4>Actuals linked to executed quantities</h4><p>Distribute material, equipment, consumable, manpower, and subcontract costs to the work performed, not only to accounting cost heads.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="trending-up"></i></div><div><h4>Unit-rate variance made visible</h4><p>Compare budget unit rates with actual unit costs by package, activity, BOQ item, and cost element while corrective action is still possible.</p></div></div>
           </div>
           <a href="#contact" class="pt-link">Explore cost control <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
@@ -686,41 +732,24 @@ footer{background:var(--navy-deep);padding:72px 0 0}
       </div>
     </div>
 
-    <!-- GET STARTED PANEL -->
-    <div class="pt-panel hidden" id="panel-get-started" role="tabpanel">
+    <!-- AI ASSISTANCE PANEL -->
+    <div class="pt-panel hidden" id="panel-ai-assistance" role="tabpanel">
       <div class="pt-panel-inner">
         <div class="pt-left">
-          <p class="eyebrow">Free Trial</p>
-          <h2>Get started in <em>60 seconds</em>.</h2>
-          <p class="pt-body">Create a free workspace, import a sample project, and explore the platform with your own rate library. No credit card required.</p>
-          <ul class="gs-checks">
-            <li>Free for the first project — no time limit</li>
-            <li>Your own organisation-approved rate library</li>
-            <li>Unlimited team members during trial</li>
-            <li>Full Estimate · Budget · Cost control workflow</li>
-          </ul>
-        </div>
-        <div class="pt-right pt-right-dark">
-          <div class="gs-form-card">
-            <form id="gsForm" novalidate>
-              <div class="gs-form-head">
-                <div class="gs-form-icon"><i data-lucide="rocket"></i></div>
-                <div><h4>Create your free workspace</h4><p>We'll send your login link to your business email.</p></div>
-              </div>
-              <div class="fl-row" style="margin-bottom:10px">
-                <div class="fl-field"><input type="text" name="firstname" placeholder=" " autocomplete="given-name" required><label>First name *</label></div>
-                <div class="fl-field"><input type="text" name="lastname" placeholder=" " autocomplete="family-name"><label>Last name</label></div>
-              </div>
-              <div class="fl-field" style="margin-bottom:12px"><input type="email" name="email" placeholder=" " autocomplete="email" required><label>Business email *</label></div>
-              <button type="submit" class="btn-gs" id="gsSubmitBtn">Request workspace access <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-              <p class="gs-terms">By signing up you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy policy</a>.</p>
-            </form>
-            <div id="gsSuccess" style="display:none;text-align:center;padding:20px 0">
-              <div class="ms-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#C6A75E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-              <h4 style="font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px">We'll be in touch!</h4>
-              <p style="font-size:13px;color:var(--muted);line-height:1.6">Check your inbox — your workspace details will arrive within one business day.</p>
-            </div>
+          <p class="eyebrow">AI Assistance</p>
+          <h2>AI that speeds the work — not AI that <em>owns the price</em>.</h2>
+          <p class="pt-body">Find assemblies faster, structure estimates cleaner, and review assumptions earlier. Your team controls the rates, pricing decisions, and approvals.</p>
+          <div class="pt-items">
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="search"></i></div><div><h4>Find the right build-up faster</h4><p>Search across your approved library, past projects, and standard assemblies without starting from a blank screen.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="layers"></i></div><div><h4>Structure estimates more consistently</h4><p>Group labour, materials, equipment, subcontractors, and consumables in a cleaner, more reviewable format.</p></div></div>
+            <div class="pt-item"><div class="pt-item-icon"><i data-lucide="shield-check"></i></div><div><h4>Review before submission</h4><p>Flag missing assumptions, unusual quantities, and areas requiring professional review before the estimate leaves your desk.</p></div></div>
           </div>
+          <a href="#contact" class="pt-link">Explore AI Assistance <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <div class="pt-right">
+          <video class="pt-video" id="vid-ai-assistance" autoplay muted loop playsinline controls>
+            <source src="platform-demo.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -742,7 +771,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
       </h1>
 
       <p class="cs-hero-sub">
-        Specialist advisory for construction organisations that need practical, contractually-sound, execution-oriented support — before they digitise it on the platform.
+        Before any tool fits your business, the process behind it has to work. We build the governance, then configure the platform around it.
       </p>
 
       <div class="cs-hero-actions">
@@ -775,8 +804,8 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           </span>
         </div>
         <div class="cs-body">
-          <h3 class="cs-card-title">Contractor vetting &amp; pre-qualification</h3>
-          <p class="cs-card-desc">Financial capacity, technical capability, execution history, safety systems, manpower &amp; equipment, and litigation profile — all checked end-to-end before contract.</p>
+          <h3 class="cs-card-title">Contractor vetting and pre-qualification</h3>
+          <p class="cs-card-desc">Reduce award risk by checking financial capacity, technical capability, execution history, safety systems, manpower, equipment, and litigation profile before contract commitment.</p>
           <div class="cs-chips">
             <span class="cs-chip">Financial</span>
             <span class="cs-chip">Technical</span>
@@ -794,7 +823,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           </span>
           <span class="cs-banner-text">
             <span class="cs-banner-num">Service 02</span>
-            <span class="cs-banner-punch">Tighten the contract.</span>
+            <span class="cs-banner-punch">Make the contract easier to enforce.</span>
           </span>
           <span class="cs-banner-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
@@ -802,7 +831,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
         </div>
         <div class="cs-body">
           <h3 class="cs-card-title">Contract governance</h3>
-          <p class="cs-card-desc">SOPs, approval workflows, variation procedures, payment controls and dispute prevention — codified into runbooks your project managers actually follow.</p>
+          <p class="cs-card-desc">Turn contract conditions, approvals, variations, payment controls, and dispute-prevention steps into practical procedures your project team can follow.</p>
           <div class="cs-chips">
             <span class="cs-chip">SOPs</span>
             <span class="cs-chip">Approvals</span>
@@ -820,7 +849,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           </span>
           <span class="cs-banner-text">
             <span class="cs-banner-num">Service 03</span>
-            <span class="cs-banner-punch">Control every rupee.</span>
+            <span class="cs-banner-punch">Know where every cost is going.</span>
           </span>
           <span class="cs-banner-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
@@ -828,11 +857,11 @@ footer{background:var(--navy-deep);padding:72px 0 0}
         </div>
         <div class="cs-body">
           <h3 class="cs-card-title">Cost control frameworks</h3>
-          <p class="cs-card-desc">Project cost codes, budget structures, commitment tracking, variance review procedures and management dashboards — built around how your team actually works.</p>
+          <p class="cs-card-desc">Set up cost codes, budget structures, commitment tracking, variance reviews, and management dashboards so project cost movement is visible before margin is lost.</p>
           <div class="cs-chips">
             <span class="cs-chip">Cost codes</span>
             <span class="cs-chip">Budgets</span>
-            <span class="cs-chip">Variance</span>
+            <span class="cs-chip">Forecasts</span>
             <span class="cs-chip">Dashboards</span>
           </div>
         </div>
@@ -846,7 +875,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
           </span>
           <span class="cs-banner-text">
             <span class="cs-banner-num">Service 04</span>
-            <span class="cs-banner-punch">Built-to-fit tooling.</span>
+            <span class="cs-banner-punch">Build only what your process needs.</span>
           </span>
           <span class="cs-banner-arrow" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
@@ -854,7 +883,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
         </div>
         <div class="cs-body">
           <h3 class="cs-card-title">Custom construction web apps</h3>
-          <p class="cs-card-desc">Practical web tools for vendor management, estimation, cost tracking, approvals, document workflows and reporting — when off-the-shelf software won't fit.</p>
+          <p class="cs-card-desc">Develop practical tools for vendor management, estimation, cost tracking, approvals, document workflows, and reporting when standard software does not fit your workflow.</p>
           <div class="cs-chips">
             <span class="cs-chip">Vendors</span>
             <span class="cs-chip">Estimation</span>
@@ -866,169 +895,78 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 
     </div>
 
-    <!-- Closing band -->
-    <aside class="cs-closing sr">
-      <div class="cs-closing-inner">
-        <div class="cs-closing-text">
-          <div class="cs-closing-eyebrow">Not sure which fits?</div>
-          <h2 class="cs-closing-headline">Tell us the situation. We'll scope a 30-minute call.</h2>
-          <p class="cs-closing-sub">A working session with the team — no slide-deck pitch, no obligation.</p>
-        </div>
-        <button class="cs-btn cs-btn-primary cs-closing-cta" data-modal="Consultancy">
-          Discuss requirement
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-    </aside>
-
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section" style="background:var(--bg)">
-  <div class="wrap">
-    <div class="flow-head">
-      <p class="eyebrow">How it works</p>
-      <h2>A practical <em>cost flow</em> for construction projects.</h2>
-      <p>Six stages from first BOQ line to in-flight cost control — built around the way construction projects are actually estimated, awarded, budgeted, executed, and commercially controlled.</p>
+<!-- WITH / WITHOUT COSTIMO -->
+<section class="ww-section" id="contact" aria-labelledby="ww-heading">
+  <div class="ww-wrap">
+    <div class="ww-head">
+      <div class="ww-eyebrow">Problems solved</div>
+      <h2 id="ww-heading">Without COSTiMO. <em>With COSTiMO.</em></h2>
+      <p>Six workflows side by side, from estimate preparation to execution cost control.</p>
     </div>
-    <div class="flow">
-      <div class="flow-step">
-        <div class="flow-num-row">
-          <div class="flow-num"><span>01</span></div>
-          <span class="flow-num-label">Resource-based structure</span>
-        </div>
-        <h4>Build the estimate</h4>
-        <p>Create a structured estimate using WBS, work packages, BOQ items, activities, assemblies, cost elements, units, and resource quantities.</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num-row">
-          <div class="flow-num"><span>02</span></div>
-          <span class="flow-num-label">Your approved library</span>
-        </div>
-        <h4>Apply org rates</h4>
-        <p>Use your own approved rate library for labour, material, equipment, subcontract, and other resources. No external rate suggestion.</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num-row">
-          <div class="flow-num"><span>03</span></div>
-          <span class="flow-num-label">Cost from every angle</span>
-        </div>
-        <h4>Review composition</h4>
-        <p>Analyse project cost by activity, cost element, resource type, work package, and summary dashboard — before submission.</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num-row">
-          <div class="flow-num"><span>04</span></div>
-          <span class="flow-num-label">Award, then baseline</span>
-        </div>
-        <h4>Convert to budget</h4>
-        <p>Once the project is awarded, convert the final estimate into an approved project budget with controlled revisions.</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num-row">
-          <div class="flow-num"><span>05</span></div>
-          <span class="flow-num-label">Commitments &amp; actuals</span>
-        </div>
-        <h4>Monitor execution</h4>
-        <p>Track commitments, actual costs, forecast cost at completion, and variances against the approved budget — live.</p>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num-row">
-          <div class="flow-num"><span>06</span></div>
-          <span class="flow-num-label">Management response</span>
-        </div>
-        <h4>Take action</h4>
-        <p>Use variance visibility to control procurement, productivity, subcontracting, claims, and project profitability.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- WHY COSTIMO -->
-<section class="bg-navy">
-  <div class="wrap">
-    <div class="why-head">
-      <p class="eyebrow">Why COSTiMO</p>
-      <h2>Designed around <em>execution realities</em>.</h2>
-      <p>COSTiMO is not a generic accounting package or a simple rate calculator. It is designed around the way construction projects are estimated, awarded, budgeted, executed, and commercially controlled.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon"><i data-lucide="shield"></i></div>
-        <h4>No uncontrolled rate suggestion</h4>
-        <p>COSTiMO does not impose market rates. Users maintain their own organisation-approved rates and commercial assumptions.</p>
+    <div class="ww-compare">
+      <div class="ww-colbar" aria-hidden="true">
+        <div class="ww-col-left">Without COSTiMO</div>
+        <div class="ww-col-mid"></div>
+        <div class="ww-col-right">With COSTiMO</div>
       </div>
-      <div class="why-card">
-        <div class="why-icon"><i data-lucide="layers"></i></div>
-        <h4>Resource quantity intelligence</h4>
-        <p>The platform focuses on activity-wise resource requirements, assembly logic, and cost element structure.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i data-lucide="git-merge"></i></div>
-        <h4>Estimate-to-budget discipline</h4>
-        <p>Approved estimates can become controlled project budgets — reducing disconnect between tendering and execution.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i data-lucide="activity"></i></div>
-        <h4>Execution cost monitoring</h4>
-        <p>Budgets can be used for monitoring commitments, actuals, forecasts, and variance through execution.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i data-lucide="users"></i></div>
-        <h4>Consultancy-led implementation</h4>
-        <p>Processes, controls, and dashboards aligned with each organisation's operating model — not the other way around.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- USE CASES -->
-<section class="section" id="use-cases" style="background:#fff">
-  <div class="wrap">
-    <div class="uc-head">
-      <p class="eyebrow">Use cases</p>
-      <h2>Where COSTiMO <em>can be used</em>.</h2>
-      <p>From bid preparation to in-flight cost control, and from contractor evaluation to governance setup.</p>
-    </div>
-    <div class="uc-grid">
-      <div class="uc-card">
-        <div class="uc-icon"><i data-lucide="file-text"></i></div>
-        <h4>Tender estimation</h4>
-        <p>Prepare structured resource-based estimates for construction bids and internal reviews.</p>
+      <div class="ww-row">
+        <div class="ww-left">
+          <div class="ww-tag">Estimate structure</div>
+          <p class="ww-text">Estimates are prepared in spreadsheets, with formulas, assumptions, and resource build-ups spread across different files.</p>
+        </div>
+        <div class="ww-mid"><div class="ww-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 4.5 10.5 7 8 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="ww-right"><p class="ww-text">Estimates are built from structured assemblies, cost elements, approved rates, and productivity assumptions, ready for review and refinement.</p></div>
       </div>
-      <div class="uc-card">
-        <div class="uc-icon"><i data-lucide="clipboard-list"></i></div>
-        <h4>Project budgeting</h4>
-        <p>Convert awarded estimates into execution budgets with clear cost baselines.</p>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon"><i data-lucide="bar-chart-3"></i></div>
-        <h4>Cost control</h4>
-        <p>Monitor commitments, actual costs, and forecast variances during project execution.</p>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon"><i data-lucide="user-check"></i></div>
-        <h4>Contractor evaluation</h4>
-        <p>Assess vendors and contractors before award using financial, technical, legal, and execution criteria.</p>
-      </div>
-      <div class="uc-card">
-        <div class="uc-icon"><i data-lucide="shield-check"></i></div>
-        <h4>Governance improvement</h4>
-        <p>Create SOPs, contract controls, approval processes, and cost reporting systems.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CTA BLOCK -->
-<section class="cta-block" id="contact">
-  <div class="wrap">
-    <h2>Bring structure and control<br>to <em>construction project costs.</em></h2>
-    <p>Whether you need a resource-based estimation platform, a project budget and cost monitoring system, or consultancy support for contractor vetting and cost governance — COSTiMO provides a practical route to stronger commercial control.</p>
-    <div class="cta-actions">
-      <button class="btn-gold btn-gold-lg" data-modal="Platform demo">Request platform demo</button>
-      <button class="btn-ghost btn-ghost-lg" data-modal="Consultancy"><i data-lucide="phone-call"></i> Discuss consultancy requirement</button>
+      <div class="ww-row">
+        <div class="ww-left">
+          <div class="ww-tag">Estimate review</div>
+          <p class="ww-text">Management cannot easily review the estimate by package, activity, BOQ item, resource, or cost category.</p>
+        </div>
+        <div class="ww-mid"><div class="ww-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 4.5 10.5 7 8 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="ww-right"><p class="ww-text">The estimate can be viewed from every key cost dimension, helping teams defend the numbers before submission.</p></div>
+      </div>
+
+      <div class="ww-row">
+        <div class="ww-left">
+          <div class="ww-tag">Estimate to budget</div>
+          <p class="ww-text">After award, the estimate is manually converted into a budget, often losing structure and traceability.</p>
+        </div>
+        <div class="ww-mid"><div class="ww-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 4.5 10.5 7 8 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="ww-right"><p class="ww-text">The approved estimate becomes a controlled execution budget with the same WBS, cost codes, activities, and cost elements.</p></div>
+      </div>
+
+      <div class="ww-row">
+        <div class="ww-left">
+          <div class="ww-tag">Accounts vs execution</div>
+          <p class="ww-text">Accounts record actual expenses under cost heads, while project teams measure progress by work packages and executed quantities.</p>
+        </div>
+        <div class="ww-mid"><div class="ww-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 4.5 10.5 7 8 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="ww-right"><p class="ww-text">Commitments and actual costs are allocated to WBS items, activities, cost elements, and executed quantities.</p></div>
+      </div>
+
+      <div class="ww-row">
+        <div class="ww-left">
+          <div class="ww-tag">Actual unit cost</div>
+          <p class="ww-text">The team knows total spend, but not the real unit cost of the work performed.</p>
+        </div>
+        <div class="ww-mid"><div class="ww-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 4.5 10.5 7 8 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="ww-right"><p class="ww-text">Actual unit costs are calculated against executed quantities and compared with approved budget unit rates.</p></div>
+      </div>
+
+      <div class="ww-row">
+        <div class="ww-left">
+          <div class="ww-tag">Margin visibility</div>
+          <p class="ww-text">Cost overruns become visible only after reports are compiled and the margin has already slipped.</p>
+        </div>
+        <div class="ww-mid"><div class="ww-arrow"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 4.5 10.5 7 8 9.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+        <div class="ww-right"><p class="ww-text">Unit-rate variance, resource usage, commitments, and actual costs are visible while corrective action is still possible.</p></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1039,32 +977,29 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     <div class="footer-top">
       <div class="footer-brand">
         <img src="movu8uzc-costimo-logo-full-dark.svg" alt="COSTiMO" style="height:32px">
-        <p>Construction cost platform &amp; project consultancy. Estimate · Budget · Cost Control · Contractor Vetting · Contract Governance · Custom Construction Apps.</p>
+        <p>Construction cost platform and advisory support for disciplined project cost control.<br>Estimate faster. Budget better. See actual cost against work performed.</p>
         <div class="footer-pills">
           <span class="footer-pill">COSTiMO.ai</span>
           <span class="footer-pill">Platform + Advisory</span>
-          <span class="footer-pill">GCC &amp; India</span>
         </div>
       </div>
       <div class="footer-cols">
         <div class="footer-col">
           <h5>Platform</h5>
-          <a href="#">Resource break-up</a>
-          <a href="#">Assemblies &amp; cost elements</a>
-          <a href="#">Estimate dashboard</a>
-          <a href="#">Estimate to budget</a>
-          <a href="#">Cost monitoring</a>
+          <a href="#platform" data-platform-tab="estimate">Estimate</a>
+          <a href="#platform" data-platform-tab="budget">Budget</a>
+          <a href="#platform" data-platform-tab="cost-control">Cost control</a>
         </div>
         <div class="footer-col">
           <h5>Consultancy</h5>
-          <a href="#">Contractor vetting</a>
-          <a href="#">Contract governance</a>
-          <a href="#">Cost control frameworks</a>
+          <a href="#consultancy">Contractor vetting</a>
+          <a href="#consultancy">Contract governance</a>
+          <a href="#consultancy">Cost control frameworks</a>
         </div>
         <div class="footer-col">
           <h5>Company</h5>
           <a href="#">About</a>
-          <a href="#">Use cases</a>
+          <a href="#contact">Problems Solved</a>
           <a href="#" data-modal="General enquiry">Contact</a>
         </div>
         <div class="footer-col">
@@ -1105,16 +1040,16 @@ footer{background:var(--navy-deep);padding:72px 0 0}
         </div>
         <form id="contactForm" novalidate>
           <div class="fl-row" style="margin-bottom:10px">
-            <div class="fl-field"><input type="text" name="name" placeholder=" " required autocomplete="name"><label>Full name *</label></div>
-            <div class="fl-field"><input type="text" name="company" placeholder=" " autocomplete="organization"><label>Company</label></div>
+            <div class="fl-field"><input type="text" id="contactName" name="name" placeholder=" " required autocomplete="name"><label for="contactName">Full name *</label></div>
+            <div class="fl-field"><input type="text" id="contactCompany" name="company" placeholder=" " autocomplete="organization"><label for="contactCompany">Company</label></div>
           </div>
           <div class="fl-row" style="margin-bottom:10px">
-            <div class="fl-field"><input type="email" name="email" placeholder=" " required autocomplete="email"><label>Business email *</label></div>
-            <div class="fl-field"><input type="tel" name="phone" placeholder=" " autocomplete="tel"><label>Phone (optional)</label></div>
+            <div class="fl-field"><input type="email" id="contactEmail" name="email" placeholder=" " required autocomplete="email"><label for="contactEmail">Business email *</label></div>
+            <div class="fl-field"><input type="tel" id="contactPhone" name="phone" placeholder=" " autocomplete="tel"><label for="contactPhone">Phone (optional)</label></div>
           </div>
           <div class="fl-field" style="margin-bottom:4px">
-            <textarea name="message" placeholder=" " rows="3" required></textarea>
-            <label>Message *</label>
+            <textarea id="contactMessage" name="message" placeholder=" " rows="3" required></textarea>
+            <label for="contactMessage">Message *</label>
           </div>
           <button type="submit" class="modal-submit" id="modalSubmitBtn">Send enquiry</button>
         </form>
@@ -1127,6 +1062,68 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     </div>
   </div>
 </div>
+
+<!-- REQUEST DEMO DRAWER -->
+<div class="rd-overlay" id="requestDemoOverlay"></div>
+<aside class="rd-drawer" id="requestDemoDrawer" role="dialog" aria-modal="true" aria-labelledby="requestDemoTitle">
+  <div class="rd-head">
+    <div>
+      <div class="rd-title" id="requestDemoTitle">Request a demo</div>
+      <div class="rd-sub">We'll be in touch within one business day.</div>
+    </div>
+    <button class="rd-close" id="requestDemoClose" aria-label="Close">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+        <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="rd-body" id="requestDemoBody">
+    <div id="requestDemoPillSection">
+      <div class="rd-label">I'm interested in</div>
+      <div class="rd-pills" role="group">
+        <button class="rd-pill active" type="button" data-interest="Platform demo">Platform demo</button>
+        <button class="rd-pill" type="button" data-interest="Consultancy">Consultancy</button>
+        <button class="rd-pill" type="button" data-interest="Free trial">Free trial</button>
+        <button class="rd-pill" type="button" data-interest="General enquiry">General enquiry</button>
+      </div>
+    </div>
+
+    <form class="rd-fields" id="requestDemoForm" novalidate>
+      <div class="rd-field">
+        <input type="text" id="requestDemoName" name="name" placeholder="Full name" autocomplete="name" required>
+        <label for="requestDemoName">Full name</label>
+        <div class="rd-error">Please enter your name.</div>
+      </div>
+      <div class="rd-field">
+        <input type="email" id="requestDemoEmail" name="email" placeholder="Work email" autocomplete="email" required>
+        <label for="requestDemoEmail">Work email</label>
+        <div class="rd-error">Please enter a valid work email.</div>
+      </div>
+      <div class="rd-field">
+        <input type="text" id="requestDemoCompany" name="company" placeholder="Company" autocomplete="organization">
+        <label for="requestDemoCompany">Company</label>
+        <span class="rd-optional">optional</span>
+      </div>
+    </form>
+
+    <div class="rd-success" id="requestDemoSuccess">
+      <div class="rd-check">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <path d="M4 12l5 5 9-10" stroke="#C6A75E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="rd-success-title">You're booked in</div>
+      <div class="rd-success-body">We'll send a calendar invite within one business day, personalised to your project type.</div>
+      <button class="rd-success-close" id="requestDemoSuccessClose">Close</button>
+    </div>
+  </div>
+
+  <div class="rd-foot" id="requestDemoFoot">
+    <button type="submit" class="rd-submit" id="requestDemoSubmit" form="requestDemoForm">Book my demo</button>
+    <p class="rd-privacy">No spam. No sales calls unless you ask. Unsubscribe anytime.</p>
+  </div>
+</aside>
 
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <script>
@@ -1308,6 +1305,158 @@ footer{background:var(--navy-deep);padding:72px 0 0}
 </script>
 
 <script>
+/* ── Request demo drawer ── */
+(function(){
+  var overlay = document.getElementById('requestDemoOverlay');
+  var drawer = document.getElementById('requestDemoDrawer');
+  var closeBtn = document.getElementById('requestDemoClose');
+  var successClose = document.getElementById('requestDemoSuccessClose');
+  var form = document.getElementById('requestDemoForm');
+  var submitBtn = document.getElementById('requestDemoSubmit');
+  var pillSection = document.getElementById('requestDemoPillSection');
+  var success = document.getElementById('requestDemoSuccess');
+  var foot = document.getElementById('requestDemoFoot');
+  var pills = document.querySelectorAll('.rd-pill');
+  var inputs = document.querySelectorAll('.rd-field input');
+
+  function syncVal(input){
+    if(input.value.trim()) input.classList.add('has-val');
+    else input.classList.remove('has-val');
+  }
+
+  function getFieldError(input){
+    var value = input.value.trim();
+    if(input.required && !value){
+      return input.type === 'email' ? 'Please enter a valid work email.' : 'Please enter your name.';
+    }
+    if(input.name === 'name' && value && value.replace(/[^A-Za-z]/g,'').length < 2){
+      return 'Please enter at least 2 letters.';
+    }
+    if(input.type === 'email' && value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)){
+      return 'Please enter a valid work email.';
+    }
+    return '';
+  }
+
+  function clearFieldError(input){
+    var wrap = input.closest('.rd-field');
+    if(wrap) wrap.classList.remove('show-error');
+  }
+
+  function showFieldError(input, message){
+    var wrap = input.closest('.rd-field');
+    if(!wrap) return;
+    var error = wrap.querySelector('.rd-error');
+    if(error) error.textContent = message;
+    wrap.classList.add('show-error');
+  }
+
+  function validateField(input){
+    var message = getFieldError(input);
+    if(message){
+      showFieldError(input, message);
+      return false;
+    }
+    clearFieldError(input);
+    return true;
+  }
+
+  function resetDrawer(){
+    form.reset();
+    form.style.display = '';
+    pillSection.style.display = '';
+    foot.style.display = '';
+    success.classList.remove('show');
+    submitBtn.disabled = false;
+    submitBtn.classList.remove('loading');
+    submitBtn.textContent = 'Book my demo';
+    inputs.forEach(function(input){
+      input.classList.remove('has-val');
+      var wrap = input.closest('.rd-field');
+      if(wrap) wrap.classList.remove('show-error');
+    });
+    pills.forEach(function(p){ p.classList.remove('active'); });
+    var defaultPill = document.querySelector('.rd-pill[data-interest="Platform demo"]');
+    if(defaultPill) defaultPill.classList.add('active');
+  }
+
+  window.openRequestDemoDrawer = function(){
+    resetDrawer();
+    overlay.classList.add('show');
+    drawer.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(function(){
+      var name = document.getElementById('requestDemoName');
+      if(name) name.focus();
+    }, 380);
+  };
+
+  window.closeRequestDemoDrawer = function(){
+    overlay.classList.remove('show');
+    drawer.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      pills.forEach(function(p){ p.classList.remove('active'); });
+      pill.classList.add('active');
+    });
+  });
+
+  inputs.forEach(function(input){
+    input.addEventListener('input', function(){
+      syncVal(input);
+      var wrap = input.closest('.rd-field');
+      if(wrap && wrap.classList.contains('show-error')){
+        var message = getFieldError(input);
+        if(message) showFieldError(input, message);
+        else clearFieldError(input);
+      }
+    });
+    input.addEventListener('blur', function(){ validateField(input); });
+  });
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = form.querySelector('[name=name]');
+    var email = form.querySelector('[name=email]');
+    var nameOk = validateField(name);
+    var emailOk = validateField(email);
+    if(!nameOk || !emailOk) return;
+    var activePill = document.querySelector('.rd-pill.active');
+    var data = {
+      name: name.value.trim(),
+      email: email.value.trim(),
+      company: form.querySelector('[name=company]').value.trim(),
+      phone: '',
+      message: 'Request demo drawer submission',
+      interest: activePill ? activePill.dataset.interest : 'Platform demo'
+    };
+    submitBtn.disabled = true;
+    submitBtn.classList.add('loading');
+    submitBtn.textContent = 'Booking...';
+    fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(r); })
+      .then(function(){
+        form.style.display = 'none';
+        pillSection.style.display = 'none';
+        foot.style.display = 'none';
+        success.classList.add('show');
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('loading');
+        submitBtn.textContent = 'Book my demo';
+        alert('Something went wrong. Please email admin@costimo.ai directly.');
+      });
+  });
+
+  overlay.addEventListener('click', window.closeRequestDemoDrawer);
+  closeBtn.addEventListener('click', window.closeRequestDemoDrawer);
+  successClose.addEventListener('click', window.closeRequestDemoDrawer);
+})();
+
 /* ── Contact modal ── */
 (function(){
   var overlay  = document.getElementById('contactModal');
@@ -1340,12 +1489,23 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   /* Open on any [data-modal] element */
   document.addEventListener('click', function(e){
     var el = e.target.closest('[data-modal]');
-    if(el){ e.preventDefault(); openModal(el.dataset.modal); }
+    if(!el) return;
+    e.preventDefault();
+    if(el.dataset.modal === 'Platform demo' && window.openRequestDemoDrawer){
+      window.openRequestDemoDrawer();
+      return;
+    }
+    openModal(el.dataset.modal);
   });
 
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', function(e){ if(e.target===overlay) closeModal(); });
-  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key==='Escape'){
+      if(window.closeRequestDemoDrawer) window.closeRequestDemoDrawer();
+      closeModal();
+    }
+  });
 
   pills.forEach(function(p){
     p.addEventListener('click', function(){
@@ -1376,28 +1536,6 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   });
 })();
 
-/* ── Get Started tab inline form ── */
-(function(){
-  var form = document.getElementById('gsForm');
-  var btn  = document.getElementById('gsSubmitBtn');
-  var succ = document.getElementById('gsSuccess');
-  if(!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var data = {
-      name:    (form.querySelector('[name=firstname]').value + ' ' + form.querySelector('[name=lastname]').value).trim(),
-      email:   form.querySelector('[name=email]').value.trim(),
-      interest:'Free trial', message:'Workspace access request'
-    };
-    if(!data.name || !data.email){ return; }
-    btn.disabled = true; btn.textContent = 'Sending…';
-    fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) })
-      .then(function(r){ return r.ok ? r.json() : Promise.reject(r); })
-      .then(function(){ form.style.display='none'; succ.style.display='block'; })
-      .catch(function(){ btn.disabled=false; btn.textContent='Request workspace access'; alert('Something went wrong. Please email admin@costimo.ai directly.'); });
-  });
-})();
-
 /* ── Platform tabs ── */
 (function(){
   var tabs = document.querySelectorAll('.pt-tab');
@@ -1423,6 +1561,17 @@ footer{background:var(--navy-deep);padding:72px 0 0}
     tab.addEventListener('click', function(){ activateTab(tab); });
   });
 
+  document.querySelectorAll('[data-platform-tab]').forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var tab = document.querySelector('.pt-tab[data-tab="'+link.dataset.platformTab+'"]');
+      if(tab) activateTab(tab);
+      var section = document.getElementById('platform');
+      if(section) section.scrollIntoView({behavior:'smooth',block:'start'});
+      history.replaceState(null,'','#platform');
+    });
+  });
+
   /* play video in initial active panel */
   var initPanel = document.getElementById('panel-estimate');
   if(initPanel){ playPanelVideo(initPanel); }
@@ -1433,10 +1582,7 @@ footer{background:var(--navy-deep);padding:72px 0 0}
   var selectors = [
     '.pos-head','.poscard',
     '.cs-card','.cs-closing',
-    '.flow-head','.flow-step',
-    '.why-head','.why-card',
-    '.uc-head','.uc-card',
-    '.cta-block h2','.cta-block p','.cta-actions',
+    '.ww-head','.ww-row',
     '.sr'
   ];
   var all = Array.from(document.querySelectorAll(selectors.join(',')));
